@@ -27,3 +27,8 @@ https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOK
 curl -s -u "hehe:TOKEN_HERE" https://api.github.com/user
 curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs
 ```
+
+## Twilio Account_sid and Auth token
+```
+curl -X GET 'https://api.twilio.com/2010-04-01/Accounts/ACCOUNT_SID/Keys.json' -u ACCOUNT_SID:AUTH_TOKEN
+```
