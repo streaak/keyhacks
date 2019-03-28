@@ -32,3 +32,23 @@ curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERN
 ```
 curl -X GET 'https://api.twilio.com/2010-04-01/Accounts/ACCOUNT_SID/Keys.json' -u ACCOUNT_SID:AUTH_TOKEN
 ```
+
+## Twitter API Secret (Reference- https://developer.twitter.com/en/docs/basics/authentication/guides/bearer-tokens.html)
+```
+curl -u 'API key:API secret key' --data 'grant_type=client_credentials' 'https://api.twitter.com/oauth2/token'
+```
+
+## Twitter Bearer token (Reference- https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/api-reference/aaa-premium
+```
+curl --request GET --url https://api.twitter.com/1.1/account_activity/all/subscriptions/count.json --header 'authorization: Bearer TOKEN'
+```
+
+## Deviant Art Secret (Reference- https://www.deviantart.com/developers/authentication)
+```
+curl https://www.deviantart.com/oauth2/token -d grant_type=client_credentials -d client_id=ID_HERE -d client_secret=mysecret
+```
+
+## Deviant Art Access Token (Reference- https://www.deviantart.com/developers/authentication)
+```
+curl https://www.deviantart.com/api/v1/oauth2/placebo -d access_token=Alph4num3r1ct0k3nv4lu3
+```
