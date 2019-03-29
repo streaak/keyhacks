@@ -52,3 +52,9 @@ curl https://www.deviantart.com/oauth2/token -d grant_type=client_credentials -d
 ```
 curl https://www.deviantart.com/api/v1/oauth2/placebo -d access_token=Alph4num3r1ct0k3nv4lu3
 ```
+
+## Pendo Integration Key (Reference- https://help.pendo.io/resources/support-library/api/index.html?bash#authentication)
+```
+curl -X GET https://app.pendo.io/api/v1/feature -H 'content-type: application/json' -H 'x-pendo-integration-key:KEY_HERE'
+curl -X GET https://app.pendo.io/api/v1/metadata/schema/account -H 'content-type: application/json' -H 'x-pendo-integration-key:KEY_HERE'
+```
