@@ -63,3 +63,8 @@ curl -X GET https://app.pendo.io/api/v1/metadata/schema/account -H 'content-type
 ```
 curl -X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SENDGRID_TOKEN-HERE" -H "Content-Type: application/json"
 ```
+
+## Dropbox API
+```
+curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Authorization: Bearer "
+```
