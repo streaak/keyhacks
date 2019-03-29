@@ -68,3 +68,10 @@ curl -X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SEN
 ```
 curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Authorization: Bearer "
 ```
+
+## aws_access_key_id and secret
+```
+Add the new access_key_id and secret within ~/.aws/credentials file as a new user (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+$ aws s3 ls --profile username_picked
+$ aws s3 cp test.txt s3://bucket_belonging_to_the_company --profile username_picked
+```
