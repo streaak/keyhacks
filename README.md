@@ -22,7 +22,7 @@ https://graph.facebook.com/oauth/access_token?client_id=ID_HERE&client_secret=SE
 https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOKEN_HERE&version=v3.2
 ```
 
-## Github Token
+## [Github Token](https://developer.github.com/v3/)
 ```
 curl -s -u "hehe:TOKEN_HERE" https://api.github.com/user
 curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs
@@ -57,4 +57,9 @@ curl https://www.deviantart.com/api/v1/oauth2/placebo -d access_token=Alph4num3r
 ```
 curl -X GET https://app.pendo.io/api/v1/feature -H 'content-type: application/json' -H 'x-pendo-integration-key:KEY_HERE'
 curl -X GET https://app.pendo.io/api/v1/metadata/schema/account -H 'content-type: application/json' -H 'x-pendo-integration-key:KEY_HERE'
+```
+
+## [SendGrid API Token](https://sendgrid.com/docs/API_Reference/api_v3.html)
+```
+curl -X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SENDGRID_TOKEN-HERE" -H "Content-Type: application/json"
 ```
