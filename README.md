@@ -1,4 +1,4 @@
-# keyhacks
+# KeyHacks
 This repository shows ways in which particular API keys found on a Bug Bounty Program can be used, to check if they are valid.
 
 ## Slack Webhook (Reference- https://api.slack.com/incoming-webhooks)
