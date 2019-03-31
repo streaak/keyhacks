@@ -80,3 +80,8 @@ $ aws s3 cp test.txt s3://bucket_belonging_to_the_company --profile username_pic
 ```
 curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
 ```
+
+## [Heroku API key](https://devcenter.heroku.com/articles/platform-api-quickstart)
+```
+curl -X POST https://api.heroku.com/apps -H "Accept: application/vnd.heroku+json; version=3" -H "Authorization: Bearer API_KEY_HERE"
+```
