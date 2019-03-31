@@ -66,7 +66,7 @@ curl -X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SEN
 
 ## Dropbox API
 ```
-curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Authorization: Bearer "
+curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Authorization: Bearer TOKEN_HERE"
 ```
 
 ## AWS Access Key ID and Secret
