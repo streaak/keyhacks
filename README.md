@@ -6,6 +6,11 @@ This repository shows ways in which particular API keys found on a Bug Bounty Pr
 curl -s -X POST -H "Content-type: application/json" -d '{"text":"streaak"}' "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
 ```
 
+## [Slack API token](https://api.slack.com/web)
+```
+curl -X POST -H 'Authorization: Bearer xoxp-TOKEN' -H 'Content-type: application/json' --data '{"channel":"#general","text":"streaak was here."}' https://slack.com/api/chat.postMessage
+```
+
 ## [SauceLabs Username and access Key](https://wiki.saucelabs.com/display/DOCS/Account+Methods)
 ```
 curl -u USERNAME:ACCESS_KEY https://saucelabs.com/rest/v1/users/USERNAME
