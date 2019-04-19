@@ -107,3 +107,8 @@ curl --request PUT \
   --header 'x-algolia-application-id: <example-application-id>' \
   --data '{"highlightPreTag": "<script>alert(1);</script>"}'
 ```
+
+## [Zapier Webhook Token](https://zapier.com/help/how-get-started-webhooks-zapier/)
+```
+curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"name":"streaak"}' "webhook_url_here"
+```
