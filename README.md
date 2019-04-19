@@ -112,3 +112,8 @@ curl --request PUT \
 ```
 curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"name":"streaak"}' "webhook_url_here"
 ```
+
+## [pagerduty API token](https://support.pagerduty.com/docs/using-the-api)
+```
+curl -H "Accept: application/vnd.pagerduty+json;version=2"  -H "Authorization: Token token=TOKEN_HERE" -X GET  "https://api.pagerduty.com/schedules"
+```
