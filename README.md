@@ -17,8 +17,10 @@ curl -u USERNAME:ACCESS_KEY https://saucelabs.com/rest/v1/users/USERNAME
 ```
 
 ## Facebook AppSecret
+
+You can generate access tokens by visiting the URL below.
+
 ```
-You can generate access tokens by visiting the below URL-
 https://graph.facebook.com/oauth/access_token?client_id=ID_HERE&client_secret=SECRET_HERE&redirect_uri=&grant_type=client_credentials
 ```
 
