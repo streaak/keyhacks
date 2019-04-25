@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/18099289/56750563-558a9400-6784-11e9-8175-ee2a19ee9d75.png" width="300px">
 </p>
+</br>
 
 KeyHacks shows ways in which particular API keys found on a Bug Bounty Program can be used, to check if they are valid.
 
