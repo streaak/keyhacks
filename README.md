@@ -128,6 +128,14 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -
 curl -H "Accept: application/vnd.pagerduty+json;version=2"  -H "Authorization: Token token=TOKEN_HERE" -X GET  "https://api.pagerduty.com/schedules"
 ```
 
+## [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
+
+Visit the following URL to check for validity
+```
+https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=KEY_HERE
+https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=2500x2000&maptype=roadmap&key=KEY_HERE
+```
+
 # Contributing
 
 I welcome contributions from the public.
