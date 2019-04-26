@@ -10,7 +10,6 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 If the below command returns `missing_text_or_fallback_or_attachments`, it means that the URL is valid, any other responses would mean that the URL is invalid.
 ```
 curl -s -X POST -H "Content-type: application/json" -d '{"text":""}' "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
-missing_text_or_fallback_or_attachments
 ```
 
 ## [Slack API token](https://api.slack.com/web)
