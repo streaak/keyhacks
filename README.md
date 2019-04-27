@@ -5,6 +5,35 @@
 
 KeyHacks shows ways in which particular API keys found on a Bug Bounty Program can be used, to check if they are valid.
 
+# Table of Contents
+
+- [Algolia API key](#Algolia-API-key)
+- [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
+- [Deviant Art Access Token](#Deviant-Art-Access-Token)
+- [Deviant Art Secret](#Deviant-Art-Secret)
+- [Dropbox API](#Dropbox-API)
+- [Facebook Access Token  ](#Facebook-Access-Token)
+- [Facebook AppSecret](#Facebook-AppSecret)
+- [GitHub private SSH key](#GitHub-private-SSH-key)
+- [Github Token](#Github-Token)
+- [Google Maps API key](#Google-Maps-API-key)
+- [Heroku API key](#Heroku-API-key)
+- [MailGun Private Key](#MailGun-Private-Key)
+- [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
+- [pagerduty API token](#pagerduty-API-token)
+- [Pendo Integration Key](#Pendo-Integration-Key)
+- [Salesforce API key](#Salesforce-API-key)
+- [SauceLabs Username and access Key](#SauceLabs-Username-and-access-Key)
+- [SendGrid API Token](#SendGrid-API-Token)
+- [Slack API token](#Slack-API-token)
+- [Slack Webhook](#Slack-Webhook)
+- [Twilio Account_sid and Auth token](#Twilio-Account_sid-and-Auth-token)
+- [Twitter API Secret](#Twitter-API-Secret)
+- [Twitter Bearer token](#Twitter-Bearer-token)
+- [Zapier Webhook Token](#Zapier-Webhook-Token)
+
+
+# Detailed Information
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
 
 If the below command returns `missing_text_or_fallback_or_attachments`, it means that the URL is valid, any other responses would mean that the URL is invalid.
