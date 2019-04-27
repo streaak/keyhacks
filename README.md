@@ -11,7 +11,8 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 
 # Table of Contents
-[Google Maps API key](#Google Maps API key)
+
+[Google Maps API key](#Google-Maps-API-key)
 
 # Detailed Information
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
