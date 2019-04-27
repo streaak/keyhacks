@@ -5,6 +5,15 @@
 
 KeyHacks shows ways in which particular API keys found on a Bug Bounty Program can be used, to check if they are valid.
 
+[![Twitter](https://img.shields.io/badge/twitter-@streaak-blue.svg)](https://twitter.com/streaak/)
+[![Twitter](https://img.shields.io/badge/twitter-@codingo__-blue.svg)](https://twitter.com/codingo_)
+[![Twitter](https://img.shields.io/badge/twitter-@edoverflow-blue.svg)](https://twitter.com/edoverflow)
+
+
+# Table of Contents
+[Google Maps API key](#Google Maps API key)
+
+# Detailed Information
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
 
 If the below command returns `missing_text_or_fallback_or_attachments`, it means that the URL is valid, any other responses would mean that the URL is invalid.
