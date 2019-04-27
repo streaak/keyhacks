@@ -41,6 +41,15 @@ curl -s -u "hehe:TOKEN_HERE" https://api.github.com/user
 curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs
 ```
 
+## GitHub private SSH key
+
+SSH private keys can be tested against github.com to see if they are registered against an existing user account. If the key exists the username corresponding to the key will be provided. ([source](https://github.com/streaak/keyhacks/issues/2))
+
+```
+$ ssh -i <path to SSH private key> -T git@github.com
+Hi <username>! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
 ## [Twilio Account_sid and Auth token](https://www.twilio.com/docs/iam/api/account)
 ```
 curl -X GET 'https://api.twilio.com/2010-04-01/Accounts/ACCOUNT_SID/Keys.json' -u ACCOUNT_SID:AUTH_TOKEN
