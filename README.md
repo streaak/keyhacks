@@ -209,6 +209,11 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -
 curl -H "Accept: application/vnd.pagerduty+json;version=2"  -H "Authorization: Token token=TOKEN_HERE" -X GET  "https://api.pagerduty.com/schedules"
 ```
 
+## [BrowserStack ACCESSKEY](https://www.browserstack.com/automate/rest-api)
+```
+curl -u "USERNAME:ACCESS_KEY" https://api.browserstack.com/automate/plan.json
+```
+
 ## [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
 Visit the following URL to check for validity
