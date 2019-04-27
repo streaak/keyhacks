@@ -5,11 +5,6 @@
 
 KeyHacks shows ways in which particular API keys found on a Bug Bounty Program can be used, to check if they are valid.
 
-[![Twitter](https://img.shields.io/badge/twitter-@streaak-blue.svg)](https://twitter.com/streaak/)
-[![Twitter](https://img.shields.io/badge/twitter-@codingo__-blue.svg)](https://twitter.com/codingo_)
-[![Twitter](https://img.shields.io/badge/twitter-@edoverflow-blue.svg)](https://twitter.com/edoverflow)
-
-
 # Table of Contents
 
 - [Algolia API key](#Algolia-API-key)
