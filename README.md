@@ -105,6 +105,49 @@ $ aws s3 cp test.txt s3://bucket_belonging_to_the_company --profile username_pic
 curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
 ```
 
+## [Microsoft Shared Access Signatures (SAS)](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/storage/common/storage-dotnet-shared-access-signature-part-1.md)
+
+The following powershell can be used to test a Shared Access Signature Token:
+```powershell
+static void UseAccountSAS(string sasToken)
+{
+    // Create new storage credentials using the SAS token.
+    StorageCredentials accountSAS = new StorageCredentials(sasToken);
+    // Use these credentials and the account name to create a Blob service client.
+    CloudStorageAccount accountWithSAS = new CloudStorageAccount(accountSAS, "account-name", endpointSuffix: null, useHttps: true);
+    CloudBlobClient blobClientWithSAS = accountWithSAS.CreateCloudBlobClient();
+
+    // Now set the service properties for the Blob client created with the SAS.
+    blobClientWithSAS.SetServiceProperties(new ServiceProperties()
+    {
+        HourMetrics = new MetricsProperties()
+        {
+            MetricsLevel = MetricsLevel.ServiceAndApi,
+            RetentionDays = 7,
+            Version = "1.0"
+        },
+        MinuteMetrics = new MetricsProperties()
+        {
+            MetricsLevel = MetricsLevel.ServiceAndApi,
+            RetentionDays = 7,
+            Version = "1.0"
+        },
+        Logging = new LoggingProperties()
+        {
+            LoggingOperations = LoggingOperations.All,
+            RetentionDays = 14,
+            Version = "1.0"
+        }
+    });
+
+    // The permissions granted by the account SAS also permit you to retrieve service properties.
+    ServiceProperties serviceProperties = blobClientWithSAS.GetServiceProperties();
+    Console.WriteLine(serviceProperties.HourMetrics.MetricsLevel);
+    Console.WriteLine(serviceProperties.HourMetrics.RetentionDays);
+    Console.WriteLine(serviceProperties.HourMetrics.Version);
+}
+```
+
 ## [Heroku API key](https://devcenter.heroku.com/articles/platform-api-quickstart)
 ```
 curl -X POST https://api.heroku.com/apps -H "Accept: application/vnd.heroku+json; version=3" -H "Authorization: Bearer API_KEY_HERE"
