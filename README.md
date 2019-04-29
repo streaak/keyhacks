@@ -225,7 +225,7 @@ https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=
 
 ## [Branch.IO Key and Secret](https://docs.branch.io/pages/apps/deep-linking-api/#app-read)
 
-Visit the following URLs to check for validity
+Visit the following URL to check for validity
 ```
 https://api2.branch.io/v1/app/KEY_HERE?branch_secret=SECRET_HERE
 ```
