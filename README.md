@@ -235,7 +235,6 @@ https://api2.branch.io/v1/app/KEY_HERE?branch_secret=SECRET_HERE
 
 Visit the following URL to check for validity
 ```
-https:
 https://api-ssl.bitly.com/v3/shorten?access_token=ACCESS_TOKEN&longUrl=https://www.google.com
 ```
 
