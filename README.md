@@ -9,6 +9,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 - [Algolia API key](#Algolia-API-key)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
+- [Branch.io Key and Secret](#Branch-IO-Key-and-Secret)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
 - [Dropbox API](#Dropbox-API)
@@ -220,6 +221,13 @@ Visit the following URL to check for validity
 ```
 https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=KEY_HERE
 https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=2500x2000&maptype=roadmap&key=KEY_HERE
+```
+
+## [Branch.IO Key and Secret](https://docs.branch.io/pages/apps/deep-linking-api/#app-read)
+
+Visit the following URLs to check for validity
+```
+https://api2.branch.io/v1/app/KEY_HERE?branch_secret=SECRET_HERE
 ```
 
 # Contributing
