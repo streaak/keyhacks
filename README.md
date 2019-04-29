@@ -9,7 +9,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 - [Algolia API key](#Algolia-API-key)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
-- [Branch.io Key and Secret](#Branch-IO-Key-and-Secret)
+- [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
 - [Dropbox API](#Dropbox-API)
