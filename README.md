@@ -33,6 +33,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Twitter Bearer token](#Twitter-Bearer-token)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Bit.ly Access token](#Bitly-Access-token)
+- [Buildkite Access token](#Buildkite-Access-token)
 
 
 # Detailed Information
@@ -236,6 +237,14 @@ https://api2.branch.io/v1/app/KEY_HERE?branch_secret=SECRET_HERE
 Visit the following URL to check for validity
 ```
 https://api-ssl.bitly.com/v3/shorten?access_token=ACCESS_TOKEN&longUrl=https://www.google.com
+```
+
+## [Buildkite Access token](https://buildkite.com/docs/apis/rest-api)
+
+Visit the following URL to check for validity
+```
+curl -H "Authorization: Bearer ACCESS_TOKEN" \
+https://api.buildkite.com/v2/user
 ```
 
 # Contributing
