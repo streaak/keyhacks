@@ -34,6 +34,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Bit.ly Access token](#Bitly-Access-token)
 - [Buildkite Access token](#Buildkite-Access-token)
+- [Asana Access token](#Asana-Access-Token)
 
 
 # Detailed Information
@@ -240,11 +241,14 @@ https://api-ssl.bitly.com/v3/shorten?access_token=ACCESS_TOKEN&longUrl=https://w
 ```
 
 ## [Buildkite Access token](https://buildkite.com/docs/apis/rest-api)
-
-Visit the following URL to check for validity
 ```
 curl -H "Authorization: Bearer ACCESS_TOKEN" \
 https://api.buildkite.com/v2/user
+```
+
+## [Asana Access token](https://asana.com/developers/documentation/getting-started/auth#personal-access-token)
+```
+curl -H "Authorization: Bearer ACCESS_TOKEN" https://app.asana.com/api/1.0/users/me
 ```
 
 # Contributing
