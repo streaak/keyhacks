@@ -35,6 +35,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Bit.ly Access token](#Bitly-Access-token)
 - [Buildkite Access token](#Buildkite-Access-token)
 - [Asana Access token](#Asana-Access-Token)
+- [Zendesk Access token](#Zendesk-Access-Token)
 
 
 # Detailed Information
@@ -249,6 +250,12 @@ https://api.buildkite.com/v2/user
 ## [Asana Access token](https://asana.com/developers/documentation/getting-started/auth#personal-access-token)
 ```
 curl -H "Authorization: Bearer ACCESS_TOKEN" https://app.asana.com/api/1.0/users/me
+```
+
+## [Zendesk Access token](https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application)
+```
+curl https://{subdomain}.zendesk.com/api/v2/tickets.json \
+  -H "Authorization: Bearer gErypPlm4dOVgGRvA1ZzMH5MQ3nLo8bo"
 ```
 
 # Contributing
