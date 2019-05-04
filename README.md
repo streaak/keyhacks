@@ -255,7 +255,7 @@ curl -H "Authorization: Bearer ACCESS_TOKEN" https://app.asana.com/api/1.0/users
 ## [Zendesk Access token](https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application)
 ```
 curl https://{subdomain}.zendesk.com/api/v2/tickets.json \
-  -H "Authorization: Bearer gErypPlm4dOVgGRvA1ZzMH5MQ3nLo8bo"
+  -H "Authorization: Bearer ACCESS_TOKEN"
 ```
 
 # Contributing
