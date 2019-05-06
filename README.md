@@ -20,6 +20,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Google Maps API key](#Google-Maps-API-key)
 - [Heroku API key](#Heroku-API-key)
 - [MailGun Private Key](#MailGun-Private-Key)
+- [MailChimp API Key](#MailChimp-API-Key)
 - [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
 - [pagerduty API token](#pagerduty-API-token)
 - [Pendo Integration Key](#Pendo-Integration-Key)
@@ -256,6 +257,11 @@ curl -H "Authorization: Bearer ACCESS_TOKEN" https://app.asana.com/api/1.0/users
 ```
 curl https://{subdomain}.zendesk.com/api/v2/tickets.json \
   -H "Authorization: Bearer ACCESS_TOKEN"
+```
+
+## [MailChimp API Key](https://developer.mailchimp.com/documentation/mailchimp/reference/overview/)
+```
+curl --request GET --url 'https://<dc>.api.mailchimp.com/3.0/' --user 'anystring:<API_KEY>' --include
 ```
 
 # Contributing
