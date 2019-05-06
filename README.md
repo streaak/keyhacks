@@ -32,6 +32,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Twilio Account_sid and Auth token](#Twilio-Account_sid-and-Auth-token)
 - [Twitter API Secret](#Twitter-API-Secret)
 - [Twitter Bearer token](#Twitter-Bearer-token)
+- [WPEngine API Key](#WPEngine-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Bit.ly Access token](#Bitly-Access-token)
 - [Buildkite Access token](#Buildkite-Access-token)
@@ -262,6 +263,14 @@ curl https://{subdomain}.zendesk.com/api/v2/tickets.json \
 ## [MailChimp API Key](https://developer.mailchimp.com/documentation/mailchimp/reference/overview/)
 ```
 curl --request GET --url 'https://<dc>.api.mailchimp.com/3.0/' --user 'anystring:<API_KEY>' --include
+```
+
+## [WPEngine API Key](https://wpengineapi.com/)
+
+This issue can be further exploited by checking out @hateshape 's gist [here](https://gist.github.com/hateshape/2e671ea71d7c243fac7ebf51fb738f0a)
+
+```
+curl "https://api.wpengine.com/1.2/?method=site&account_name=ACCOUNT_NAME&wpe_apikey=WPENGINE_APIKEY"
 ```
 
 # Contributing
