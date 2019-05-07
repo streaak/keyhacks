@@ -10,6 +10,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Algolia API key](#Algolia-API-key)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
+- [DataDog API key](#DataDog-API-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
 - [Dropbox API](#Dropbox-API)
@@ -271,6 +272,11 @@ This issue can be further exploited by checking out @hateshape 's gist [here](ht
 
 ```
 curl "https://api.wpengine.com/1.2/?method=site&account_name=ACCOUNT_NAME&wpe_apikey=WPENGINE_APIKEY"
+```
+
+## [DataDog API key](https://docs.datadoghq.com/api/)
+```
+curl "https://api.datadoghq.com/api/v1/dashboard?api_key=<api_key>&application_key=<application_key>"
 ```
 
 # Contributing
