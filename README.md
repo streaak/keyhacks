@@ -30,6 +30,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [SendGrid API Token](#SendGrid-API-Token)
 - [Slack API token](#Slack-API-token)
 - [Slack Webhook](#Slack-Webhook)
+- [Travis CI API token](#Travis-CI-API-token)
 - [Twilio Account_sid and Auth token](#Twilio-Account_sid-and-Auth-token)
 - [Twitter API Secret](#Twitter-API-Secret)
 - [Twitter Bearer token](#Twitter-Bearer-token)
@@ -277,6 +278,12 @@ curl "https://api.wpengine.com/1.2/?method=site&account_name=ACCOUNT_NAME&wpe_ap
 ## [DataDog API key](https://docs.datadoghq.com/api/)
 ```
 curl "https://api.datadoghq.com/api/v1/dashboard?api_key=<api_key>&application_key=<application_key>"
+```
+
+## [Travis CI API token](https://developer.travis-ci.com/gettingstarted)
+
+```
+curl -H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.travis-ci.com/user
 ```
 
 # Contributing
