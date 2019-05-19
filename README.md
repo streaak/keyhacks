@@ -18,6 +18,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Facebook AppSecret](#Facebook-AppSecret)
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
+- [Google Cloud Messaging (GCM)](#Google-Cloud-Messaging)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Heroku API key](#Heroku-API-key)
 - [MailGun Private Key](#MailGun-Private-Key)
@@ -78,6 +79,11 @@ https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOK
 ```
 curl -s -u "hehe:TOKEN_HERE" https://api.github.com/user
 curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs
+```
+
+## [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)
+```
+curl -s -X POST --header "Authorization: key=AI..." --header "Content-Type:application/json" 'https://gcm-http.googleapis.com/gcm/send' -d '{"registration_ids":["1"]}'
 ```
 
 ## GitHub private SSH key
