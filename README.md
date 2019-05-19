@@ -16,6 +16,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Dropbox API](#Dropbox-API)
 - [Facebook Access Token  ](#Facebook-Access-Token)
 - [Facebook AppSecret](#Facebook-AppSecret)
+- [Firebase](#Firebase)
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
 - [Google Cloud Messaging (GCM)](#Google-Cloud-Messaging)
@@ -74,6 +75,12 @@ https://graph.facebook.com/oauth/access_token?client_id=ID_HERE&client_secret=SE
 ```
 https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOKEN_HERE&version=v3.2
 ```
+
+## [Firebase](https://firebase.google.com/)
+Requires a **custom token**, and an **API key**.
+
+1. obtain ID token and refresh token from custom token and API key: `curl -s -XPOST -H 'content-type: application/json' -d '{"custom_token":":custom_token"}' 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
+2. exchange ID token for auth token: `curl -s -XPOST -H 'content-type: application/json' -d '{"idToken":":id_token"}' https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
 
 ## [Github Token](https://developer.github.com/v3/)
 ```
