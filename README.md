@@ -23,6 +23,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [MailGun Private Key](#MailGun-Private-Key)
 - [MailChimp API Key](#MailChimp-API-Key)
 - [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
+- [Microsoft Azure Tenant](#Microsoft-Azure-Tenant)
 - [pagerduty API token](#pagerduty-API-token)
 - [Pendo Integration Key](#Pendo-Integration-Key)
 - [Salesforce API key](#Salesforce-API-key)
@@ -141,6 +142,18 @@ $ aws s3 cp test.txt s3://bucket_belonging_to_the_company --profile username_pic
 ## [MailGun Private Key](https://documentation.mailgun.com/en/latest/api_reference.html)
 ```
 curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
+```
+
+## Microsoft Azure Tenant
+Format:
+```
+CLIENT_ID: [0-9a-z\-]{36}
+CLIENT_SECRET: [0-9A-Za-z\+\=]{40,50}
+TENANT_ID: [0-9a-z\-]{36}
+```
+Verification:
+```
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=<CLIENT_ID>&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret=<CLIENT_SECRET>&grant_type=client_credentials' 'https://login.microsoftonline.com/<TENANT_ID>/oauth2/v2.0/token'
 ```
 
 ## [Microsoft Shared Access Signatures (SAS)](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/storage/common/storage-dotnet-shared-access-signature-part-1.md)
