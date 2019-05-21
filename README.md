@@ -38,6 +38,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Twitter API Secret](#Twitter-API-Secret)
 - [Twitter Bearer token](#Twitter-Bearer-token)
 - [WPEngine API Key](#WPEngine-API-Key)
+- [WakaTime API Key](#WakaTime-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Bit.ly Access token](#Bitly-Access-token)
 - [Buildkite Access token](#Buildkite-Access-token)
@@ -310,6 +311,11 @@ curl "https://api.datadoghq.com/api/v1/dashboard?api_key=<api_key>&application_k
 
 ```
 curl -H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.travis-ci.com/user
+```
+
+## [WakaTime API Key](https://wakatime.com/developers)
+```
+curl "https://wakatime.com/api/v1/users/current/projects/?api_key=KEY_HERE"
 ```
 
 # Contributing
