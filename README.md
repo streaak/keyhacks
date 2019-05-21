@@ -29,6 +29,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [pagerduty API token](#pagerduty-API-token)
 - [Pendo Integration Key](#Pendo-Integration-Key)
 - [Salesforce API key](#Salesforce-API-key)
+- [Square](#Square)
 - [SauceLabs Username and access Key](#SauceLabs-Username-and-access-Key)
 - [SendGrid API Token](#SendGrid-API-Token)
 - [Slack API token](#Slack-API-token)
@@ -137,6 +138,45 @@ curl -X GET https://app.pendo.io/api/v1/metadata/schema/account -H 'content-type
 ## [SendGrid API Token](https://sendgrid.com/docs/API_Reference/api_v3.html)
 ```
 curl -X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SENDGRID_TOKEN-HERE" -H "Content-Type: application/json"
+```
+
+## [Square](https://squareup.com/)
+**Detection:**
+
+app id / client secret:  `sq0[a-z]{3}-[0-9A-Za-z\-_]{22,43}`
+auth token: `EAAA[a-zA-Z0-9]{60}`
+
+**Test App id & client secret:**
+```
+curl "https://squareup.com/oauth2/revoke" -d '{"access_token":"[RANDOM_STRING]","client_id":"[APP_ID]"}'  -H "Content-Type: application/json" -H "Authorization: Client [CLIENT_SECRET]"
+```
+
+Valid:
+```
+empty
+```
+
+Not valid:
+```
+{
+  "message": "Not Authorized",
+  "type": "service.not_authorized"
+}
+```
+
+**Test Auth token:**
+```
+curl https://connect.squareup.com/v2/locations -H "Authorization: Bearer [AUHT_TOKEN]"
+```
+
+Valid:
+```
+{"locations":[{"id":"CBASELqoYPXr7RtT-9BRMlxGpfcgAQ","name":"Coffee \u0026 Toffee SF","address":{"address_line_1":"1455 Market Street","locality":"San Francisco","administrative_district_level_1":"CA","postal_code":"94103","country":"US"},"timezone":"America/Los_Angeles"........
+```
+
+Not valid:
+```
+{"errors":[{"category":"AUTHENTICATION_ERROR","code":"UNAUTHORIZED","detail":"This request could not be authorized."}]}
 ```
 
 ## Dropbox API
