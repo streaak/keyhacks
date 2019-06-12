@@ -45,6 +45,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Buildkite Access token](#Buildkite-Access-token)
 - [Asana Access token](#Asana-Access-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
+- [Spotify Access Token](#Spotify-Access-Token)
 
 
 # Detailed Information
@@ -356,6 +357,11 @@ curl -H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.tr
 ## [WakaTime API Key](https://wakatime.com/developers)
 ```
 curl "https://wakatime.com/api/v1/users/current/projects/?api_key=KEY_HERE"
+```
+
+## [Spotify Access Token](https://developer.spotify.com/documentation/general/guides/authorization-guide/)
+```
+curl -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.spotify.com/v1/me
 ```
 
 # Contributing
