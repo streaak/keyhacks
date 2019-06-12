@@ -32,7 +32,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Twitter API Secret](#Twitter-API-Secret)
 - [Twitter Bearer token](#Twitter-Bearer-token)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
-
+- [Spotify Access Token](#Spotify-Access-Token)
 
 # Detailed Information
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
@@ -228,6 +228,11 @@ https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=
 Visit the following URL to check for validity
 ```
 https://api2.branch.io/v1/app/KEY_HERE?branch_secret=SECRET_HERE
+```
+
+## [Spotify Access Token](https://developer.spotify.com/documentation/general/guides/authorization-guide/)
+```
+curl -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.spotify.com/v1/me
 ```
 
 # Contributing
