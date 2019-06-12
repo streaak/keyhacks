@@ -10,29 +10,43 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Algolia API key](#Algolia-API-key)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
+- [DataDog API key](#DataDog-API-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
 - [Dropbox API](#Dropbox-API)
 - [Facebook Access Token  ](#Facebook-Access-Token)
 - [Facebook AppSecret](#Facebook-AppSecret)
+- [Firebase](#Firebase)
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
+- [Google Cloud Messaging (GCM)](#Google-Cloud-Messaging)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Heroku API key](#Heroku-API-key)
 - [MailGun Private Key](#MailGun-Private-Key)
+- [MailChimp API Key](#MailChimp-API-Key)
 - [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
+- [Microsoft Azure Tenant](#Microsoft-Azure-Tenant)
 - [pagerduty API token](#pagerduty-API-token)
 - [Pendo Integration Key](#Pendo-Integration-Key)
 - [Salesforce API key](#Salesforce-API-key)
+- [Square](#Square)
 - [SauceLabs Username and access Key](#SauceLabs-Username-and-access-Key)
 - [SendGrid API Token](#SendGrid-API-Token)
 - [Slack API token](#Slack-API-token)
 - [Slack Webhook](#Slack-Webhook)
+- [Travis CI API token](#Travis-CI-API-token)
 - [Twilio Account_sid and Auth token](#Twilio-Account_sid-and-Auth-token)
 - [Twitter API Secret](#Twitter-API-Secret)
 - [Twitter Bearer token](#Twitter-Bearer-token)
+- [WPEngine API Key](#WPEngine-API-Key)
+- [WakaTime API Key](#WakaTime-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
+- [Bit.ly Access token](#Bitly-Access-token)
+- [Buildkite Access token](#Buildkite-Access-token)
+- [Asana Access token](#Asana-Access-Token)
+- [Zendesk Access token](#Zendesk-Access-Token)
 - [Spotify Access Token](#Spotify-Access-Token)
+
 
 # Detailed Information
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
@@ -65,10 +79,21 @@ https://graph.facebook.com/oauth/access_token?client_id=ID_HERE&client_secret=SE
 https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOKEN_HERE&version=v3.2
 ```
 
+## [Firebase](https://firebase.google.com/)
+Requires a **custom token**, and an **API key**.
+
+1. obtain ID token and refresh token from custom token and API key: `curl -s -XPOST -H 'content-type: application/json' -d '{"custom_token":":custom_token"}' 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
+2. exchange ID token for auth token: `curl -s -XPOST -H 'content-type: application/json' -d '{"idToken":":id_token"}' https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
+
 ## [Github Token](https://developer.github.com/v3/)
 ```
 curl -s -u "hehe:TOKEN_HERE" https://api.github.com/user
 curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs
+```
+
+## [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)
+```
+curl -s -X POST --header "Authorization: key=AI..." --header "Content-Type:application/json" 'https://gcm-http.googleapis.com/gcm/send' -d '{"registration_ids":["1"]}'
 ```
 
 ## GitHub private SSH key
@@ -116,6 +141,45 @@ curl -X GET https://app.pendo.io/api/v1/metadata/schema/account -H 'content-type
 curl -X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SENDGRID_TOKEN-HERE" -H "Content-Type: application/json"
 ```
 
+## [Square](https://squareup.com/)
+**Detection:**
+
+app id / client secret:  `sq0[a-z]{3}-[0-9A-Za-z\-_]{22,43}`
+auth token: `EAAA[a-zA-Z0-9]{60}`
+
+**Test App id & client secret:**
+```
+curl "https://squareup.com/oauth2/revoke" -d '{"access_token":"[RANDOM_STRING]","client_id":"[APP_ID]"}'  -H "Content-Type: application/json" -H "Authorization: Client [CLIENT_SECRET]"
+```
+
+Valid:
+```
+empty
+```
+
+Not valid:
+```
+{
+  "message": "Not Authorized",
+  "type": "service.not_authorized"
+}
+```
+
+**Test Auth token:**
+```
+curl https://connect.squareup.com/v2/locations -H "Authorization: Bearer [AUHT_TOKEN]"
+```
+
+Valid:
+```
+{"locations":[{"id":"CBASELqoYPXr7RtT-9BRMlxGpfcgAQ","name":"Coffee \u0026 Toffee SF","address":{"address_line_1":"1455 Market Street","locality":"San Francisco","administrative_district_level_1":"CA","postal_code":"94103","country":"US"},"timezone":"America/Los_Angeles"........
+```
+
+Not valid:
+```
+{"errors":[{"category":"AUTHENTICATION_ERROR","code":"UNAUTHORIZED","detail":"This request could not be authorized."}]}
+```
+
 ## Dropbox API
 ```
 curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Authorization: Bearer TOKEN_HERE"
@@ -133,6 +197,18 @@ $ aws s3 cp test.txt s3://bucket_belonging_to_the_company --profile username_pic
 ## [MailGun Private Key](https://documentation.mailgun.com/en/latest/api_reference.html)
 ```
 curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
+```
+
+## Microsoft Azure Tenant
+Format:
+```
+CLIENT_ID: [0-9a-z\-]{36}
+CLIENT_SECRET: [0-9A-Za-z\+\=]{40,50}
+TENANT_ID: [0-9a-z\-]{36}
+```
+Verification:
+```
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d 'client_id=<CLIENT_ID>&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default&client_secret=<CLIENT_SECRET>&grant_type=client_credentials' 'https://login.microsoftonline.com/<TENANT_ID>/oauth2/v2.0/token'
 ```
 
 ## [Microsoft Shared Access Signatures (SAS)](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/storage/common/storage-dotnet-shared-access-signature-part-1.md)
@@ -228,6 +304,59 @@ https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=
 Visit the following URL to check for validity
 ```
 https://api2.branch.io/v1/app/KEY_HERE?branch_secret=SECRET_HERE
+```
+
+## [Bit.ly Access token](https://dev.bitly.com/authentication.html)
+
+Visit the following URL to check for validity
+```
+https://api-ssl.bitly.com/v3/shorten?access_token=ACCESS_TOKEN&longUrl=https://www.google.com
+```
+
+## [Buildkite Access token](https://buildkite.com/docs/apis/rest-api)
+```
+curl -H "Authorization: Bearer ACCESS_TOKEN" \
+https://api.buildkite.com/v2/user
+```
+
+## [Asana Access token](https://asana.com/developers/documentation/getting-started/auth#personal-access-token)
+```
+curl -H "Authorization: Bearer ACCESS_TOKEN" https://app.asana.com/api/1.0/users/me
+```
+
+## [Zendesk Access token](https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application)
+```
+curl https://{subdomain}.zendesk.com/api/v2/tickets.json \
+  -H "Authorization: Bearer ACCESS_TOKEN"
+```
+
+## [MailChimp API Key](https://developer.mailchimp.com/documentation/mailchimp/reference/overview/)
+```
+curl --request GET --url 'https://<dc>.api.mailchimp.com/3.0/' --user 'anystring:<API_KEY>' --include
+```
+
+## [WPEngine API Key](https://wpengineapi.com/)
+
+This issue can be further exploited by checking out @hateshape 's gist [here](https://gist.github.com/hateshape/2e671ea71d7c243fac7ebf51fb738f0a)
+
+```
+curl "https://api.wpengine.com/1.2/?method=site&account_name=ACCOUNT_NAME&wpe_apikey=WPENGINE_APIKEY"
+```
+
+## [DataDog API key](https://docs.datadoghq.com/api/)
+```
+curl "https://api.datadoghq.com/api/v1/dashboard?api_key=<api_key>&application_key=<application_key>"
+```
+
+## [Travis CI API token](https://developer.travis-ci.com/gettingstarted)
+
+```
+curl -H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.travis-ci.com/user
+```
+
+## [WakaTime API Key](https://wakatime.com/developers)
+```
+curl "https://wakatime.com/api/v1/users/current/projects/?api_key=KEY_HERE"
 ```
 
 ## [Spotify Access Token](https://developer.spotify.com/documentation/general/guides/authorization-guide/)
