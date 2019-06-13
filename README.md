@@ -89,7 +89,7 @@ Requires a **custom token**, and an **API key**.
 ## [Github Token](https://developer.github.com/v3/)
 ```
 curl -s -u "hehe:TOKEN_HERE" https://api.github.com/user
-curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs
+curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs"
 ```
 
 ## [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)
