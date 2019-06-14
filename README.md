@@ -88,8 +88,10 @@ Requires a **custom token**, and an **API key**.
 
 ## [Github Token](https://developer.github.com/v3/)
 ```
-curl -s -u "hehe:TOKEN_HERE" https://api.github.com/user
+
+curl -s -u "user:apikey" https://api.github.com/user
 curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs"
+curl "https://api.github.com/rate_limit" -i -u "user:apikey" | grep "X-OAuth-Scopes:" # Check scope of your api token
 ```
 
 ## [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)
