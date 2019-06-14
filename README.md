@@ -46,6 +46,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Asana Access token](#Asana-Access-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
 - [Spotify Access Token](#Spotify-Access-Token)
+- [Instagram Access Token](#Instagram-Access-Token)
 
 
 # Detailed Information
@@ -88,7 +89,7 @@ Requires a **custom token**, and an **API key**.
 ## [Github Token](https://developer.github.com/v3/)
 ```
 curl -s -u "hehe:TOKEN_HERE" https://api.github.com/user
-curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs
+curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs"
 ```
 
 ## [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)
@@ -364,6 +365,12 @@ curl "https://wakatime.com/api/v1/users/current/projects/?api_key=KEY_HERE"
 curl -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.spotify.com/v1/me
 ```
 
+## [Instagram Access Token](https://www.instagram.com/developer/endpoints/users/)
+Visit the following URL to check for validity
+```
+https://api.instagram.com/v1/users/self/?access_token=ACCESS-TOKEN
+
+```
 # Contributing
 
 I welcome contributions from the public.
