@@ -197,6 +197,16 @@ $ aws s3 ls --profile username_picked
 $ aws s3 cp test.txt s3://bucket_belonging_to_the_company --profile username_picked
 ```
 
+AWS credentials' permissions can be determined using [Enumerate-IAM](https://github.com/andresriancho/enumerate-iam)
+This gives broader view of the discovered AWS credentials privileges instead of just checking S3 buckets.
+
+```
+git clone https://github.com/andresriancho/enumerate-iam
+cd  enumerate-iam
+./enumerate-iam.py --access-key AKIA... --secret-key StF0q...
+```
+
+
 ## [MailGun Private Key](https://documentation.mailgun.com/en/latest/api_reference.html)
 ```
 curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
