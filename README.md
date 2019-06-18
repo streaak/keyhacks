@@ -47,6 +47,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Zendesk Access token](#Zendesk-Access-Token)
 - [Spotify Access Token](#Spotify-Access-Token)
 - [Instagram Access Token](#Instagram-Access-Token)
+- [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
 
 
 # Detailed Information
@@ -383,6 +384,20 @@ Visit the following URL to check for validity
 https://api.instagram.com/v1/users/self/?access_token=ACCESS-TOKEN
 
 ```
+
+## [Paypal client id and secret key](https://developer.paypal.com/docs/api/get-an-access-token-curl/)
+```
+curl -v https://api.sandbox.paypal.com/v1/oauth2/token \
+   -H "Accept: application/json" \
+   -H "Accept-Language: en_US" \
+   -u "client_id:secret" \
+   -d "grant_type=client_credentials"
+   ```
+Access token can be further used to extract data from the PayPal API. More information:
+
+https://developer.paypal.com/docs/api/overview/#make-rest-api-calls
+
+
 # Contributing
 
 I welcome contributions from the public.
