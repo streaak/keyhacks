@@ -48,6 +48,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Spotify Access Token](#Spotify-Access-Token)
 - [Instagram Access Token](#Instagram-Access-Token)
 - [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
+- [Gitlab personal access token](#Gitlab-personal-access-token)
 
 
 # Detailed Information
@@ -383,6 +384,11 @@ Visit the following URL to check for validity
 ```
 https://api.instagram.com/v1/users/self/?access_token=ACCESS-TOKEN
 
+```
+
+## [Gitlab personal access token](https://docs.gitlab.com/ee/api/README.html#personal-access-tokens)
+```
+curl "https://gitlab.example.com/api/v4/projects?private_token=<your_access_token>"
 ```
 
 ## [Paypal client id and secret key](https://developer.paypal.com/docs/api/get-an-access-token-curl/)
