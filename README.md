@@ -19,6 +19,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Firebase](#Firebase)
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
+- [Github client id and client secret](#Github-client-id-and-client-secret)
 - [Google Cloud Messaging (GCM)](#Google-Cloud-Messaging)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Heroku API key](#Heroku-API-key)
@@ -91,10 +92,14 @@ Requires a **custom token**, and an **API key**.
 
 ## [Github Token](https://developer.github.com/v3/)
 ```
-
 curl -s -u "user:apikey" https://api.github.com/user
 curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs"
 curl "https://api.github.com/rate_limit" -i -u "user:apikey" | grep "X-OAuth-Scopes:" # Check scope of your api token
+```
+
+## [Github client id and client secret](https://developer.github.com/v3/#oauth2-keysecret)
+```
+curl 'https://api.github.com/users/whatever?client_id=xxxx&client_secret=yyyy'
 ```
 
 ## [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)
