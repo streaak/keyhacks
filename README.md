@@ -221,7 +221,7 @@ cd  enumerate-iam
 curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
 ```
 
-## [Microsoft Azure Tenant]
+## Microsoft Azure Tenant
 Format:
 ```
 CLIENT_ID: [0-9a-z\-]{36}
