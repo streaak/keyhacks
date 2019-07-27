@@ -197,9 +197,9 @@ Not valid:
 curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Authorization: Bearer TOKEN_HERE"
 ```
 
-## [AWS Access Key ID and Secret]
+## [AWS Access Key ID and Secret](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
 
-Add the new `access_key_id` and `secret` within `~/.aws/credentials` file as a new user (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html).
+Add the new `access_key_id` and `secret` within `~/.aws/credentials` file as a new user.
 
 ```
 $ aws s3 ls --profile username_picked
