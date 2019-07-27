@@ -192,7 +192,7 @@ Not valid:
 {"errors":[{"category":"AUTHENTICATION_ERROR","code":"UNAUTHORIZED","detail":"This request could not be authorized."}]}
 ```
 
-## [Dropbox API]
+## Dropbox API
 ```
 curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Authorization: Bearer TOKEN_HERE"
 ```
