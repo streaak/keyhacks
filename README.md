@@ -192,12 +192,12 @@ Not valid:
 {"errors":[{"category":"AUTHENTICATION_ERROR","code":"UNAUTHORIZED","detail":"This request could not be authorized."}]}
 ```
 
-## Dropbox API
+## [Dropbox API]
 ```
 curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Authorization: Bearer TOKEN_HERE"
 ```
 
-## AWS Access Key ID and Secret
+## [AWS Access Key ID and Secret]
 
 Add the new `access_key_id` and `secret` within `~/.aws/credentials` file as a new user (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html).
 
@@ -221,7 +221,7 @@ cd  enumerate-iam
 curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
 ```
 
-## Microsoft Azure Tenant
+## [Microsoft Azure Tenant]
 Format:
 ```
 CLIENT_ID: [0-9a-z\-]{36}
@@ -280,7 +280,7 @@ static void UseAccountSAS(string sasToken)
 ```
 curl -X POST https://api.heroku.com/apps -H "Accept: application/vnd.heroku+json; version=3" -H "Authorization: Bearer API_KEY_HERE"
 ```
-##[Mapbox API key](https://docs.mapbox.com/api/)
+## [Mapbox API key](https://docs.mapbox.com/api/)
 
 Mapbox secret keys start with sk, rest start with pk (public token), sk (secret token), or tk (temporary token).
 
