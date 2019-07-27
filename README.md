@@ -25,6 +25,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Heroku API key](#Heroku-API-key)
 - [MailGun Private Key](#MailGun-Private-Key)
 - [MailChimp API Key](#MailChimp-API-Key)
+- [Mapbox API key](#Mapbox-API-Key)
 - [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
 - [Microsoft Azure Tenant](#Microsoft-Azure-Tenant)
 - [pagerduty API token](#pagerduty-API-token)
@@ -278,6 +279,13 @@ static void UseAccountSAS(string sasToken)
 ## [Heroku API key](https://devcenter.heroku.com/articles/platform-api-quickstart)
 ```
 curl -X POST https://api.heroku.com/apps -H "Accept: application/vnd.heroku+json; version=3" -H "Authorization: Bearer API_KEY_HERE"
+```
+##[Mapbox API key](https://docs.mapbox.com/api/)
+
+Mapbox secret keys start with sk, rest start with pk (public token), sk (secret token), or tk (temporary token).
+
+```
+curl "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=ACCESS_TOKEN"
 ```
 
 ## [Salesforce API key](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm)
