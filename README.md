@@ -199,11 +199,9 @@ curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Au
 
 ## [AWS Access Key ID and Secret](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
 
-Add the new `access_key_id` and `secret` within `~/.aws/credentials` file as a new user.
-
+Install [awscli](https://aws.amazon.com/cli/). Set the [access key and secret to environment variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html) and execute the following command.
 ```
-$ aws s3 ls --profile username_picked
-$ aws s3 cp test.txt s3://bucket_belonging_to_the_company --profile username_picked
+AWS_ACCESS_KEY_ID=xxxx AWS_SECRET_ACCESS_KEY=yyyy aws sts get-caller-identity
 ```
 
 AWS credentials' permissions can be determined using [Enumerate-IAM](https://github.com/andresriancho/enumerate-iam)
