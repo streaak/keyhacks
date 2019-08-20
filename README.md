@@ -119,7 +119,7 @@ Hi <username>! You've successfully authenticated, but GitHub does not provide sh
 
 ## [Twilio Account_sid and Auth token](https://www.twilio.com/docs/iam/api/account)
 ```
-curl -X GET 'https://api.twilio.com/2010-04-01/Accounts/ACCOUNT_SID/Keys.json' -u ACCOUNT_SID:AUTH_TOKEN
+curl -X GET 'https://api.twilio.com/2010-04-01/Accounts.json' -u ACCOUNT_SID:AUTH_TOKEN
 ```
 
 ## [Twitter API Secret](https://developer.twitter.com/en/docs/basics/authentication/guides/bearer-tokens.html)
