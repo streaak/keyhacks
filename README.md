@@ -415,6 +415,12 @@ Access token can be further used to extract data from the PayPal API. More infor
 
 https://developer.paypal.com/docs/api/overview/#make-rest-api-calls
 
+This can be verified using:
+
+```
+curl -v -X GET "https://api.sandbox.paypal.com/v1/identity/oauth2/userinfo?schema=paypalv1.1" -H "Content-Type: application/json" -H "Authorization: Bearer [ACCESS_TOKEN]"
+```
+
 ## [Stripe Live Token](https://stripe.com/docs/api/authentication)
 
 ```
