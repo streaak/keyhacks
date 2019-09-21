@@ -424,11 +424,8 @@ curl -v -X GET "https://api.sandbox.paypal.com/v1/identity/oauth2/userinfo?schem
 ## [Stripe Live Token](https://stripe.com/docs/api/authentication)
 
 ```
-
-curl https://api.stripe.com/v1/ 
-   -u token_here:
-
-   ```
+curl https://api.stripe.com/v1/charges -u token_here:
+```
 
 Note: Keep the colon at the end of the token to prevent cURL from requesting a password.
 Info: The token is always in the following format: sk_live_24charshere, where the 24charshere part contains 24 characters from a-z A-Z 0-9
