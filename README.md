@@ -431,7 +431,7 @@ curl https://api.stripe.com/v1/
    ```
 
 Note: Keep the colon at the end of the token to prevent cURL from requesting a password.
-Info: The token is always in the following format: sk_live_34charshere, where the 34charshere part contains 34 characters from a-z A-Z 0-9
+Info: The token is always in the following format: sk_live_24charshere, where the 24charshere part contains 24 characters from a-z A-Z 0-9
 There is also a test key, which starts with sk_test, but this key is worthless since it is only used for testing purposes and most likely doesn't contain any sensitive info.
 The live key, on the other hand, can be used to extract/retrieve a lot of info. Going from charges, to the complete product list.
 Keep in mind that you will never be able to get the full credit card information since stripe only gives you like the last 4 digits.
