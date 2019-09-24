@@ -36,6 +36,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [pagerduty API token](#pagerduty-API-token)
 - [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
 - [Pendo Integration Key](#Pendo-Integration-Key)
+- [Razorpay API key and secret key](#Razorpay-keys)
 - [Salesforce API key](#Salesforce-API-key)
 - [SauceLabs Username and access Key](#SauceLabs-Username-and-access-Key)
 - [SendGrid API Token](#SendGrid-API-Token)
@@ -434,6 +435,14 @@ The live key, on the other hand, can be used to extract/retrieve a lot of info. 
 Keep in mind that you will never be able to get the full credit card information since stripe only gives you like the last 4 digits.
 More info / complete docs: https://stripe.com/docs/api/authentication
 
+## [Razorpay API key and Secret key](https://razorpay.com/docs/api/)
+
+This can be verified using:
+
+```
+curl -u <YOUR_KEY_ID>:<YOUR_KEY_SECRET> \
+  https://api.razorpay.com/v1/payments
+```
 
 # Contributing
 
