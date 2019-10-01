@@ -26,6 +26,8 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Gitlab personal access token](#Gitlab-personal-access-token)
 - [Google Cloud Messaging (GCM)](#Google-Cloud-Messaging)
 - [Google Maps API key](#Google-Maps-API-key)
+- [Google Recaptcha key](#Google-Recaptcha-key)
+
 - [Heroku API key](#Heroku-API-key)
 - [Instagram Access Token](#Instagram-Access-Token)
 - [MailChimp API Key](#MailChimp-API-Key)
@@ -326,6 +328,24 @@ Visit the following URL to check for validity
 https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=KEY_HERE
 https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=2500x2000&maptype=roadmap&key=KEY_HERE
 ```
+
+## [Google Recaptcha key](https://developers.google.com/recaptcha/docs/verify)
+
+
+
+Send a POST to the following URL:
+
+```
+
+https://www.google.com/recaptcha/api/siteverify
+
+```
+secret and response are 2 required POST parameters. Where secret is the key and response is the response to test for.
+RegEx: ^6[0-9a-zA-Z_-]{39}$
+Explanation: The key always starts with a 6 and is 40 chars long.
+Read more here: https://developers.google.com/recaptcha/docs/verify
+
+
 
 ## [Branch.IO Key and Secret](https://docs.branch.io/pages/apps/deep-linking-api/#app-read)
 
