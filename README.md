@@ -91,14 +91,15 @@ https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOK
 ## [Firebase](https://firebase.google.com/)
 Requires a **custom token**, and an **API key**.
 
-1. obtain ID token and refresh token from custom token and API key: `curl -s -XPOST -H 'content-type: application/json' -d '{"custom_token":":custom_token"}' 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
-2. exchange ID token for auth token: `curl -s -XPOST -H 'content-type: application/json' -d '{"idToken":":id_token"}' https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
+1. Obtain ID token and refresh token from custom token and API key: `curl -s -XPOST -H 'content-type: application/json' -d '{"custom_token":":custom_token"}' 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
+2. Exchange ID token for auth token: `curl -s -XPOST -H 'content-type: application/json' -d '{"idToken":":id_token"}' https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
 
 ## [Github Token](https://developer.github.com/v3/)
 ```
 curl -s -u "user:apikey" https://api.github.com/user
 curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs"
-curl "https://api.github.com/rate_limit" -i -u "user:apikey" | grep "X-OAuth-Scopes:" # Check scope of your api token
+# Check scope of your api token
+curl "https://api.github.com/rate_limit" -i -u "user:apikey" | grep "X-OAuth-Scopes:"
 ```
 
 ## [Github client id and client secret](https://developer.github.com/v3/#oauth2-keysecret)
@@ -159,20 +160,20 @@ curl -X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SEN
 ## [Square](https://squareup.com/)
 **Detection:**
 
-app id / client secret:  `sq0[a-z]{3}-[0-9A-Za-z\-_]{22,43}`
-auth token: `EAAA[a-zA-Z0-9]{60}`
+App id/client secret:  `sq0[a-z]{3}-[0-9A-Za-z\-_]{22,43}`
+Auth token: `EAAA[a-zA-Z0-9]{60}`
 
 **Test App id & client secret:**
 ```
 curl "https://squareup.com/oauth2/revoke" -d '{"access_token":"[RANDOM_STRING]","client_id":"[APP_ID]"}'  -H "Content-Type: application/json" -H "Authorization: Client [CLIENT_SECRET]"
 ```
 
-Valid:
+Response indicating valid credentials:
 ```
 empty
 ```
 
-Not valid:
+Response indicating invalid credentials:
 ```
 {
   "message": "Not Authorized",
@@ -185,12 +186,12 @@ Not valid:
 curl https://connect.squareup.com/v2/locations -H "Authorization: Bearer [AUHT_TOKEN]"
 ```
 
-Valid:
+Response indicating valid credentials:
 ```
 {"locations":[{"id":"CBASELqoYPXr7RtT-9BRMlxGpfcgAQ","name":"Coffee \u0026 Toffee SF","address":{"address_line_1":"1455 Market Street","locality":"San Francisco","administrative_district_level_1":"CA","postal_code":"94103","country":"US"},"timezone":"America/Los_Angeles"........
 ```
 
-Not valid:
+Response indicating invalid credentials:
 ```
 {"errors":[{"category":"AUTHENTICATION_ERROR","code":"UNAUTHORIZED","detail":"This request could not be authorized."}]}
 ```
@@ -202,12 +203,12 @@ curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Au
 
 ## [AWS Access Key ID and Secret](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
 
-Install [awscli](https://aws.amazon.com/cli/). Set the [access key and secret to environment variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html) and execute the following command.
+Install [awscli](https://aws.amazon.com/cli/), set the [access key and secret to environment variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html), and execute the following command:
 ```
 AWS_ACCESS_KEY_ID=xxxx AWS_SECRET_ACCESS_KEY=yyyy aws sts get-caller-identity
 ```
 
-AWS credentials' permissions can be determined using [Enumerate-IAM](https://github.com/andresriancho/enumerate-iam)
+AWS credentials' permissions can be determined using [Enumerate-IAM](https://github.com/andresriancho/enumerate-iam).
 This gives broader view of the discovered AWS credentials privileges instead of just checking S3 buckets.
 
 ```
@@ -283,7 +284,7 @@ curl -X POST https://api.heroku.com/apps -H "Accept: application/vnd.heroku+json
 ```
 ## [Mapbox API key](https://docs.mapbox.com/api/)
 
-Mapbox secret keys start with sk, rest start with pk (public token), sk (secret token), or tk (temporary token).
+Mapbox secret keys start with `sk`, rest start with `pk` (public token), `sk` (secret token), or `tk` (temporary token).
 
 ```
 curl "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=ACCESS_TOKEN"
@@ -293,6 +294,7 @@ curl "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?acces
 ```
 curl https://instance_name.salesforce.com/services/data/v20.0/ -H 'Authorization: Bearer access_token_here'
 ```
+
 ## [Algolia API key](https://www.algolia.com/doc/rest-api/search/#overview)
 
 Be cautious when running this command, since the payload might execute within an administrative environment, depending on what index you are editing the `highlightPreTag` of. It's recommended to use a more silent payload (such as XSS Hunter) to prove the possible cross-site scripting attack.
@@ -323,7 +325,8 @@ curl -u "USERNAME:ACCESS_KEY" https://api.browserstack.com/automate/plan.json
 
 ## [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-Visit the following URL to check for validity
+Visit the following URL to check for validity:
+
 ```
 https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=KEY_HERE
 https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=2500x2000&maptype=roadmap&key=KEY_HERE
@@ -331,32 +334,28 @@ https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=
 
 ## [Google Recaptcha key](https://developers.google.com/recaptcha/docs/verify)
 
-
-
 Send a POST to the following URL:
 
 ```
-
 https://www.google.com/recaptcha/api/siteverify
-
 ```
-secret and response are 2 required POST parameters. Where secret is the key and response is the response to test for.
-RegEx: ^6[0-9a-zA-Z_-]{39}$
-Explanation: The key always starts with a 6 and is 40 chars long.
-Read more here: https://developers.google.com/recaptcha/docs/verify
 
+`secret` and `response` are two required POST parameters, where `secret` is the key and `response` is the response to test for.
 
+Regular expression: `^6[0-9a-zA-Z_-]{39}$`. The API key always starts with a 6 and is 40 chars long. Read more here: https://developers.google.com/recaptcha/docs/verify.
 
 ## [Branch.IO Key and Secret](https://docs.branch.io/pages/apps/deep-linking-api/#app-read)
 
-Visit the following URL to check for validity
+Visit the following URL to check for validity:
+
 ```
 https://api2.branch.io/v1/app/KEY_HERE?branch_secret=SECRET_HERE
 ```
 
 ## [Bit.ly Access token](https://dev.bitly.com/authentication.html)
 
-Visit the following URL to check for validity
+Visit the following URL to check for validity:
+
 ```
 https://api-ssl.bitly.com/v3/shorten?access_token=ACCESS_TOKEN&longUrl=https://www.google.com
 ```
@@ -385,7 +384,7 @@ curl --request GET --url 'https://<dc>.api.mailchimp.com/3.0/' --user 'anystring
 
 ## [WPEngine API Key](https://wpengineapi.com/)
 
-This issue can be further exploited by checking out @hateshape 's gist [here](https://gist.github.com/hateshape/2e671ea71d7c243fac7ebf51fb738f0a)
+This issue can be further exploited by checking out [@hateshape](https://github.com/hateshape/)'s gist https://gist.github.com/hateshape/2e671ea71d7c243fac7ebf51fb738f0a.
 
 ```
 curl "https://api.wpengine.com/1.2/?method=site&account_name=ACCOUNT_NAME&wpe_apikey=WPENGINE_APIKEY"
@@ -416,7 +415,6 @@ curl -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.spotify.com/v1/me
 Visit the following URL to check for validity
 ```
 https://api.instagram.com/v1/users/self/?access_token=ACCESS-TOKEN
-
 ```
 
 ## [Gitlab personal access token](https://docs.gitlab.com/ee/api/README.html#personal-access-tokens)
@@ -431,10 +429,9 @@ curl -v https://api.sandbox.paypal.com/v1/oauth2/token \
    -H "Accept-Language: en_US" \
    -u "client_id:secret" \
    -d "grant_type=client_credentials"
-   ```
-Access token can be further used to extract data from the PayPal API. More information:
+```
 
-https://developer.paypal.com/docs/api/overview/#make-rest-api-calls
+The access token can be further used to extract data from the PayPal API. More information: https://developer.paypal.com/docs/api/overview/#make-rest-api-calls.
 
 This can be verified using:
 
@@ -448,12 +445,13 @@ curl -v -X GET "https://api.sandbox.paypal.com/v1/identity/oauth2/userinfo?schem
 curl https://api.stripe.com/v1/charges -u token_here:
 ```
 
-Note: Keep the colon at the end of the token to prevent cURL from requesting a password.
-Info: The token is always in the following format: sk_live_24charshere, where the 24charshere part contains 24 characters from a-z A-Z 0-9
-There is also a test key, which starts with sk_test, but this key is worthless since it is only used for testing purposes and most likely doesn't contain any sensitive info.
-The live key, on the other hand, can be used to extract/retrieve a lot of info. Going from charges, to the complete product list.
-Keep in mind that you will never be able to get the full credit card information since stripe only gives you like the last 4 digits.
-More info / complete docs: https://stripe.com/docs/api/authentication
+Keep the colon at the end of the token to prevent `cURL` from requesting a password.
+
+The token is always in the following format: `sk_live_24charshere`, where the `24charshere` part contains 24 characters from `a-z A-Z 0-9`. There is also a test key, which starts with `sk_test`, but this key is worthless since it is only used for testing purposes and most likely doesn't contain any sensitive information. The live key, on the other hand, can be used to extract/retrieve a lot of info — ranging from charges to the complete product list.
+
+Keep in mind that you will never be able to get the full credit card information since Stripe only gives you the last 4 digits.
+
+More info/complete documentation: https://stripe.com/docs/api/authentication.
 
 ## [Razorpay API key and Secret key](https://razorpay.com/docs/api/)
 
