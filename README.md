@@ -13,6 +13,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Bit.ly Access token](#Bitly-Access-token)
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
 - [Buildkite Access token](#Buildkite-Access-token)
+- [CircleCI Access Token](#CircleCI-Access-Token)
 - [DataDog API key](#DataDog-API-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
@@ -460,6 +461,12 @@ This can be verified using:
 ```
 curl -u <YOUR_KEY_ID>:<YOUR_KEY_SECRET> \
   https://api.razorpay.com/v1/payments
+```
+
+## [CircleCI Access Token](https://circleci.com/docs/api/#api-overview)
+
+```
+curl https://circleci.com/api/v1.1/me?circle-token=<TOKEN>
 ```
 
 # Contributing
