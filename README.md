@@ -332,6 +332,11 @@ Visit the following URL to check for validity:
 https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=KEY_HERE
 https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=2500x2000&maptype=roadmap&key=KEY_HERE
 ```
+More Information available here-
+
+https://medium.com/@ozguralp/unauthorized-google-maps-api-key-usage-cases-and-why-you-need-to-care-1ccb28bf21e
+
+https://github.com/ozguralp/gmapsapiscanner/
 
 ## [Google Recaptcha key](https://developers.google.com/recaptcha/docs/verify)
 
