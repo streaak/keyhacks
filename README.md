@@ -33,6 +33,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 - [Heroku API key](#Heroku-API-key)
 - [Instagram Access Token](#Instagram-Access-Token)
+- [JumpCloud API key](#JumpCloud-API-Key)
 - [MailChimp API Key](#MailChimp-API-Key)
 - [MailGun Private Key](#MailGun-Private-Key)
 - [Mapbox API key](#Mapbox-API-Key)
@@ -224,6 +225,12 @@ cd  enumerate-iam
 ## [MailGun Private Key](https://documentation.mailgun.com/en/latest/api_reference.html)
 ```
 curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
+```
+
+## [JumpCloud API Key](https://docs.jumpcloud.com/1.0/authentication-and-authorization/authentication-and-authorization-overview)
+```
+List systems:
+curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systems"
 ```
 
 ## Microsoft Azure Tenant
