@@ -23,6 +23,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Facebook Access Token  ](#Facebook-Access-Token)
 - [Facebook AppSecret](#Facebook-AppSecret)
 - [Firebase](#Firebase)
+- [FreshDesk API Key](#FreshDesk-API-key)
 - [Github client id and client secret](#Github-client-id-and-client-secret)
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
@@ -30,7 +31,6 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Google Cloud Messaging (GCM)](#Google-Cloud-Messaging)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
-
 - [Heroku API key](#Heroku-API-key)
 - [Instagram Access Token](#Instagram-Access-Token)
 - [JumpCloud API key](#JumpCloud-API-Key)
@@ -227,6 +227,12 @@ cd  enumerate-iam
 curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
 ```
 
+## [FreshDesk API Key](https://developers.freshdesk.com/api/#getting-started)
+```
+curl -v -u user@yourcompany.com:test -X GET 'https://domain.freshdesk.com/api/v2/groups/1'
+This requires the API key in 'user@yourcompany.com', pass in 'test' and 'domain.freshdesk.com' to be the instance url of the target. In case you get a 403, try the endpoint api/v2/tickets, which is accessible for all keys.
+
+```
 ## [JumpCloud API Key](https://docs.jumpcloud.com/1.0/authentication-and-authorization/authentication-and-authorization-overview)
 ```
 List systems:
