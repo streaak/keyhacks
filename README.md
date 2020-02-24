@@ -141,7 +141,7 @@ curl -u 'API key:API secret key' --data 'grant_type=client_credentials' 'https:/
 curl --request GET --url https://api.twitter.com/1.1/account_activity/all/subscriptions/count.json --header 'authorization: Bearer TOKEN'
 ```
 
-## [HubSpot API key]
+## [HubSpot API key](https://developers.hubspot.com/docs/methods/owners/get_owners)
 
 Get all owners:
 ```
