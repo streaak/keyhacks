@@ -354,17 +354,17 @@ curl -u "USERNAME:ACCESS_KEY" https://api.browserstack.com/automate/plan.json
 
 ## [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-Visit the following URL to check for validity:
-
+Issue the following command to ensure the key is `Active` and not restricted by the `Referer`:
 ```
-https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=KEY_HERE
-https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=2500x2000&maptype=roadmap&key=KEY_HERE
+curl -H "referer: http://example.com" "https://maps.googleapis.com/maps/api/directions/json?origin=Stockholm&destination=Kalmar&key=KEY_HERE"
 ```
 More Information available here-
 
 https://medium.com/@ozguralp/unauthorized-google-maps-api-key-usage-cases-and-why-you-need-to-care-1ccb28bf21e
 
 https://github.com/ozguralp/gmapsapiscanner/
+
+https://developers.google.com/maps/api-key-best-practices
 
 ## [Google Recaptcha key](https://developers.google.com/recaptcha/docs/verify)
 
