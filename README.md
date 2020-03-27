@@ -354,10 +354,25 @@ curl -u "USERNAME:ACCESS_KEY" https://api.browserstack.com/automate/plan.json
 
 ## [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-Issue the following command to ensure the key is `Active` and not restricted by the `Referer`:
-```
-curl -H "referer: http://example.com" "https://maps.googleapis.com/maps/api/directions/json?origin=Stockholm&destination=Kalmar&key=KEY_HERE"
-```
+**Key restrictions are set per service. When testing the key, if the key is restricted/inactive on one service try it with another.**
+
+| Name| Endpoint| Pricing|
+| ------------- |:-------------:| -----:|
+| Static Maps     | https://maps.googleapis.com/maps/api/staticmap?center=45%2C10&zoom=7&size=400x400&key=KEY_HERE| $2 |
+| Streetview     | https://maps.googleapis.com/maps/api/streetview?size=400x400&location=40.720032,-73.988354&fov=90&heading=235&pitch=10&key=KEY_HERE| $7 |
+| Embed | https://www.google.com/maps/embed/v1/place?q=place_id:ChIJyX7muQw8tokR2Vf5WBBk1iQ&key=KEY_HERE| Varies |
+| Directions | https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood4&key=KEY_HERE| $5 |
+| Geocoding | https://maps.googleapis.com/maps/api/geocode/json?latlng=40,30&key=KEY_HERE| $5 |
+| Distance Matrix| https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=40.6655101,-73.89188969999998&destinations=40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626&key=KEY_HERE | $5 |
+|Find Place from Text | https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=KEY_HERE | Varies |
+| Autocomplete | https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Bingh&types=%28cities%29&key=KEY_HERE| Varies |
+| Elevation | https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=KEY_HERE | $5 |
+| Timezone | https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331161200&key=KEY_HERE | $5 |
+| Roads | https://roads.googleapis.com/v1/nearestRoads?points=60.170880,24.942795\|60.170879,24.942796\|60.170877,24.942796&key=KEY_HERE | $10|
+| Geolocate | https://www.googleapis.com/geolocation/v1/geolocate?key=KEY_HERE| $5 |
+
+*\*Pricing is in USD per 1000 requests (for the first 100k requests)*
+
 More Information available here-
 
 https://medium.com/@ozguralp/unauthorized-google-maps-api-key-usage-cases-and-why-you-need-to-care-1ccb28bf21e
