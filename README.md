@@ -114,7 +114,7 @@ curl 'https://api.github.com/users/whatever?client_id=xxxx&client_secret=yyyy'
 
 ## [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)
 ```
-curl -s -X POST --header "Authorization: key=AI..." --header "Content-Type:application/json" 'https://gcm-http.googleapis.com/gcm/send' -d '{"registration_ids":["1"]}'
+curl -s -X POST --header "Authorization: key=AI..." --header "Content-Type:application/json" 'https://fcm.googleapis.com/fcm/send' -d '{"registration_ids":["1"]}'
 ```
 
 ## GitHub private SSH key
