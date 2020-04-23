@@ -35,6 +35,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [HubSpot API key](#Hubspot-API-key)
 - [Instagram Access Token](#Instagram-Access-Token)
 - [JumpCloud API key](#JumpCloud-API-Key)
+- [Loqate API Key](#Loqate-API-key)
 - [MailChimp API Key](#MailChimp-API-Key)
 - [MailGun Private Key](#MailGun-Private-Key)
 - [Mapbox API key](#Mapbox-API-Key)
@@ -515,6 +516,12 @@ curl -u <YOUR_KEY_ID>:<YOUR_KEY_SECRET> \
 
 ```
 curl https://circleci.com/api/v1.1/me?circle-token=<TOKEN>
+```
+
+## [Loqate API key](https://www.loqate.com/resources/support/apis)
+
+```
+curl 'http://api.addressy.com/Capture/Interactive/Find/v1.00/json3.ws?Key=<KEY_HERE>&Countries=US,CA&Language=en&Limit=5&Text=BHAR'
 ```
 
 # Contributing
