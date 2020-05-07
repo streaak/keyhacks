@@ -14,6 +14,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
 - [Bit.ly Access token](#Bitly-Access-token)
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
+- [BrowserStack Access Key](#BrowserStack-Access-Key)
 - [Buildkite Access token](#Buildkite-Access-token)
 - [CircleCI Access Token](#CircleCI-Access-Token)
 - [DataDog API key](#DataDog-API-key)
@@ -348,7 +349,7 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -
 curl -H "Accept: application/vnd.pagerduty+json;version=2"  -H "Authorization: Token token=TOKEN_HERE" -X GET  "https://api.pagerduty.com/schedules"
 ```
 
-## [BrowserStack ACCESSKEY](https://www.browserstack.com/automate/rest-api)
+## [BrowserStack Access Key](https://www.browserstack.com/automate/rest-api)
 ```
 curl -u "USERNAME:ACCESS_KEY" https://api.browserstack.com/automate/plan.json
 ```
