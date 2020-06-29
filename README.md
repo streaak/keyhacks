@@ -34,7 +34,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Google Recaptcha key](#Google-Recaptcha-key)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
-- [IPstack Access Token](#IPstack-Access-Token)
+- [ipstack API Key](#ipstack-API-Key)
 - [Instagram Access Token](#Instagram-Access-Token)
 - [JumpCloud API key](#JumpCloud-API-Key)
 - [Loqate API Key](#Loqate-API-key)
@@ -526,7 +526,7 @@ curl https://circleci.com/api/v1.1/me?circle-token=<TOKEN>
 curl 'http://api.addressy.com/Capture/Interactive/Find/v1.00/json3.ws?Key=<KEY_HERE>&Countries=US,CA&Language=en&Limit=5&Text=BHAR'
 ```
 
-## [IPstack API key](https://ipstack.com/documentation)
+## [ipstack API Key](https://ipstack.com/documentation)
 
 ```
 curl 'https://api.ipstack.com/{ip_address}?access_key={keyhere}'
