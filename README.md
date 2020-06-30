@@ -34,7 +34,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Google Recaptcha key](#Google-Recaptcha-key)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
-- [ipstack API Key](#ipstack-API-Key)
+- [Ipstack API Key](#Ipstack-API-Key)
 - [Instagram Access Token](#Instagram-Access-Token)
 - [JumpCloud API key](#JumpCloud-API-Key)
 - [Loqate API Key](#Loqate-API-key)
@@ -43,7 +43,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Mapbox API key](#Mapbox-API-Key)
 - [Microsoft Azure Tenant](#Microsoft-Azure-Tenant)
 - [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
-- [pagerduty API token](#pagerduty-API-token)
+- [Pagerduty API token](#Pagerduty-API-token)
 - [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
 - [Pendo Integration Key](#Pendo-Integration-Key)
 - [Razorpay API key and secret key](#Razorpay-keys)
@@ -345,7 +345,7 @@ curl --request PUT \
 curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"name":"streaak"}' "webhook_url_here"
 ```
 
-## [pagerduty API token](https://support.pagerduty.com/docs/using-the-api)
+## [Pagerduty API token](https://support.pagerduty.com/docs/using-the-api)
 ```
 curl -H "Accept: application/vnd.pagerduty+json;version=2"  -H "Authorization: Token token=TOKEN_HERE" -X GET  "https://api.pagerduty.com/schedules"
 ```
@@ -526,7 +526,7 @@ curl https://circleci.com/api/v1.1/me?circle-token=<TOKEN>
 curl 'http://api.addressy.com/Capture/Interactive/Find/v1.00/json3.ws?Key=<KEY_HERE>&Countries=US,CA&Language=en&Limit=5&Text=BHAR'
 ```
 
-## [ipstack API Key](https://ipstack.com/documentation)
+## [Ipstack API Key](https://ipstack.com/documentation)
 
 ```
 curl 'https://api.ipstack.com/{ip_address}?access_key={keyhere}'
