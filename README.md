@@ -43,6 +43,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Mapbox API key](#Mapbox-API-Key)
 - [Microsoft Azure Tenant](#Microsoft-Azure-Tenant)
 - [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
+- [NPM token](#NPM-token)
 - [Pagerduty API token](#Pagerduty-API-token)
 - [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
 - [Pendo Integration Key](#Pendo-Integration-Key)
@@ -531,6 +532,28 @@ curl 'http://api.addressy.com/Capture/Interactive/Find/v1.00/json3.ws?Key=<KEY_H
 ```
 curl 'https://api.ipstack.com/{ip_address}?access_key={keyhere}'
 ```
+
+## [NPM token](https://docs.npmjs.com/about-authentication-tokens)
+
+You can verify NPM token [using `npm`](https://medium.com/bugbountywriteup/one-token-to-leak-them-all-the-story-of-a-8000-npm-token-79b13af182a3) (replacing `00000000-0000-0000-0000-000000000000` with NPM token):
+
+```
+export NPM_TOKEN="00000000-0000-0000-0000-000000000000"
+echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+npm whoami
+```
+
+Another way to verify token is to query API directly:
+
+```
+curl -H 'authorization: Bearer 00000000-0000-0000-0000-000000000000' 'https://registry.npmjs.org/-/whoami'
+```
+
+You'll get username in response in case of success, `401 Unauthorized` in case if token doesn't exists and `403 Forbidden` in case if your IP address is not whitelisted.
+
+NPM token can be [CIDR-whitelisted](https://docs.npmjs.com/creating-and-viewing-authentication-tokens#creating-tokens-with-the-cli). Thus if you are using token from *non-whitelisted* CIDR you'll get `403 Forbidden` in response. So try to verify NPM token from different IP ranges!.
+
+P.S. Some companies [uses registries other than `registry.npmjs.org`](https://medium.com/bugbountywriteup/one-token-to-leak-them-all-the-story-of-a-8000-npm-token-79b13af182a3). If it's the case replace all `registry.npmjs.org` occurrences with domain name of company's NPM registry.
 
 # Contributing
 
