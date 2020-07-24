@@ -32,6 +32,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Google Cloud Messaging (GCM)](#Google-Cloud-Messaging)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
+- [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
 - [Ipstack API Key](#Ipstack-API-Key)
@@ -396,6 +397,37 @@ https://www.google.com/recaptcha/api/siteverify
 `secret` and `response` are two required POST parameters, where `secret` is the key and `response` is the response to test for.
 
 Regular expression: `^6[0-9a-zA-Z_-]{39}$`. The API key always starts with a 6 and is 40 chars long. Read more here: https://developers.google.com/recaptcha/docs/verify.
+
+## [Google Cloud Service Account credentials](https://cloud.google.com/docs/authentication/production) 
+
+Service Account credentials may be found in a JSON file like this:
+
+```
+$ cat service_account.json
+{
+  "type": "service_account",
+  "project_id": "...",
+  "private_key_id": "...",
+  "private_key": "-----BEGIN PRIVATE KEY-----...-----END PRIVATE KEY-----\n",
+  "client_email": "...",
+  "client_id": "...",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/..."
+}
+```
+
+If this is your case you may check these credentials using `gcloud` tool ([how to install `gcloud`](https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu)):
+
+```
+$ gcloud auth activate-service-account --key-file=service_account.json
+Activated service account credentials for: [...]
+$ gcloud auth print-access-token
+ya29.c...
+```
+
+In case of success you'll see access token printed in terminal. Please note that after verifying that credentials are actually valid you may want to enumerate permissions of these credentials which is another story.
 
 ## [Branch.IO Key and Secret](https://docs.branch.io/pages/apps/deep-linking-api/#app-read)
 
