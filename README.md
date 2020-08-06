@@ -36,7 +36,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
 - [Instagram Basic Display API](#Instagram-Basic-Display-API-Access-Token)
-- [Instagram Graph API](#Instagram-GraphApi-Access-Token)
+- [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
 - [Ipstack API Key](#Ipstack-API-Key)
 - [JumpCloud API key](#JumpCloud-API-Key)
 - [Loqate API Key](#Loqate-API-key)
