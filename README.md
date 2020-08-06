@@ -497,13 +497,13 @@ curl "https://wakatime.com/api/v1/users/current/projects/?api_key=KEY_HERE"
 curl -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.spotify.com/v1/me
 ```
 
-## [Instagram Basic Display API](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)
+## [Instagram Basic Display API Access Token](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)
 E.g.: IGQVJ...
 ```
 curl -X GET 'https://graph.instagram.com/{user-id}?fields=id,username&access_token={access-token}'
 ```
 
-## [Instagram Graph API](https://developers.facebook.com/docs/instagram-api/getting-started)
+## [Instagram Graph API Access Token](https://developers.facebook.com/docs/instagram-api/getting-started)
 E.g.: EAAJjmJ...
 ```
 curl -i -X GET 'https://graph.facebook.com/v8.0/me/accounts?access_token={access-token}'
