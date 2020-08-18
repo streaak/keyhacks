@@ -21,7 +21,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
 - [Dropbox API](#Dropbox-API)
-- [Facebook Access Token  ](#Facebook-Access-Token)
+- [Facebook Access Token](#Facebook-Access-Token)
 - [Facebook AppSecret](#Facebook-AppSecret)
 - [Firebase](#Firebase)
 - [FreshDesk API Key](#FreshDesk-API-key)
@@ -35,8 +35,9 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
+- [Instagram Basic Display API](#Instagram-Basic-Display-API-Access-Token)
+- [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
 - [Ipstack API Key](#Ipstack-API-Key)
-- [Instagram Access Token](#Instagram-Access-Token)
 - [JumpCloud API key](#JumpCloud-API-Key)
 - [Loqate API Key](#Loqate-API-key)
 - [MailChimp API Key](#MailChimp-API-Key)
@@ -496,10 +497,16 @@ curl "https://wakatime.com/api/v1/users/current/projects/?api_key=KEY_HERE"
 curl -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.spotify.com/v1/me
 ```
 
-## [Instagram Access Token](https://www.instagram.com/developer/endpoints/users/)
-Visit the following URL to check for validity
+## [Instagram Basic Display API Access Token](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)
+E.g.: IGQVJ...
 ```
-https://api.instagram.com/v1/users/self/?access_token=ACCESS-TOKEN
+curl -X GET 'https://graph.instagram.com/{user-id}?fields=id,username&access_token={access-token}'
+```
+
+## [Instagram Graph API Access Token](https://developers.facebook.com/docs/instagram-api/getting-started)
+E.g.: EAAJjmJ...
+```
+curl -i -X GET 'https://graph.facebook.com/v8.0/me/accounts?access_token={access-token}'
 ```
 
 ## [Gitlab personal access token](https://docs.gitlab.com/ee/api/README.html#personal-access-tokens)
