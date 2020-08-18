@@ -29,7 +29,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
 - [Gitlab personal access token](#Gitlab-personal-access-token)
-- [Google Cloud Messaging (GCM)](#Google-Cloud-Messaging)
+- [Firebase Cloud Messaging (FCM)](#Firebase-Cloud-Messaging)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
 - [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
@@ -117,7 +117,10 @@ curl "https://api.github.com/rate_limit" -i -u "user:apikey" | grep "X-OAuth-Sco
 curl 'https://api.github.com/users/whatever?client_id=xxxx&client_secret=yyyy'
 ```
 
-## [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)
+## [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
+
+Reference: https://abss.me/posts/fcm-takeover
+
 ```
 curl -s -X POST --header "Authorization: key=AI..." --header "Content-Type:application/json" 'https://fcm.googleapis.com/fcm/send' -d '{"registration_ids":["1"]}'
 ```
