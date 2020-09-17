@@ -39,6 +39,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
 - [Ipstack API Key](#Ipstack-API-Key)
 - [JumpCloud API key](#JumpCloud-API-Key)
+- [Keen.io API key](#Keenio-API-Key)
 - [Loqate API Key](#Loqate-API-key)
 - [MailChimp API Key](#MailChimp-API-Key)
 - [MailGun Private Key](#MailGun-Private-Key)
@@ -596,6 +597,14 @@ You'll get username in response in case of success, `401 Unauthorized` in case i
 NPM token can be [CIDR-whitelisted](https://docs.npmjs.com/creating-and-viewing-authentication-tokens#creating-tokens-with-the-cli). Thus if you are using token from *non-whitelisted* CIDR you'll get `403 Forbidden` in response. So try to verify NPM token from different IP ranges!.
 
 P.S. Some companies [uses registries other than `registry.npmjs.org`](https://medium.com/bugbountywriteup/one-token-to-leak-them-all-the-story-of-a-8000-npm-token-79b13af182a3). If it's the case replace all `registry.npmjs.org` occurrences with domain name of company's NPM registry.
+
+## [Keen.io API Key](https://keen.io/docs/api/)
+
+Get all collections for a specific project:
+
+```
+curl "https://api.keen.io/3.0/projects/PROJECT_ID/events?api_key=READ_KEY"
+```
 
 # Contributing
 
