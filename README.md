@@ -46,6 +46,8 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Mapbox API key](#Mapbox-API-Key)
 - [Microsoft Azure Tenant](#Microsoft-Azure-Tenant)
 - [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
+- [New Relic Personal API Key (NerdGraph)](#New-Relic-Personal-API-Key-(NerdGraph))
+- [New Relic REST API](#New-Relic-REST-API)
 - [NPM token](#NPM-token)
 - [Pagerduty API token](#Pagerduty-API-token)
 - [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
@@ -316,6 +318,24 @@ static void UseAccountSAS(string sasToken)
     Console.WriteLine(serviceProperties.HourMetrics.Version);
 }
 ```
+
+## [New Relic Personal API Key (NerdGraph)](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph#endpoint)
+
+```
+curl -X POST https://api.newrelic.com/graphql \
+-H 'Content-Type: application/json' \
+-H 'API-Key: YOUR_API_KEY' \
+-d '{ "query":  "{ requestContext { userId apiKey } }" } '
+```
+
+## [New Relic REST API](https://docs.newrelic.com/docs/apis/rest-api-v2/application-examples-v2/list-your-app-id-metric-timeslice-data-v2)
+
+```
+curl -X GET 'https://api.newrelic.com/v2/applications.json' \
+     -H "X-Api-Key:${APIKEY}" -i
+```
+
+If valid, test further to see if it's an [admin key](https://docs.newrelic.com/docs/apis/get-started/intro-apis/types-new-relic-api-keys#admin)
 
 ## [Heroku API key](https://devcenter.heroku.com/articles/platform-api-quickstart)
 ```
