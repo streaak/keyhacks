@@ -17,6 +17,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
 - [BrowserStack Access Key](#BrowserStack-Access-Key)
 - [Buildkite Access token](#Buildkite-Access-token)
+- [Calendly API Key](#Calendly-API-Key)
 - [CircleCI Access Token](#CircleCI-Access-Token)
 - [DataDog API key](#DataDog-API-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
@@ -627,6 +628,21 @@ Get all collections for a specific project:
 curl "https://api.keen.io/3.0/projects/PROJECT_ID/events?api_key=READ_KEY"
 ```
 
+
+## [Calendly API Key](https://developer.calendly.com/docs/)
+
+Get user information:
+
+````
+curl --header "X-TOKEN: <your_token>" https://calendly.com/api/v1/users/me
+````
+
+List Webhook Subscriptions:
+
+````
+curl --header "X-TOKEN: <your_token>" https://calendly.com/api/v1/hooks
+````
+
 ## [Azure Application Insights APP ID and API Key](https://dev.applicationinsights.io/reference)
 
 Get the total number of requests made in last 24 hours:
@@ -634,6 +650,7 @@ Get the total number of requests made in last 24 hours:
 ```
 curl -H "x-api-key: {API_Key}" "https://api.applicationinsights.io/v1/apps/{APP_ID}/metrics/requests/count"
 ```
+
 
 
 # Contributing
