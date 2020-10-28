@@ -75,11 +75,6 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 
 # Detailed Information
-## [YouTube API Key](https://developers.google.com/youtube/v3/docs/)
-
-```
-curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key={KEY_HERE}'
-```
 
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
 
@@ -658,7 +653,11 @@ Get the total number of requests made in last 24 hours:
 curl -H "x-api-key: {API_Key}" "https://api.applicationinsights.io/v1/apps/{APP_ID}/metrics/requests/count"
 ```
 
+## [YouTube API Key](https://developers.google.com/youtube/v3/docs/)
 
+```
+curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key={KEY_HERE}'
+```
 
 # Contributing
 
