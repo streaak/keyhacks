@@ -654,6 +654,7 @@ curl -H "x-api-key: {API_Key}" "https://api.applicationinsights.io/v1/apps/{APP_
 ```
 
 ## [YouTube API Key](https://developers.google.com/youtube/v3/docs/)
+Fetch content details for a YouTube channel (The channelId in this case points to PewDiePie's channel).
 
 ```
 curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key={KEY_HERE}'
