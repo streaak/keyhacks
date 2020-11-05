@@ -19,6 +19,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Buildkite Access token](#Buildkite-Access-token)
 - [Calendly API Key](#Calendly-API-Key)
 - [CircleCI Access Token](#CircleCI-Access-Token)
+- [Cypress record key](#Cypress-record-key)
 - [DataDog API key](#DataDog-API-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
