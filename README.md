@@ -654,7 +654,7 @@ curl -H "x-api-key: {API_Key}" "https://api.applicationinsights.io/v1/apps/{APP_
 
 ## [Cypress record key](https://docs.cypress.io/guides/dashboard/projects.html#Record-key)
 
-In order to check `recordKey` validity you'll need `projectId` which is public value that usually can be found at `cypress.json` file.
+In order to check `recordKey` validity you'll need `projectId` which is public value that usually can be found at `cypress.json` file. Replace `recordKey` and `projectId` in JSON body with your values.
 
 ```
 curl -i -s -k -X $'POST' \
