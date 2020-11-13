@@ -69,11 +69,13 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Twitter Bearer token](#Twitter-Bearer-token)
 - [WakaTime API Key](#WakaTime-API-Key)
 - [WPEngine API Key](#WPEngine-API-Key)
+- [YouTube API Key](#YouTube-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
 
 
 # Detailed Information
+
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
 
 If the below command returns `missing_text_or_fallback_or_attachments`, it means that the URL is valid, any other responses would mean that the URL is invalid.
@@ -651,7 +653,12 @@ Get the total number of requests made in last 24 hours:
 curl -H "x-api-key: {API_Key}" "https://api.applicationinsights.io/v1/apps/{APP_ID}/metrics/requests/count"
 ```
 
+## [YouTube API Key](https://developers.google.com/youtube/v3/docs/)
+Fetch content details for a YouTube channel (The channelId in this case points to PewDiePie's channel).
 
+```
+curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key={KEY_HERE}'
+```
 
 # Contributing
 
