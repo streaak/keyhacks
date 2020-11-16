@@ -9,7 +9,8 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 # Table of Contents
 
-- [Algolia API key](#Algolia-API-key)
+- [Algolia API Key](#Algolia-API-key)
+- [Amplitude API Keys](#Amplitude-API-Keys)
 - [Asana Access token](#Asana-Access-Token)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
 - [Azure Application Insights APP ID and API Key](#Azure-Application-Insights-APP-ID-and-API-Key)
@@ -672,9 +673,17 @@ curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&
 
 ## [Iterable API Key](https://api.iterable.com/api/docs)
 Export campaign analytics data in JSON format, one entry per line. Use of either 'range' or 'startDateTime' and 'endDateTime' is required.
+
 ```
 curl -H "Api_Key: {API_KEY}" https://api.iterable.com/api/export/data.json?dataTypeName=emailSend&range=Today&onlyFields=List.empty
 ```
+## [Amplitude API Keys](https://help.amplitude.com/hc/en-us/articles/205406637-Export-API-Export-Your-Project-s-Event-Data)
+The response is a zipped archive of JSON files, with potentially multiple files per hour. Note that events prior to 2014-11-12 will be grouped by day instead of by the hour. If you request data for a time range during which no data has been collected for the project, then you will receive a 404 response from the server.
+
+```
+curl -u API_Key:Secret_Key 'https://amplitude.com/api/2/export?start=20200201T5&end=20210203T20' >> yourfilename.zip
+```
+
 
 # Contributing
 
