@@ -275,7 +275,7 @@ curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systemusers"
 curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/applications"
 ```
 
-#### [v]2(https://docs.jumpcloud.com/2.0/systems/list-the-associations-of-a-system)
+#### [v2](https://docs.jumpcloud.com/2.0/systems/list-the-associations-of-a-system)
 
 ```
 List systems:
