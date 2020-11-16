@@ -41,8 +41,9 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Instagram Basic Display API](#Instagram-Basic-Display-API-Access-Token)
 - [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
 - [Ipstack API Key](#Ipstack-API-Key)
-- [JumpCloud API key](#JumpCloud-API-Key)
-- [Keen.io API key](#Keenio-API-Key)
+- [Iterable API Key](#Iterable-API-Key)
+- [JumpCloud API Key](#JumpCloud-API-Key)
+- [Keen.io API Key](#Keenio-API-Key)
 - [Loqate API Key](#Loqate-API-key)
 - [MailChimp API Key](#MailChimp-API-Key)
 - [MailGun Private Key](#MailGun-Private-Key)
@@ -667,6 +668,12 @@ Fetch content details for a YouTube channel (The channelId in this case points t
 
 ```
 curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key={KEY_HERE}'
+```
+
+## [Iterable API Key](https://api.iterable.com/api/docs)
+Export campaign analytics data in JSON format, one entry per line. Use of either 'range' or 'startDateTime' and 'endDateTime' is required.
+```
+curl -H "Api_Key: {API_KEY}" https://api.iterable.com/api/export/data.json?dataTypeName=emailSend&range=Today&onlyFields=List.empty
 ```
 
 # Contributing
