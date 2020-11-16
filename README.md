@@ -266,9 +266,23 @@ This requires the API key in 'user@yourcompany.com', pass in 'test' and 'domain.
 
 ```
 ## [JumpCloud API Key](https://docs.jumpcloud.com/1.0/authentication-and-authorization/authentication-and-authorization-overview)
+
+#### [v1](https://docs.jumpcloud.com/1.0/systemusers)
 ```
 List systems:
 curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systems"
+curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systemusers"
+curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/applications"
+```
+
+#### [v]2(https://docs.jumpcloud.com/2.0/systems/list-the-associations-of-a-system)
+
+```
+List systems:
+curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/memberof \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}'
 ```
 
 ## Microsoft Azure Tenant
