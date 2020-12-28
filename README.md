@@ -18,6 +18,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
 - [BrowserStack Access Key](#BrowserStack-Access-Key)
 - [Buildkite Access token](#Buildkite-Access-token)
+- [ButterCMS API Key](#ButterCMS-API-Key)
 - [Calendly API Key](#Calendly-API-Key)
 - [CircleCI Access Token](#CircleCI-Access-Token)
 - [DataDog API key](#DataDog-API-key)
@@ -487,6 +488,11 @@ https://api-ssl.bitly.com/v3/shorten?access_token=ACCESS_TOKEN&longUrl=https://w
 ```
 curl -H "Authorization: Bearer ACCESS_TOKEN" \
 https://api.buildkite.com/v2/user
+```
+
+## [ButterCMS-API-Key](https://buttercms.com/docs/api/#authentication)
+```
+curl -X GET 'https://api.buttercms.com/v2/posts/?auth_token=your_api_token'
 ```
 
 ## [Asana Access token](https://asana.com/developers/documentation/getting-started/auth#personal-access-token)
