@@ -9,6 +9,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 # Table of Contents
 
+- [ABTasty API Key](#ABTasty-API-Key)
 - [Algolia API key](#Algolia-API-key)
 - [Asana Access token](#Asana-Access-Token)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
@@ -679,6 +680,12 @@ Fetch content details for a YouTube channel (The channelId in this case points t
 
 ```
 curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key={KEY_HERE}'
+```
+
+## [ABTasty API Key](https://developers.abtasty.com/server-side.html#authentication)
+
+```
+curl "api_endpoint_here" -H "x-api-key: your_api_key"
 ```
 
 # Contributing
