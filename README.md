@@ -45,7 +45,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [JumpCloud API key](#JumpCloud-API-Key)
 - [Keen.io API key](#Keenio-API-Key)
 - [Loqate API Key](#Loqate-API-key)
-- [Lokalize API Key](#Lokalise-API-Key)
+- [Lokalise API Key](#Lokalise-API-Key)
 - [MailChimp API Key](#MailChimp-API-Key)
 - [MailGun Private Key](#MailGun-Private-Key)
 - [Mapbox API key](#Mapbox-API-Key)
