@@ -9,7 +9,8 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 # Table of Contents
 
-- [Algolia API Key](#Algolia-API-key)
+- [ABTasty API Key](#ABTasty-API-Key)
+- [Algolia API key](#Algolia-API-key)
 - [Amplitude API Keys](#Amplitude-API-Keys)
 - [Asana Access token](#Asana-Access-Token)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
@@ -19,6 +20,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
 - [BrowserStack Access Key](#BrowserStack-Access-Key)
 - [Buildkite Access token](#Buildkite-Access-token)
+- [ButterCMS API Key](#ButterCMS-API-Key)
 - [Calendly API Key](#Calendly-API-Key)
 - [CircleCI Access Token](#CircleCI-Access-Token)
 - [DataDog API key](#DataDog-API-key)
@@ -46,6 +48,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [JumpCloud API Key](#JumpCloud-API-Key)
 - [Keen.io API Key](#Keenio-API-Key)
 - [Loqate API Key](#Loqate-API-key)
+- [Lokalise API Key](#Lokalise-API-Key)
 - [MailChimp API Key](#MailChimp-API-Key)
 - [MailGun Private Key](#MailGun-Private-Key)
 - [Mapbox API key](#Mapbox-API-Key)
@@ -259,6 +262,11 @@ cd  enumerate-iam
 ./enumerate-iam.py --access-key AKIA... --secret-key StF0q...
 ```
 
+## [Lokalise API Key](https://app.lokalise.com/api2docs/curl/#resource-authentication)
+```curl --request GET \
+  --url https://api.lokalise.com/api2/projects/ \
+  --header 'x-api-token: [API-KEY-HERE]'
+```
 
 ## [MailGun Private Key](https://documentation.mailgun.com/en/latest/api_reference.html)
 ```
@@ -511,6 +519,11 @@ curl -H "Authorization: Bearer ACCESS_TOKEN" \
 https://api.buildkite.com/v2/user
 ```
 
+## [ButterCMS-API-Key](https://buttercms.com/docs/api/#authentication)
+```
+curl -X GET 'https://api.buttercms.com/v2/posts/?auth_token=your_api_token'
+```
+
 ## [Asana Access token](https://asana.com/developers/documentation/getting-started/auth#personal-access-token)
 ```
 curl -H "Authorization: Bearer ACCESS_TOKEN" https://app.asana.com/api/1.0/users/me
@@ -698,6 +711,13 @@ Fetch content details for a YouTube channel (The channelId in this case points t
 curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key={KEY_HERE}'
 ```
 
+
+## [ABTasty API Key](https://developers.abtasty.com/server-side.html#authentication)
+
+```
+curl "api_endpoint_here" -H "x-api-key: your_api_key"
+```
+
 ## [Iterable API Key](https://api.iterable.com/api/docs)
 Export campaign analytics data in JSON format, one entry per line. Use of either 'range' or 'startDateTime' and 'endDateTime' is required.
 
@@ -726,7 +746,6 @@ curl -u API_Key:Secret_Key 'https://amplitude.com/api/2/export?start=20200201T5&
 -H "Content-Type: application/json" \
 -H "X-Api-Token: {your_api_token}"
   ```
-
 
 # Contributing
 
