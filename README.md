@@ -11,6 +11,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 - [ABTasty API Key](#ABTasty-API-Key)
 - [Algolia API key](#Algolia-API-key)
+- [Amplitude API Keys](#Amplitude-API-Keys)
 - [Asana Access token](#Asana-Access-Token)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
 - [Azure Application Insights APP ID and API Key](#Azure-Application-Insights-APP-ID-and-API-Key)
@@ -43,8 +44,9 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Instagram Basic Display API](#Instagram-Basic-Display-API-Access-Token)
 - [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
 - [Ipstack API Key](#Ipstack-API-Key)
-- [JumpCloud API key](#JumpCloud-API-Key)
-- [Keen.io API key](#Keenio-API-Key)
+- [Iterable API Key](#Iterable-API-Key)
+- [JumpCloud API Key](#JumpCloud-API-Key)
+- [Keen.io API Key](#Keenio-API-Key)
 - [Loqate API Key](#Loqate-API-key)
 - [Lokalise API Key](#Lokalise-API-Key)
 - [MailChimp API Key](#MailChimp-API-Key)
@@ -76,6 +78,12 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [YouTube API Key](#YouTube-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
+- [Spotify Access Token](#Spotify-Access-Token)
+- [Instagram Access Token](#Instagram-Access-Token)
+- [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
+- [Gitlab personal access token](#Gitlab-personal-access-token)
+- [Stripe Live Token](#Stripe-Live-Token)
+- [Visual Studio App Center API Token](#Visual-Studio-App-Center-API-Token)
 
 
 # Detailed Information
@@ -272,9 +280,23 @@ This requires the API key in 'user@yourcompany.com', pass in 'test' and 'domain.
 
 ```
 ## [JumpCloud API Key](https://docs.jumpcloud.com/1.0/authentication-and-authorization/authentication-and-authorization-overview)
+
+#### [v1](https://docs.jumpcloud.com/1.0/systemusers)
 ```
 List systems:
 curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systems"
+curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systemusers"
+curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/applications"
+```
+
+#### [v2](https://docs.jumpcloud.com/2.0/systems/list-the-associations-of-a-system)
+
+```
+List systems:
+curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/memberof \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}'
 ```
 
 ## Microsoft Azure Tenant
@@ -652,6 +674,13 @@ Get all collections for a specific project:
 curl "https://api.keen.io/3.0/projects/PROJECT_ID/events?api_key=READ_KEY"
 ```
 
+>Note: Keep the colon at the end of the token to prevent cURL from requesting a password.
+Info: The token is always in the following format: sk_live_34charshere, where the 34charshere part contains 34 characters from a-z A-Z 0-9
+There is also a test key, which starts with sk_test, but this key is worthless since it is only used for testing purposes and most likely doesn't contain any sensitive info.
+The live key, on the other hand, can be used to extract/retrieve a lot of info. Going from charges, to the complete product list.
+Keep in mind that you will never be able to get the full credit card information since stripe only gives you like the last 4 digits.
+More info / complete docs: https://stripe.com/docs/api/authentication
+=======
 
 ## [Calendly API Key](https://developer.calendly.com/docs/)
 
@@ -682,11 +711,41 @@ Fetch content details for a YouTube channel (The channelId in this case points t
 curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key={KEY_HERE}'
 ```
 
+
 ## [ABTasty API Key](https://developers.abtasty.com/server-side.html#authentication)
 
 ```
 curl "api_endpoint_here" -H "x-api-key: your_api_key"
 ```
+
+## [Iterable API Key](https://api.iterable.com/api/docs)
+Export campaign analytics data in JSON format, one entry per line. Use of either 'range' or 'startDateTime' and 'endDateTime' is required.
+
+```
+curl -H "Api_Key: {API_KEY}" https://api.iterable.com/api/export/data.json?dataTypeName=emailSend&range=Today&onlyFields=List.empty
+```
+## [Amplitude API Keys](https://help.amplitude.com/hc/en-us/articles/205406637-Export-API-Export-Your-Project-s-Event-Data)
+The response is a zipped archive of JSON files, with potentially multiple files per hour. Note that events prior to 2014-11-12 will be grouped by day instead of by the hour. If you request data for a time range during which no data has been collected for the project, then you will receive a 404 response from the server.
+
+```
+curl -u API_Key:Secret_Key 'https://amplitude.com/api/2/export?start=20200201T5&end=20210203T20' >> yourfilename.zip
+```
+
+## [Visual Studio App Center API Token](https://docs.microsoft.com/en-us/appcenter/api-docs/)
+   
+   1. List all the app projects for the API Token:
+  ```
+  curl -sX GET  "https://api.appcenter.ms/v0.1/apps" \
+ -H "Content-Type: application/json" \
+ -H "X-Api-Token: {your_api_token}"
+  ```
+   2. Fetch the latest app build information for a particular project:
+   > Use the `name` and `owner.name` obtained in response in Step [1](#438).
+  ```
+  curl -sX GET  "https://api.appcenter.ms/v0.1/apps/{owner.name}/{name}/releases/latest" \
+-H "Content-Type: application/json" \
+-H "X-Api-Token: {your_api_token}"
+  ```
 
 # Contributing
 
