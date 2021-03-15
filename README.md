@@ -75,6 +75,12 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [YouTube API Key](#YouTube-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
+- [Spotify Access Token](#Spotify-Access-Token)
+- [Instagram Access Token](#Instagram-Access-Token)
+- [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
+- [Gitlab personal access token](#Gitlab-personal-access-token)
+- [Stripe Live Token](#Stripe-Live-Token)
+- [Visual Studio App Center API Token](#Visual-Studio-App-Center-API-Token)
 
 
 # Detailed Information
@@ -655,6 +661,13 @@ Get all collections for a specific project:
 curl "https://api.keen.io/3.0/projects/PROJECT_ID/events?api_key=READ_KEY"
 ```
 
+>Note: Keep the colon at the end of the token to prevent cURL from requesting a password.
+Info: The token is always in the following format: sk_live_34charshere, where the 34charshere part contains 34 characters from a-z A-Z 0-9
+There is also a test key, which starts with sk_test, but this key is worthless since it is only used for testing purposes and most likely doesn't contain any sensitive info.
+The live key, on the other hand, can be used to extract/retrieve a lot of info. Going from charges, to the complete product list.
+Keep in mind that you will never be able to get the full credit card information since stripe only gives you like the last 4 digits.
+More info / complete docs: https://stripe.com/docs/api/authentication
+=======
 
 ## [Calendly API Key](https://developer.calendly.com/docs/)
 
@@ -697,6 +710,22 @@ The response is a zipped archive of JSON files, with potentially multiple files 
 ```
 curl -u API_Key:Secret_Key 'https://amplitude.com/api/2/export?start=20200201T5&end=20210203T20' >> yourfilename.zip
 ```
+
+## [Visual Studio App Center API Token](https://docs.microsoft.com/en-us/appcenter/api-docs/)
+   
+   1. List all the app projects for the API Token:
+  ```
+  curl -sX GET  "https://api.appcenter.ms/v0.1/apps" \
+ -H "Content-Type: application/json" \
+ -H "X-Api-Token: {your_api_token}"
+  ```
+   2. Fetch the latest app build information for a particular project:
+   > Use the `name` and `owner.name` obtained in response in Step [1](#438).
+  ```
+  curl -sX GET  "https://api.appcenter.ms/v0.1/apps/{owner.name}/{name}/releases/latest" \
+-H "Content-Type: application/json" \
+-H "X-Api-Token: {your_api_token}"
+  ```
 
 
 # Contributing
