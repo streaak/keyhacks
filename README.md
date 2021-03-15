@@ -5,47 +5,75 @@
 
 KeyHacks shows ways in which particular API keys found on a Bug Bounty Program can be used, to check if they are valid.
 
+@Gwen001 has scripted the entire process available here and it can be found [here](https://github.com/gwen001/pentest-tools/blob/master/keyhacks.sh)
+
 # Table of Contents
 
-- [Algolia API key](#Algolia-API-key)
+- [Algolia API Key](#Algolia-API-key)
+- [Amplitude API Keys](#Amplitude-API-Keys)
+- [Asana Access token](#Asana-Access-Token)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
+- [Azure Application Insights APP ID and API Key](#Azure-Application-Insights-APP-ID-and-API-Key)
+- [Bing Maps API Key](#Bing-Maps-API-Key)
+- [Bit.ly Access token](#Bitly-Access-token)
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
+- [BrowserStack Access Key](#BrowserStack-Access-Key)
+- [Buildkite Access token](#Buildkite-Access-token)
+- [Calendly API Key](#Calendly-API-Key)
+- [CircleCI Access Token](#CircleCI-Access-Token)
 - [DataDog API key](#DataDog-API-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
 - [Dropbox API](#Dropbox-API)
-- [Facebook Access Token  ](#Facebook-Access-Token)
+- [Facebook Access Token](#Facebook-Access-Token)
 - [Facebook AppSecret](#Facebook-AppSecret)
 - [Firebase](#Firebase)
+- [FreshDesk API Key](#FreshDesk-API-key)
+- [Github client id and client secret](#Github-client-id-and-client-secret)
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
-- [Github client id and client secret](#Github-client-id-and-client-secret)
-- [Google Cloud Messaging (GCM)](#Google-Cloud-Messaging)
+- [Gitlab personal access token](#Gitlab-personal-access-token)
+- [Firebase Cloud Messaging (FCM)](#Firebase-Cloud-Messaging)
 - [Google Maps API key](#Google-Maps-API-key)
+- [Google Recaptcha key](#Google-Recaptcha-key)
+- [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
 - [Heroku API key](#Heroku-API-key)
-- [MailGun Private Key](#MailGun-Private-Key)
+- [HubSpot API key](#Hubspot-API-key)
+- [Instagram Basic Display API](#Instagram-Basic-Display-API-Access-Token)
+- [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
+- [Ipstack API Key](#Ipstack-API-Key)
+- [Iterable API Key](#Iterable-API-Key)
+- [JumpCloud API Key](#JumpCloud-API-Key)
+- [Keen.io API Key](#Keenio-API-Key)
+- [Loqate API Key](#Loqate-API-key)
 - [MailChimp API Key](#MailChimp-API-Key)
+- [MailGun Private Key](#MailGun-Private-Key)
 - [Mapbox API key](#Mapbox-API-Key)
-- [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
 - [Microsoft Azure Tenant](#Microsoft-Azure-Tenant)
-- [pagerduty API token](#pagerduty-API-token)
+- [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
+- [New Relic Personal API Key (NerdGraph)](#New-Relic-Personal-API-Key-(NerdGraph))
+- [New Relic REST API](#New-Relic-REST-API)
+- [NPM token](#NPM-token)
+- [Pagerduty API token](#Pagerduty-API-token)
+- [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
 - [Pendo Integration Key](#Pendo-Integration-Key)
+- [Razorpay API key and secret key](#Razorpay-keys)
 - [Salesforce API key](#Salesforce-API-key)
-- [Square](#Square)
 - [SauceLabs Username and access Key](#SauceLabs-Username-and-access-Key)
 - [SendGrid API Token](#SendGrid-API-Token)
 - [Slack API token](#Slack-API-token)
 - [Slack Webhook](#Slack-Webhook)
+- [Spotify Access Token](#Spotify-Access-Token)
+- [Square](#Square)
+- [Stripe Live Token](#Stripe-Live-Token)
 - [Travis CI API token](#Travis-CI-API-token)
 - [Twilio Account_sid and Auth token](#Twilio-Account_sid-and-Auth-token)
 - [Twitter API Secret](#Twitter-API-Secret)
 - [Twitter Bearer token](#Twitter-Bearer-token)
-- [WPEngine API Key](#WPEngine-API-Key)
 - [WakaTime API Key](#WakaTime-API-Key)
+- [WPEngine API Key](#WPEngine-API-Key)
+- [YouTube API Key](#YouTube-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
-- [Bit.ly Access token](#Bitly-Access-token)
-- [Buildkite Access token](#Buildkite-Access-token)
-- [Asana Access token](#Asana-Access-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
 - [Spotify Access Token](#Spotify-Access-Token)
 - [Instagram Access Token](#Instagram-Access-Token)
@@ -56,6 +84,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 
 # Detailed Information
+
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
 
 If the below command returns `missing_text_or_fallback_or_attachments`, it means that the URL is valid, any other responses would mean that the URL is invalid.
@@ -89,14 +118,15 @@ https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOK
 ## [Firebase](https://firebase.google.com/)
 Requires a **custom token**, and an **API key**.
 
-1. obtain ID token and refresh token from custom token and API key: `curl -s -XPOST -H 'content-type: application/json' -d '{"custom_token":":custom_token"}' 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
-2. exchange ID token for auth token: `curl -s -XPOST -H 'content-type: application/json' -d '{"idToken":":id_token"}' https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
+1. Obtain ID token and refresh token from custom token and API key: `curl -s -XPOST -H 'content-type: application/json' -d '{"token":":custom_token","returnSecureToken":True}' 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=:api_key'`
+2. Exchange ID token for auth token: `curl -s -XPOST -H 'content-type: application/json' -d '{"idToken":":id_token"}' https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
 
 ## [Github Token](https://developer.github.com/v3/)
 ```
 curl -s -u "user:apikey" https://api.github.com/user
 curl -s -H "Authorization: token TOKEN_HERE" "https://api.github.com/users/USERNAME_HERE/orgs"
-curl "https://api.github.com/rate_limit" -i -u "user:apikey" | grep "X-OAuth-Scopes:" # Check scope of your api token
+# Check scope of your api token
+curl "https://api.github.com/rate_limit" -i -u "user:apikey" | grep "X-OAuth-Scopes:"
 ```
 
 ## [Github client id and client secret](https://developer.github.com/v3/#oauth2-keysecret)
@@ -104,9 +134,12 @@ curl "https://api.github.com/rate_limit" -i -u "user:apikey" | grep "X-OAuth-Sco
 curl 'https://api.github.com/users/whatever?client_id=xxxx&client_secret=yyyy'
 ```
 
-## [Google Cloud Messaging](https://developers.google.com/cloud-messaging/)
+## [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
+
+Reference: https://abss.me/posts/fcm-takeover
+
 ```
-curl -s -X POST --header "Authorization: key=AI..." --header "Content-Type:application/json" 'https://gcm-http.googleapis.com/gcm/send' -d '{"registration_ids":["1"]}'
+curl -s -X POST --header "Authorization: key=AI..." --header "Content-Type:application/json" 'https://fcm.googleapis.com/fcm/send' -d '{"registration_ids":["1"]}'
 ```
 
 ## GitHub private SSH key
@@ -120,7 +153,7 @@ Hi <username>! You've successfully authenticated, but GitHub does not provide sh
 
 ## [Twilio Account_sid and Auth token](https://www.twilio.com/docs/iam/api/account)
 ```
-curl -X GET 'https://api.twilio.com/2010-04-01/Accounts/ACCOUNT_SID/Keys.json' -u ACCOUNT_SID:AUTH_TOKEN
+curl -X GET 'https://api.twilio.com/2010-04-01/Accounts.json' -u ACCOUNT_SID:AUTH_TOKEN
 ```
 
 ## [Twitter API Secret](https://developer.twitter.com/en/docs/basics/authentication/guides/bearer-tokens.html)
@@ -131,6 +164,18 @@ curl -u 'API key:API secret key' --data 'grant_type=client_credentials' 'https:/
 ## [Twitter Bearer token](https://developer.twitter.com/en/docs/accounts-and-users/subscribe-account-activity/api-reference/aaa-premium)
 ```
 curl --request GET --url https://api.twitter.com/1.1/account_activity/all/subscriptions/count.json --header 'authorization: Bearer TOKEN'
+```
+
+## [HubSpot API key](https://developers.hubspot.com/docs/methods/owners/get_owners)
+
+Get all owners:
+```
+https://api.hubapi.com/owners/v2/owners?hapikey={keyhere}
+```
+Get all contact details:
+```
+https://api.hubapi.com/contacts/v1/lists/all/contacts/all?hapikey={keyhere}
+
 ```
 
 ## [Deviant Art Secret](https://www.deviantart.com/developers/authentication)
@@ -157,20 +202,20 @@ curl -X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SEN
 ## [Square](https://squareup.com/)
 **Detection:**
 
-app id / client secret:  `sq0[a-z]{3}-[0-9A-Za-z\-_]{22,43}`
-auth token: `EAAA[a-zA-Z0-9]{60}`
+App id/client secret:  `sq0[a-z]{3}-[0-9A-Za-z\-_]{22,43}`
+Auth token: `EAAA[a-zA-Z0-9]{60}`
 
 **Test App id & client secret:**
 ```
 curl "https://squareup.com/oauth2/revoke" -d '{"access_token":"[RANDOM_STRING]","client_id":"[APP_ID]"}'  -H "Content-Type: application/json" -H "Authorization: Client [CLIENT_SECRET]"
 ```
 
-Valid:
+Response indicating valid credentials:
 ```
 empty
 ```
 
-Not valid:
+Response indicating invalid credentials:
 ```
 {
   "message": "Not Authorized",
@@ -183,31 +228,29 @@ Not valid:
 curl https://connect.squareup.com/v2/locations -H "Authorization: Bearer [AUHT_TOKEN]"
 ```
 
-Valid:
+Response indicating valid credentials:
 ```
 {"locations":[{"id":"CBASELqoYPXr7RtT-9BRMlxGpfcgAQ","name":"Coffee \u0026 Toffee SF","address":{"address_line_1":"1455 Market Street","locality":"San Francisco","administrative_district_level_1":"CA","postal_code":"94103","country":"US"},"timezone":"America/Los_Angeles"........
 ```
 
-Not valid:
+Response indicating invalid credentials:
 ```
 {"errors":[{"category":"AUTHENTICATION_ERROR","code":"UNAUTHORIZED","detail":"This request could not be authorized."}]}
 ```
 
-## Dropbox API
+## [Dropbox API](https://www.dropbox.com/developers/documentation/http/documentation)
 ```
 curl -X POST https://api.dropboxapi.com/2/users/get_current_account --header "Authorization: Bearer TOKEN_HERE"
 ```
 
 ## [AWS Access Key ID and Secret](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
 
-Add the new `access_key_id` and `secret` within `~/.aws/credentials` file as a new user.
-
+Install [awscli](https://aws.amazon.com/cli/), set the [access key and secret to environment variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html), and execute the following command:
 ```
-$ aws s3 ls --profile username_picked
-$ aws s3 cp test.txt s3://bucket_belonging_to_the_company --profile username_picked
+AWS_ACCESS_KEY_ID=xxxx AWS_SECRET_ACCESS_KEY=yyyy aws sts get-caller-identity
 ```
 
-AWS credentials' permissions can be determined using [Enumerate-IAM](https://github.com/andresriancho/enumerate-iam)
+AWS credentials' permissions can be determined using [Enumerate-IAM](https://github.com/andresriancho/enumerate-iam).
 This gives broader view of the discovered AWS credentials privileges instead of just checking S3 buckets.
 
 ```
@@ -220,6 +263,32 @@ cd  enumerate-iam
 ## [MailGun Private Key](https://documentation.mailgun.com/en/latest/api_reference.html)
 ```
 curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
+```
+
+## [FreshDesk API Key](https://developers.freshdesk.com/api/#getting-started)
+```
+curl -v -u user@yourcompany.com:test -X GET 'https://domain.freshdesk.com/api/v2/groups/1'
+This requires the API key in 'user@yourcompany.com', pass in 'test' and 'domain.freshdesk.com' to be the instance url of the target. In case you get a 403, try the endpoint api/v2/tickets, which is accessible for all keys.
+
+```
+## [JumpCloud API Key](https://docs.jumpcloud.com/1.0/authentication-and-authorization/authentication-and-authorization-overview)
+
+#### [v1](https://docs.jumpcloud.com/1.0/systemusers)
+```
+List systems:
+curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systems"
+curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systemusers"
+curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/applications"
+```
+
+#### [v2](https://docs.jumpcloud.com/2.0/systems/list-the-associations-of-a-system)
+
+```
+List systems:
+curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/memberof \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}'
 ```
 
 ## Microsoft Azure Tenant
@@ -277,13 +346,31 @@ static void UseAccountSAS(string sasToken)
 }
 ```
 
+## [New Relic Personal API Key (NerdGraph)](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph#endpoint)
+
+```
+curl -X POST https://api.newrelic.com/graphql \
+-H 'Content-Type: application/json' \
+-H 'API-Key: YOUR_API_KEY' \
+-d '{ "query":  "{ requestContext { userId apiKey } }" } '
+```
+
+## [New Relic REST API](https://docs.newrelic.com/docs/apis/rest-api-v2/application-examples-v2/list-your-app-id-metric-timeslice-data-v2)
+
+```
+curl -X GET 'https://api.newrelic.com/v2/applications.json' \
+     -H "X-Api-Key:${APIKEY}" -i
+```
+
+If valid, test further to see if it's an [admin key](https://docs.newrelic.com/docs/apis/get-started/intro-apis/types-new-relic-api-keys#admin)
+
 ## [Heroku API key](https://devcenter.heroku.com/articles/platform-api-quickstart)
 ```
 curl -X POST https://api.heroku.com/apps -H "Accept: application/vnd.heroku+json; version=3" -H "Authorization: Bearer API_KEY_HERE"
 ```
 ## [Mapbox API key](https://docs.mapbox.com/api/)
 
-Mapbox secret keys start with sk, rest start with pk (public token), sk (secret token), or tk (temporary token).
+Mapbox secret keys start with `sk`, rest start with `pk` (public token), `sk` (secret token), or `tk` (temporary token).
 
 ```
 curl "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=ACCESS_TOKEN"
@@ -293,6 +380,7 @@ curl "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?acces
 ```
 curl https://instance_name.salesforce.com/services/data/v20.0/ -H 'Authorization: Bearer access_token_here'
 ```
+
 ## [Algolia API key](https://www.algolia.com/doc/rest-api/search/#overview)
 
 Be cautious when running this command, since the payload might execute within an administrative environment, depending on what index you are editing the `highlightPreTag` of. It's recommended to use a more silent payload (such as XSS Hunter) to prove the possible cross-site scripting attack.
@@ -311,34 +399,108 @@ curl --request PUT \
 curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"name":"streaak"}' "webhook_url_here"
 ```
 
-## [pagerduty API token](https://support.pagerduty.com/docs/using-the-api)
+## [Pagerduty API token](https://support.pagerduty.com/docs/using-the-api)
 ```
 curl -H "Accept: application/vnd.pagerduty+json;version=2"  -H "Authorization: Token token=TOKEN_HERE" -X GET  "https://api.pagerduty.com/schedules"
 ```
 
-## [BrowserStack ACCESSKEY](https://www.browserstack.com/automate/rest-api)
+## [BrowserStack Access Key](https://www.browserstack.com/automate/rest-api)
 ```
 curl -u "USERNAME:ACCESS_KEY" https://api.browserstack.com/automate/plan.json
 ```
 
 ## [Google Maps API key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-Visit the following URL to check for validity
+**Key restrictions are set per service. When testing the key, if the key is restricted/inactive on one service try it with another.**
+
+| Name| Endpoint| Pricing|
+| ------------- |:-------------:| -----:|
+| Static Maps     | https://maps.googleapis.com/maps/api/staticmap?center=45%2C10&zoom=7&size=400x400&key=KEY_HERE| $2 |
+| Streetview     | https://maps.googleapis.com/maps/api/streetview?size=400x400&location=40.720032,-73.988354&fov=90&heading=235&pitch=10&key=KEY_HERE| $7 |
+| Embed | https://www.google.com/maps/embed/v1/place?q=place_id:ChIJyX7muQw8tokR2Vf5WBBk1iQ&key=KEY_HERE| Varies |
+| Directions | https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood4&key=KEY_HERE| $5 |
+| Geocoding | https://maps.googleapis.com/maps/api/geocode/json?latlng=40,30&key=KEY_HERE| $5 |
+| Distance Matrix| https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=40.6655101,-73.89188969999998&destinations=40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.6905615%2C-73.9976592%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626%7C40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626&key=KEY_HERE | $5 |
+|Find Place from Text | https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=KEY_HERE | Varies |
+| Autocomplete | https://maps.googleapis.com/maps/api/place/autocomplete/json?input=Bingh&types=%28cities%29&key=KEY_HERE| Varies |
+| Elevation | https://maps.googleapis.com/maps/api/elevation/json?locations=39.7391536,-104.9847034&key=KEY_HERE | $5 |
+| Timezone | https://maps.googleapis.com/maps/api/timezone/json?location=39.6034810,-119.6822510&timestamp=1331161200&key=KEY_HERE | $5 |
+| Roads | https://roads.googleapis.com/v1/nearestRoads?points=60.170880,24.942795\|60.170879,24.942796\|60.170877,24.942796&key=KEY_HERE | $10|
+| Geolocate | https://www.googleapis.com/geolocation/v1/geolocate?key=KEY_HERE| $5 |
+
+*\*Pricing is in USD per 1000 requests (for the first 100k requests)*
+
+More Information available here-
+
+https://medium.com/@ozguralp/unauthorized-google-maps-api-key-usage-cases-and-why-you-need-to-care-1ccb28bf21e
+
+https://github.com/ozguralp/gmapsapiscanner/
+
+https://developers.google.com/maps/api-key-best-practices
+
+## [Google Recaptcha key](https://developers.google.com/recaptcha/docs/verify)
+
+Send a POST to the following URL:
+
 ```
-https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=KEY_HERE
-https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=12&size=2500x2000&maptype=roadmap&key=KEY_HERE
+https://www.google.com/recaptcha/api/siteverify
 ```
+
+`secret` and `response` are two required POST parameters, where `secret` is the key and `response` is the response to test for.
+
+Regular expression: `^6[0-9a-zA-Z_-]{39}$`. The API key always starts with a 6 and is 40 chars long. Read more here: https://developers.google.com/recaptcha/docs/verify.
+
+## [Google Cloud Service Account credentials](https://cloud.google.com/docs/authentication/production) 
+
+Service Account credentials may be found in a JSON file like this:
+
+```
+$ cat service_account.json
+{
+  "type": "service_account",
+  "project_id": "...",
+  "private_key_id": "...",
+  "private_key": "-----BEGIN PRIVATE KEY-----...-----END PRIVATE KEY-----\n",
+  "client_email": "...",
+  "client_id": "...",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/..."
+}
+```
+
+If this is your case you may check these credentials using `gcloud` tool ([how to install `gcloud`](https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu)):
+
+```
+$ gcloud auth activate-service-account --key-file=service_account.json
+Activated service account credentials for: [...]
+$ gcloud auth print-access-token
+ya29.c...
+```
+
+In case of success you'll see access token printed in terminal. Please note that after verifying that credentials are actually valid you may want to enumerate permissions of these credentials which is another story.
 
 ## [Branch.IO Key and Secret](https://docs.branch.io/pages/apps/deep-linking-api/#app-read)
 
-Visit the following URL to check for validity
+Visit the following URL to check for validity:
+
 ```
 https://api2.branch.io/v1/app/KEY_HERE?branch_secret=SECRET_HERE
 ```
 
+## [Bing Maps API Key](https://docs.microsoft.com/en-us/bingmaps/rest-services/locations/find-a-location-by-address)
+
+Visit this link to check for the key's validity. A valid key's response should start with `authenticationResultCode:	"ValidCredentials"`
+
+```
+https://dev.virtualearth.net/REST/v1/Locations?CountryRegion=US&adminDistrict=WA&locality=Somewhere&postalCode=98001&addressLine=100%20Main%20St.&key=API_KEY
+```
+
 ## [Bit.ly Access token](https://dev.bitly.com/authentication.html)
 
-Visit the following URL to check for validity
+Visit the following URL to check for validity:
+
 ```
 https://api-ssl.bitly.com/v3/shorten?access_token=ACCESS_TOKEN&longUrl=https://www.google.com
 ```
@@ -367,7 +529,7 @@ curl --request GET --url 'https://<dc>.api.mailchimp.com/3.0/' --user 'anystring
 
 ## [WPEngine API Key](https://wpengineapi.com/)
 
-This issue can be further exploited by checking out @hateshape 's gist [here](https://gist.github.com/hateshape/2e671ea71d7c243fac7ebf51fb738f0a)
+This issue can be further exploited by checking out [@hateshape](https://github.com/hateshape/)'s gist https://gist.github.com/hateshape/2e671ea71d7c243fac7ebf51fb738f0a.
 
 ```
 curl "https://api.wpengine.com/1.2/?method=site&account_name=ACCOUNT_NAME&wpe_apikey=WPENGINE_APIKEY"
@@ -394,11 +556,16 @@ curl "https://wakatime.com/api/v1/users/current/projects/?api_key=KEY_HERE"
 curl -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.spotify.com/v1/me
 ```
 
-## [Instagram Access Token](https://www.instagram.com/developer/endpoints/users/)
-Visit the following URL to check for validity
+## [Instagram Basic Display API Access Token](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)
+E.g.: IGQVJ...
 ```
-https://api.instagram.com/v1/users/self/?access_token=ACCESS-TOKEN
+curl -X GET 'https://graph.instagram.com/{user-id}?fields=id,username&access_token={access-token}'
+```
 
+## [Instagram Graph API Access Token](https://developers.facebook.com/docs/instagram-api/getting-started)
+E.g.: EAAJjmJ...
+```
+curl -i -X GET 'https://graph.facebook.com/v8.0/me/accounts?access_token={access-token}'
 ```
 
 ## [Gitlab personal access token](https://docs.gitlab.com/ee/api/README.html#personal-access-tokens)
@@ -413,27 +580,138 @@ curl -v https://api.sandbox.paypal.com/v1/oauth2/token \
    -H "Accept-Language: en_US" \
    -u "client_id:secret" \
    -d "grant_type=client_credentials"
-   ```
-Access token can be further used to extract data from the PayPal API. More information:
+```
 
-https://developer.paypal.com/docs/api/overview/#make-rest-api-calls
+The access token can be further used to extract data from the PayPal API. More information: https://developer.paypal.com/docs/api/overview/#make-rest-api-calls.
+
+This can be verified using:
+
+```
+curl -v -X GET "https://api.sandbox.paypal.com/v1/identity/oauth2/userinfo?schema=paypalv1.1" -H "Content-Type: application/json" -H "Authorization: Bearer [ACCESS_TOKEN]"
+```
 
 ## [Stripe Live Token](https://stripe.com/docs/api/authentication)
 
 ```
+curl https://api.stripe.com/v1/charges -u token_here:
+```
 
-curl https://api.stripe.com/v1/ 
-   -u token_here:
+Keep the colon at the end of the token to prevent `cURL` from requesting a password.
 
-   ``` 
+The token is always in the following format: `sk_live_24charshere`, where the `24charshere` part contains 24 characters from `a-z A-Z 0-9`. There is also a test key, which starts with `sk_test`, but this key is worthless since it is only used for testing purposes and most likely doesn't contain any sensitive information. The live key, on the other hand, can be used to extract/retrieve a lot of info — ranging from charges to the complete product list.
+
+Keep in mind that you will never be able to get the full credit card information since Stripe only gives you the last 4 digits.
+
+More info/complete documentation: https://stripe.com/docs/api/authentication.
+
+## [Razorpay API key and Secret key](https://razorpay.com/docs/api/)
+
+This can be verified using:
+
+```
+curl -u <YOUR_KEY_ID>:<YOUR_KEY_SECRET> \
+  https://api.razorpay.com/v1/payments
+```
+
+## [CircleCI Access Token](https://circleci.com/docs/api/#api-overview)
+
+```
+curl https://circleci.com/api/v1.1/me?circle-token=<TOKEN>
+```
+
+## [Loqate API key](https://www.loqate.com/resources/support/apis)
+
+```
+curl 'http://api.addressy.com/Capture/Interactive/Find/v1.00/json3.ws?Key=<KEY_HERE>&Countries=US,CA&Language=en&Limit=5&Text=BHAR'
+```
+
+## [Ipstack API Key](https://ipstack.com/documentation)
+
+```
+curl 'https://api.ipstack.com/{ip_address}?access_key={keyhere}'
+```
+
+## [NPM token](https://docs.npmjs.com/about-authentication-tokens)
+
+You can verify NPM token [using `npm`](https://medium.com/bugbountywriteup/one-token-to-leak-them-all-the-story-of-a-8000-npm-token-79b13af182a3) (replacing `00000000-0000-0000-0000-000000000000` with NPM token):
+
+```
+export NPM_TOKEN="00000000-0000-0000-0000-000000000000"
+echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+npm whoami
+```
+
+Another way to verify token is to query API directly:
+
+```
+curl -H 'authorization: Bearer 00000000-0000-0000-0000-000000000000' 'https://registry.npmjs.org/-/whoami'
+```
+
+You'll get username in response in case of success, `401 Unauthorized` in case if token doesn't exists and `403 Forbidden` in case if your IP address is not whitelisted.
+
+NPM token can be [CIDR-whitelisted](https://docs.npmjs.com/creating-and-viewing-authentication-tokens#creating-tokens-with-the-cli). Thus if you are using token from *non-whitelisted* CIDR you'll get `403 Forbidden` in response. So try to verify NPM token from different IP ranges!.
+
+P.S. Some companies [uses registries other than `registry.npmjs.org`](https://medium.com/bugbountywriteup/one-token-to-leak-them-all-the-story-of-a-8000-npm-token-79b13af182a3). If it's the case replace all `registry.npmjs.org` occurrences with domain name of company's NPM registry.
+
+## [Keen.io API Key](https://keen.io/docs/api/)
+
+Get all collections for a specific project:
+
+```
+curl "https://api.keen.io/3.0/projects/PROJECT_ID/events?api_key=READ_KEY"
+```
+
 >Note: Keep the colon at the end of the token to prevent cURL from requesting a password.
 Info: The token is always in the following format: sk_live_34charshere, where the 34charshere part contains 34 characters from a-z A-Z 0-9
 There is also a test key, which starts with sk_test, but this key is worthless since it is only used for testing purposes and most likely doesn't contain any sensitive info.
 The live key, on the other hand, can be used to extract/retrieve a lot of info. Going from charges, to the complete product list.
 Keep in mind that you will never be able to get the full credit card information since stripe only gives you like the last 4 digits.
 More info / complete docs: https://stripe.com/docs/api/authentication
+=======
 
-   ## [Visual Studio App Center API Token](https://docs.microsoft.com/en-us/appcenter/api-docs/)
+## [Calendly API Key](https://developer.calendly.com/docs/)
+
+Get user information:
+
+````
+curl --header "X-TOKEN: <your_token>" https://calendly.com/api/v1/users/me
+````
+
+List Webhook Subscriptions:
+
+````
+curl --header "X-TOKEN: <your_token>" https://calendly.com/api/v1/hooks
+````
+
+## [Azure Application Insights APP ID and API Key](https://dev.applicationinsights.io/reference)
+
+Get the total number of requests made in last 24 hours:
+
+```
+curl -H "x-api-key: {API_Key}" "https://api.applicationinsights.io/v1/apps/{APP_ID}/metrics/requests/count"
+```
+
+## [YouTube API Key](https://developers.google.com/youtube/v3/docs/)
+Fetch content details for a YouTube channel (The channelId in this case points to PewDiePie's channel).
+
+```
+curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key={KEY_HERE}'
+```
+
+## [Iterable API Key](https://api.iterable.com/api/docs)
+Export campaign analytics data in JSON format, one entry per line. Use of either 'range' or 'startDateTime' and 'endDateTime' is required.
+
+```
+curl -H "Api_Key: {API_KEY}" https://api.iterable.com/api/export/data.json?dataTypeName=emailSend&range=Today&onlyFields=List.empty
+```
+## [Amplitude API Keys](https://help.amplitude.com/hc/en-us/articles/205406637-Export-API-Export-Your-Project-s-Event-Data)
+The response is a zipped archive of JSON files, with potentially multiple files per hour. Note that events prior to 2014-11-12 will be grouped by day instead of by the hour. If you request data for a time range during which no data has been collected for the project, then you will receive a 404 response from the server.
+
+```
+curl -u API_Key:Secret_Key 'https://amplitude.com/api/2/export?start=20200201T5&end=20210203T20' >> yourfilename.zip
+```
+
+## [Visual Studio App Center API Token](https://docs.microsoft.com/en-us/appcenter/api-docs/)
    
    1. List all the app projects for the API Token:
   ```
