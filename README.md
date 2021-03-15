@@ -9,14 +9,18 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 # Table of Contents
 
+- [ABTasty API Key](#ABTasty-API-Key)
 - [Algolia API key](#Algolia-API-key)
+- [Amplitude API Keys](#Amplitude-API-Keys)
 - [Asana Access token](#Asana-Access-Token)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
 - [Azure Application Insights APP ID and API Key](#Azure-Application-Insights-APP-ID-and-API-Key)
+- [Bing Maps API Key](#Bing-Maps-API-Key)
 - [Bit.ly Access token](#Bitly-Access-token)
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
 - [BrowserStack Access Key](#BrowserStack-Access-Key)
 - [Buildkite Access token](#Buildkite-Access-token)
+- [ButterCMS API Key](#ButterCMS-API-Key)
 - [Calendly API Key](#Calendly-API-Key)
 - [CircleCI Access Token](#CircleCI-Access-Token)
 - [Cypress record key](#Cypress-record-key)
@@ -41,9 +45,11 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Instagram Basic Display API](#Instagram-Basic-Display-API-Access-Token)
 - [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
 - [Ipstack API Key](#Ipstack-API-Key)
-- [JumpCloud API key](#JumpCloud-API-Key)
-- [Keen.io API key](#Keenio-API-Key)
+- [Iterable API Key](#Iterable-API-Key)
+- [JumpCloud API Key](#JumpCloud-API-Key)
+- [Keen.io API Key](#Keenio-API-Key)
 - [Loqate API Key](#Loqate-API-key)
+- [Lokalise API Key](#Lokalise-API-Key)
 - [MailChimp API Key](#MailChimp-API-Key)
 - [MailGun Private Key](#MailGun-Private-Key)
 - [Mapbox API key](#Mapbox-API-Key)
@@ -70,11 +76,19 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Twitter Bearer token](#Twitter-Bearer-token)
 - [WakaTime API Key](#WakaTime-API-Key)
 - [WPEngine API Key](#WPEngine-API-Key)
+- [YouTube API Key](#YouTube-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
+- [Spotify Access Token](#Spotify-Access-Token)
+- [Instagram Access Token](#Instagram-Access-Token)
+- [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
+- [Gitlab personal access token](#Gitlab-personal-access-token)
+- [Stripe Live Token](#Stripe-Live-Token)
+- [Visual Studio App Center API Token](#Visual-Studio-App-Center-API-Token)
 
 
 # Detailed Information
+
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
 
 If the below command returns `missing_text_or_fallback_or_attachments`, it means that the URL is valid, any other responses would mean that the URL is invalid.
@@ -249,6 +263,11 @@ cd  enumerate-iam
 ./enumerate-iam.py --access-key AKIA... --secret-key StF0q...
 ```
 
+## [Lokalise API Key](https://app.lokalise.com/api2docs/curl/#resource-authentication)
+```curl --request GET \
+  --url https://api.lokalise.com/api2/projects/ \
+  --header 'x-api-token: [API-KEY-HERE]'
+```
 
 ## [MailGun Private Key](https://documentation.mailgun.com/en/latest/api_reference.html)
 ```
@@ -262,9 +281,23 @@ This requires the API key in 'user@yourcompany.com', pass in 'test' and 'domain.
 
 ```
 ## [JumpCloud API Key](https://docs.jumpcloud.com/1.0/authentication-and-authorization/authentication-and-authorization-overview)
+
+#### [v1](https://docs.jumpcloud.com/1.0/systemusers)
 ```
 List systems:
 curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systems"
+curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/systemusers"
+curl -H "x-api-key: APIKEYHERE" "https://console.jumpcloud.com/api/applications"
+```
+
+#### [v2](https://docs.jumpcloud.com/2.0/systems/list-the-associations-of-a-system)
+
+```
+List systems:
+curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/memberof \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'x-api-key: {API_KEY}'
 ```
 
 ## Microsoft Azure Tenant
@@ -465,6 +498,14 @@ Visit the following URL to check for validity:
 https://api2.branch.io/v1/app/KEY_HERE?branch_secret=SECRET_HERE
 ```
 
+## [Bing Maps API Key](https://docs.microsoft.com/en-us/bingmaps/rest-services/locations/find-a-location-by-address)
+
+Visit this link to check for the key's validity. A valid key's response should start with `authenticationResultCode:	"ValidCredentials"`
+
+```
+https://dev.virtualearth.net/REST/v1/Locations?CountryRegion=US&adminDistrict=WA&locality=Somewhere&postalCode=98001&addressLine=100%20Main%20St.&key=API_KEY
+```
+
 ## [Bit.ly Access token](https://dev.bitly.com/authentication.html)
 
 Visit the following URL to check for validity:
@@ -477,6 +518,11 @@ https://api-ssl.bitly.com/v3/shorten?access_token=ACCESS_TOKEN&longUrl=https://w
 ```
 curl -H "Authorization: Bearer ACCESS_TOKEN" \
 https://api.buildkite.com/v2/user
+```
+
+## [ButterCMS-API-Key](https://buttercms.com/docs/api/#authentication)
+```
+curl -X GET 'https://api.buttercms.com/v2/posts/?auth_token=your_api_token'
 ```
 
 ## [Asana Access token](https://asana.com/developers/documentation/getting-started/auth#personal-access-token)
@@ -629,6 +675,13 @@ Get all collections for a specific project:
 curl "https://api.keen.io/3.0/projects/PROJECT_ID/events?api_key=READ_KEY"
 ```
 
+>Note: Keep the colon at the end of the token to prevent cURL from requesting a password.
+Info: The token is always in the following format: sk_live_34charshere, where the 34charshere part contains 34 characters from a-z A-Z 0-9
+There is also a test key, which starts with sk_test, but this key is worthless since it is only used for testing purposes and most likely doesn't contain any sensitive info.
+The live key, on the other hand, can be used to extract/retrieve a lot of info. Going from charges, to the complete product list.
+Keep in mind that you will never be able to get the full credit card information since stripe only gives you like the last 4 digits.
+More info / complete docs: https://stripe.com/docs/api/authentication
+=======
 
 ## [Calendly API Key](https://developer.calendly.com/docs/)
 
@@ -666,6 +719,49 @@ curl -i -s -k -X $'POST' \
 Yes, this request needs to be that big. It'll return `200 OK` with some information about run in case if both `projectId` and `recordKey` are valid, `404 Not Found` with `{"message":"Project not found. Invalid projectId."}` if `projectId` is invalid or `401 Unauthorized` with `{"message":"Invalid Record Key."}` if `recordKey` is invalid.
 
 Example of `projectId` is `1yxykz` and example of `recordKey` is `a216e7b4-4819-4713-b9c2-c5da60a1c48c`.
+
+## [YouTube API Key](https://developers.google.com/youtube/v3/docs/)
+Fetch content details for a YouTube channel (The channelId in this case points to PewDiePie's channel).
+
+```
+curl -iLk 'https://www.googleapis.com/youtube/v3/activities?part=contentDetails&maxResults=25&channelId=UC-lHJZR3Gqxm24_Vd_AJ5Yw&key={KEY_HERE}'
+```
+
+
+## [ABTasty API Key](https://developers.abtasty.com/server-side.html#authentication)
+
+```
+curl "api_endpoint_here" -H "x-api-key: your_api_key"
+```
+
+## [Iterable API Key](https://api.iterable.com/api/docs)
+Export campaign analytics data in JSON format, one entry per line. Use of either 'range' or 'startDateTime' and 'endDateTime' is required.
+
+```
+curl -H "Api_Key: {API_KEY}" https://api.iterable.com/api/export/data.json?dataTypeName=emailSend&range=Today&onlyFields=List.empty
+```
+## [Amplitude API Keys](https://help.amplitude.com/hc/en-us/articles/205406637-Export-API-Export-Your-Project-s-Event-Data)
+The response is a zipped archive of JSON files, with potentially multiple files per hour. Note that events prior to 2014-11-12 will be grouped by day instead of by the hour. If you request data for a time range during which no data has been collected for the project, then you will receive a 404 response from the server.
+
+```
+curl -u API_Key:Secret_Key 'https://amplitude.com/api/2/export?start=20200201T5&end=20210203T20' >> yourfilename.zip
+```
+
+## [Visual Studio App Center API Token](https://docs.microsoft.com/en-us/appcenter/api-docs/)
+   
+   1. List all the app projects for the API Token:
+  ```
+  curl -sX GET  "https://api.appcenter.ms/v0.1/apps" \
+ -H "Content-Type: application/json" \
+ -H "X-Api-Token: {your_api_token}"
+  ```
+   2. Fetch the latest app build information for a particular project:
+   > Use the `name` and `owner.name` obtained in response in Step [1](#438).
+  ```
+  curl -sX GET  "https://api.appcenter.ms/v0.1/apps/{owner.name}/{name}/releases/latest" \
+-H "Content-Type: application/json" \
+-H "X-Api-Token: {your_api_token}"
+  ```
 
 # Contributing
 
