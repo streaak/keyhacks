@@ -67,6 +67,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [SendGrid API Token](#SendGrid-API-Token)
 - [Slack API token](#Slack-API-token)
 - [Slack Webhook](#Slack-Webhook)
+- [Sonarcloud](#Sonarcloud-Token)
 - [Spotify Access Token](#Spotify-Access-Token)
 - [Square](#Square)
 - [Stripe Live Token](#Stripe-Live-Token)
@@ -563,6 +564,11 @@ curl -H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.tr
 ## [WakaTime API Key](https://wakatime.com/developers)
 ```
 curl "https://wakatime.com/api/v1/users/current/projects/?api_key=KEY_HERE"
+```
+
+## [Sonarcloud Token](https://sonarcloud.io/web_api)
+```
+curl -u <token>: "https://sonarcloud.io/api/authentication/validate"
 ```
 
 ## [Spotify Access Token](https://developer.spotify.com/documentation/general/guides/authorization-guide/)
