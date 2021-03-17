@@ -23,6 +23,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [ButterCMS API Key](#ButterCMS-API-Key)
 - [Calendly API Key](#Calendly-API-Key)
 - [CircleCI Access Token](#CircleCI-Access-Token)
+- [Cypress record key](#Cypress-record-key)
 - [DataDog API key](#DataDog-API-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
@@ -458,7 +459,7 @@ https://www.google.com/recaptcha/api/siteverify
 
 Regular expression: `^6[0-9a-zA-Z_-]{39}$`. The API key always starts with a 6 and is 40 chars long. Read more here: https://developers.google.com/recaptcha/docs/verify.
 
-## [Google Cloud Service Account credentials](https://cloud.google.com/docs/authentication/production) 
+## [Google Cloud Service Account credentials](https://cloud.google.com/docs/authentication/production)
 
 Service Account credentials may be found in a JSON file like this:
 
@@ -703,6 +704,21 @@ Get the total number of requests made in last 24 hours:
 ```
 curl -H "x-api-key: {API_Key}" "https://api.applicationinsights.io/v1/apps/{APP_ID}/metrics/requests/count"
 ```
+
+## [Cypress record key](https://docs.cypress.io/guides/dashboard/projects.html#Record-key)
+
+In order to check `recordKey` validity you'll need `projectId` which is public value that usually can be found at `cypress.json` file. Replace `{recordKey}` and `{projectId}` in JSON body with your values.
+
+```
+curl -i -s -k -X $'POST' \
+    -H $'x-route-version: 4' -H $'x-os-name: darwin' -H $'x-cypress-version: 5.5.0' -H $'host: api.cypress.io' -H $'accept: application/json' -H $'content-type: application/json' -H $'Content-Length: 1433' -H $'Connection: close' \
+    --data-binary $'{\"ci\":{\"params\":null,\"provider\":null},\"specs\":[\"cypress/integration/examples/actions.spec.js\",\"cypress/integration/examples/aliasing.spec.js\",\"cypress/integration/examples/assertions.spec.js\",\"cypress/integration/examples/connectors.spec.js\",\"cypress/integration/examples/cookies.spec.js\",\"cypress/integration/examples/cypress_api.spec.js\",\"cypress/integration/examples/files.spec.js\",\"cypress/integration/examples/local_storage.spec.js\",\"cypress/integration/examples/location.spec.js\",\"cypress/integration/examples/misc.spec.js\",\"cypress/integration/examples/navigation.spec.js\",\"cypress/integration/examples/network_requests.spec.js\",\"cypress/integration/examples/querying.spec.js\",\"cypress/integration/examples/spies_stubs_clocks.spec.js\",\"cypress/integration/examples/traversal.spec.js\",\"cypress/integration/examples/utilities.spec.js\",\"cypress/integration/examples/viewport.spec.js\",\"cypress/integration/examples/waiting.spec.js\",\"cypress/integration/examples/window.spec.js\"],\"commit\":{\"sha\":null,\"branch\":null,\"authorName\":null,\"authorEmail\":null,\"message\":null,\"remoteOrigin\":null,\"defaultBranch\":null},\"group\":null,\"platform\":{\"osCpus\":[],\"osName\":\"darwin\",\"osMemory\":{\"free\":1153744896,\"total\":17179869184},\"osVersion\":\"19.6.0\",\"browserName\":\"Electron\",\"browserVersion\":\"85.0.4183.121\"},\"parallel\":null,\"ciBuildId\":null,\"projectId\":\"{projectId}\",\"recordKey\":\"{recordKey}\",\"specPattern\":null,\"tags\":[\"\"]}' \
+    $'https://api.cypress.io/runs'
+```
+
+Yes, this request needs to be that big. It'll return `200 OK` with some information about run in case if both `projectId` and `recordKey` are valid, `404 Not Found` with `{"message":"Project not found. Invalid projectId."}` if `projectId` is invalid or `401 Unauthorized` with `{"message":"Invalid Record Key."}` if `recordKey` is invalid.
+
+Example of `projectId` is `1yxykz` and example of `recordKey` is `a216e7b4-4819-4713-b9c2-c5da60a1c48c`.
 
 ## [YouTube API Key](https://developers.google.com/youtube/v3/docs/)
 Fetch content details for a YouTube channel (The channelId in this case points to PewDiePie's channel).
