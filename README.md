@@ -86,6 +86,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Gitlab personal access token](#Gitlab-personal-access-token)
 - [Stripe Live Token](#Stripe-Live-Token)
 - [Visual Studio App Center API Token](#Visual-Studio-App-Center-API-Token)
+- [WeGlot Api Key](#weglot-api-key)
 
 
 # Detailed Information
@@ -768,6 +769,25 @@ curl -u API_Key:Secret_Key 'https://amplitude.com/api/2/export?start=20200201T5&
 -H "Content-Type: application/json" \
 -H "X-Api-Token: {your_api_token}"
   ```
+
+## [WeGlot Api Key](https://weglot.com/)
+   
+
+```
+curl -X POST \
+  'https://api.weglot.com/translate?api_key=my_api_key' \
+  -H 'Content-Type: application/json' \
+  -d '{  
+   "l_from":"en",
+   "l_to":"fr",
+   "request_url":"https://www.website.com/",
+   "words":[  
+      {"w":"This is a blue car", "t": 1},
+      {"w":"This is a black car", "t": 1}
+   ]
+}'
+```
+
 
 # Contributing
 
