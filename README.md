@@ -61,6 +61,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Pagerduty API token](#Pagerduty-API-token)
 - [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
 - [Pendo Integration Key](#Pendo-Integration-Key)
+- [PivotalTracker API Token](#PivotalTracker-API-Token)
 - [Razorpay API key and secret key](#Razorpay-keys)
 - [Salesforce API key](#Salesforce-API-key)
 - [SauceLabs Username and access Key](#SauceLabs-Username-and-access-Key)
@@ -788,6 +789,21 @@ curl -X POST \
 }'
 ```
 
+## [PivotalTracker API Token](https://www.pivotaltracker.com/)
+
+   1. List User Information with API Token:
+   ```
+   curl -s -X GET -H "X-TrackerToken: {API TOKEN}" "https://www.pivotaltracker.com/services/v5/me -o pivotaltracker.json"
+   ```
+   
+   1. Obtain API Token with Valid User Credentials:
+   ```
+   curl -s -X GET --user 'USER:PASSWORD' "https://www.pivotaltracker.com/services/v5/me -o pivotaltracker.json"
+   jq --raw-output .api_token pivotaltracker.json
+   ```
+ 
+
+```
 
 # Contributing
 
