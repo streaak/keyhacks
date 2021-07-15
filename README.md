@@ -801,9 +801,6 @@ curl -X POST \
    curl -s -X GET --user 'USER:PASSWORD' "https://www.pivotaltracker.com/services/v5/me -o pivotaltracker.json"
    jq --raw-output .api_token pivotaltracker.json
    ```
- 
-
-```
 
 # Contributing
 
