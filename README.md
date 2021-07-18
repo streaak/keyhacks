@@ -274,7 +274,7 @@ cd  enumerate-iam
 
 ## [MailGun Private Key](https://documentation.mailgun.com/en/latest/api_reference.html)
 ```
-curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
+curl --user 'api:YOUR_API_KEY' "https://api.mailgun.net/v3/domains"
 ```
 
 ## [FreshDesk API Key](https://developers.freshdesk.com/api/#getting-started)
