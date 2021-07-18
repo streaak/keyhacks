@@ -560,7 +560,7 @@ curl "https://api.datadoghq.com/api/v1/dashboard?api_key=<api_key>&application_k
 ## [Travis CI API token](https://developer.travis-ci.com/gettingstarted)
 
 ```
-curl -H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.travis-ci.com/user
+curl -H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.travis-ci.org/repos
 ```
 
 ## [WakaTime API Key](https://wakatime.com/developers)
