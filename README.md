@@ -789,7 +789,7 @@ curl -X POST \
 }'
 ```
 
-## [PivotalTracker API Token](https://www.pivotaltracker.com/)
+## [PivotalTracker API Token](https://www.pivotaltracker.com/help/api/#top)
 
    1. List User Information with API Token:
    ```
