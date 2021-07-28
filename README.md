@@ -201,7 +201,7 @@ curl -X GET https://app.pendo.io/api/v1/feature -H 'content-type: application/js
 curl -X GET https://app.pendo.io/api/v1/metadata/schema/account -H 'content-type: application/json' -H 'x-pendo-integration-key:KEY_HERE'
 ```
 
-## [SendGrid API Token](https://sendgrid.com/docs/API_Reference/api_v3.html)
+## [SendGrid API Token](https://docs.sendgrid.com/api-reference)
 ```
 curl -X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SENDGRID_TOKEN-HERE" -H "Content-Type: application/json"
 ```
