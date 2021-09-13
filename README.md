@@ -270,7 +270,7 @@ cd  enumerate-iam
 
 ## [MailGun Private Key](https://documentation.mailgun.com/en/latest/api_reference.html)
 ```
-curl --user 'api:key-PRIVATEKEYHERE' "https://api.mailgun.net/v3/domains"
+curl --user 'api:YOUR_API_KEY' "https://api.mailgun.net/v3/domains"
 ```
 
 ## [FreshDesk API Key](https://developers.freshdesk.com/api/#getting-started)
@@ -556,7 +556,7 @@ curl "https://api.datadoghq.com/api/v1/dashboard?api_key=<api_key>&application_k
 ## [Travis CI API token](https://developer.travis-ci.com/gettingstarted)
 
 ```
-curl -H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.travis-ci.com/user
+curl -H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.travis-ci.org/repos
 ```
 
 ## [WakaTime API Key](https://wakatime.com/developers)
@@ -785,7 +785,7 @@ curl -X POST \
 }'
 ```
 
-## [PivotalTracker API Token](https://www.pivotaltracker.com/help/api/rest/v5)
+## [PivotalTracker API Token](https://www.pivotaltracker.com/help/api/#top)
 
    1. List User Information with API Token:
    ```
