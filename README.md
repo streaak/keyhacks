@@ -785,11 +785,11 @@ curl -X POST \
 }'
 ```
 
-## [PivotalTracker API Token](https://www.pivotaltracker.com/)
+## [PivotalTracker API Token](https://www.pivotaltracker.com/help/api/rest/v5)
 
    1. List User Information with API Token:
    ```
-   curl -s -X GET -H "X-TrackerToken: {API TOKEN}" "https://www.pivotaltracker.com/services/v5/me -o pivotaltracker.json"
+   curl -X GET -H "X-TrackerToken: $TOKEN" "https://www.pivotaltracker.com/services/v5/me?fields=%3Adefault"
    ```
    
    1. Obtain API Token with Valid User Credentials:
