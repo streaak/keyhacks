@@ -31,25 +31,26 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Facebook Access Token](#Facebook-Access-Token)
 - [Facebook AppSecret](#Facebook-AppSecret)
 - [Firebase](#Firebase)
+- [Firebase Cloud Messaging (FCM)](#Firebase-Cloud-Messaging)
 - [FreshDesk API Key](#FreshDesk-API-key)
 - [Github client id and client secret](#Github-client-id-and-client-secret)
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
 - [Gitlab personal access token](#Gitlab-personal-access-token)
-- [Firebase Cloud Messaging (FCM)](#Firebase-Cloud-Messaging)
+- [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
-- [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
+- [Instagram Access Token](#Instagram-Access-Token)
 - [Instagram Basic Display API](#Instagram-Basic-Display-API-Access-Token)
 - [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
 - [Ipstack API Key](#Ipstack-API-Key)
 - [Iterable API Key](#Iterable-API-Key)
 - [JumpCloud API Key](#JumpCloud-API-Key)
 - [Keen.io API Key](#Keenio-API-Key)
-- [Loqate API Key](#Loqate-API-key)
 - [Lokalise API Key](#Lokalise-API-Key)
+- [Loqate API Key](#Loqate-API-key)
 - [MailChimp API Key](#MailChimp-API-Key)
 - [MailGun Private Key](#MailGun-Private-Key)
 - [Mapbox API key](#Mapbox-API-Key)
@@ -76,18 +77,13 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Twilio Account_sid and Auth token](#Twilio-Account_sid-and-Auth-token)
 - [Twitter API Secret](#Twitter-API-Secret)
 - [Twitter Bearer token](#Twitter-Bearer-token)
+- [Visual Studio App Center API Token](#Visual-Studio-App-Center-API-Token)
 - [WakaTime API Key](#WakaTime-API-Key)
+- [WeGlot Api Key](#weglot-api-key)
 - [WPEngine API Key](#WPEngine-API-Key)
 - [YouTube API Key](#YouTube-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
-- [Spotify Access Token](#Spotify-Access-Token)
-- [Instagram Access Token](#Instagram-Access-Token)
-- [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
-- [Gitlab personal access token](#Gitlab-personal-access-token)
-- [Stripe Live Token](#Stripe-Live-Token)
-- [Visual Studio App Center API Token](#Visual-Studio-App-Center-API-Token)
-- [WeGlot Api Key](#weglot-api-key)
 
 
 # Detailed Information
@@ -201,7 +197,7 @@ curl -X GET https://app.pendo.io/api/v1/feature -H 'content-type: application/js
 curl -X GET https://app.pendo.io/api/v1/metadata/schema/account -H 'content-type: application/json' -H 'x-pendo-integration-key:KEY_HERE'
 ```
 
-## [SendGrid API Token](https://sendgrid.com/docs/API_Reference/api_v3.html)
+## [SendGrid API Token](https://docs.sendgrid.com/api-reference)
 ```
 curl -X "GET" "https://api.sendgrid.com/v3/scopes" -H "Authorization: Bearer SENDGRID_TOKEN-HERE" -H "Content-Type: application/json"
 ```
@@ -793,7 +789,7 @@ curl -X POST \
 
    1. List User Information with API Token:
    ```
-   curl -s -X GET -H "X-TrackerToken: {API TOKEN}" "https://www.pivotaltracker.com/services/v5/me -o pivotaltracker.json"
+   curl -X GET -H "X-TrackerToken: $TOKEN" "https://www.pivotaltracker.com/services/v5/me?fields=%3Adefault"
    ```
    
    1. Obtain API Token with Valid User Credentials:
