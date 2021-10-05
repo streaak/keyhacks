@@ -40,6 +40,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
+- [HashiCorp Vault token](#HashiCorp-Vault-token)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
 - [Instagram Access Token](#Instagram-Access-Token)
@@ -797,6 +798,11 @@ curl -X POST \
    curl -s -X GET --user 'USER:PASSWORD' "https://www.pivotaltracker.com/services/v5/me -o pivotaltracker.json"
    jq --raw-output .api_token pivotaltracker.json
    ```
+
+## [HashiCorp Vault Token](https://www.vaultproject.io/api/auth/token)
+```
+curl -s -H "X-Vault-Token: <your_token>" "https://vault.example.com/v1/auth/token/lookup-self"
+```
 
 # Contributing
 
