@@ -84,8 +84,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [YouTube API Key](#YouTube-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
-
-
+- [Contentful API KEYS](#Contentful-API-KEYS)
 # Detailed Information
 
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
@@ -797,6 +796,10 @@ curl -X POST \
    curl -s -X GET --user 'USER:PASSWORD' "https://www.pivotaltracker.com/services/v5/me -o pivotaltracker.json"
    jq --raw-output .api_token pivotaltracker.json
    ```
+## [Contentful API KEYS] (https://www.contentful.com/developers/docs/references/content-delivery-api/)
+1. If you have contentful space id , delivery api token or preview api token then you can access their base api path to access their particular enviroment contentful data.
+2. curl -X GET 'https://cdn.contentful.com/spaces/{SPACE_ID}/enviroments/master/entries?access_token={API_KEY}'
+3. API KEY can be contentful delivery or preview api key.
 
 # Contributing
 
