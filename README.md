@@ -50,6 +50,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Iterable API Key](#Iterable-API-Key)
 - [JumpCloud API Key](#JumpCloud-API-Key)
 - [Keen.io API Key](#Keenio-API-Key)
+- [LinkedIn OAUTH](#LinkedIn-OAUTH)
 - [Lokalise API Key](#Lokalise-API-Key)
 - [Loqate API Key](#Loqate-API-key)
 - [MailChimp API Key](#MailChimp-API-Key)
@@ -819,7 +820,12 @@ curl -X POST \
    curl -s -X GET --user 'USER:PASSWORD' "https://www.pivotaltracker.com/services/v5/me -o pivotaltracker.json"
    jq --raw-output .api_token pivotaltracker.json
    ```
+## [LinkedIn OAUTH](https://docs.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow?context=linkedin/context)
+A successful access token request returns a JSON object containing access_token, expires_in.
+```
+curl -XPOST -H "Content-type: application/x-www-form-urlencoded" -d 'grant_type=client_credentials&client_id=<client-ID>&client_secret=<client-secret>' 'https://www.linkedin.com/oauth/v2/accessToken'
 
+```
 # Contributing
 
 I welcome contributions from the public.
