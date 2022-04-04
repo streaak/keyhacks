@@ -25,6 +25,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [CircleCI Access Token](#CircleCI-Access-Token)
 - [Cypress record key](#Cypress-record-key)
 - [DataDog API key](#DataDog-API-key)
+- [Delighted API key](#Delighted-api-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
 - [Dropbox API](#Dropbox-API)
@@ -557,6 +558,14 @@ curl "https://api.wpengine.com/1.2/?method=site&account_name=ACCOUNT_NAME&wpe_ap
 ## [DataDog API key](https://docs.datadoghq.com/api/)
 ```
 curl "https://api.datadoghq.com/api/v1/dashboard?api_key=<api_key>&application_key=<application_key>"
+```
+
+## [Delighted API key](https://app.delighted.com/docs/api)
+Do not delete the `:` at the end.
+```
+curl https://api.delighted.com/v1/metrics.json \
+  -H "Content-Type: application/json" \
+  -u YOUR_DELIGHTED_API_KEY:
 ```
 
 ## [Travis CI API token](https://developer.travis-ci.com/gettingstarted)
