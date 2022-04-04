@@ -85,6 +85,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [YouTube API Key](#YouTube-API-Key)
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
+- [Zendesk API key](#Zendesk-api-key)
 
 
 # Detailed Information
@@ -540,6 +541,12 @@ curl -H "Authorization: Bearer ACCESS_TOKEN" https://app.asana.com/api/1.0/users
 ```
 curl https://{subdomain}.zendesk.com/api/v2/tickets.json \
   -H "Authorization: Bearer ACCESS_TOKEN"
+```
+
+## [Zendesk Api Key](https://developer.zendesk.com/api-reference/ticketing/introduction/)
+API tokens are different from OAuth tokens, API tokens are auto-generated passwords in the Support admin interface.
+```
+curl https://{target}.zendesk.com/api/v2/users.json \  -u support@{target}.com/token:{here your token}
 ```
 
 ## [MailChimp API Key](https://developer.mailchimp.com/documentation/mailchimp/reference/overview/)
