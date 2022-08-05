@@ -61,6 +61,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [New Relic Personal API Key (NerdGraph)](#New-Relic-Personal-API-Key-(NerdGraph))
 - [New Relic REST API](#New-Relic-REST-API)
 - [NPM token](#NPM-token)
+- [OpsGenie API Key](#OpsGenie-API-Key)
 - [Pagerduty API token](#Pagerduty-API-token)
 - [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
 - [Pendo Integration Key](#Pendo-Integration-Key)
@@ -693,6 +694,11 @@ You'll get username in response in case of success, `401 Unauthorized` in case i
 NPM token can be [CIDR-whitelisted](https://docs.npmjs.com/creating-and-viewing-authentication-tokens#creating-tokens-with-the-cli). Thus if you are using token from *non-whitelisted* CIDR you'll get `403 Forbidden` in response. So try to verify NPM token from different IP ranges!.
 
 P.S. Some companies [uses registries other than `registry.npmjs.org`](https://medium.com/bugbountywriteup/one-token-to-leak-them-all-the-story-of-a-8000-npm-token-79b13af182a3). If it's the case replace all `registry.npmjs.org` occurrences with domain name of company's NPM registry.
+
+## [OpsGenie API Key](https://docs.opsgenie.com/docs/api-overview)
+```
+curl https://api.opsgenie.com/v2/alerts -H 'Authorization: GenieKey API_KEY'
+```
 
 ## [Keen.io API Key](https://keen.io/docs/api/)
 
