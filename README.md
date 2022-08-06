@@ -43,6 +43,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Google Recaptcha key](#Google-Recaptcha-key)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
+- [Infura API key](#Infura-API-key)
 - [Instagram Access Token](#Instagram-Access-Token)
 - [Instagram Basic Display API](#Instagram-Basic-Display-API-Access-Token)
 - [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
@@ -182,6 +183,11 @@ Get all contact details:
 ```
 https://api.hubapi.com/contacts/v1/lists/all/contacts/all?hapikey={keyhere}
 
+```
+
+## [Infura API key](https://docs.infura.io/infura/networks/ethereum/how-to/secure-a-project/project-id)
+```
+curl https://mainnet.infura.io/v3/<YOUR-API-KEY> -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1}'
 ```
 
 ## [Deviant Art Secret](https://www.deviantart.com/developers/authentication)
