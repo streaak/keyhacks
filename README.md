@@ -15,6 +15,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Asana Access token](#Asana-Access-Token)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
 - [Azure Application Insights APP ID and API Key](#Azure-Application-Insights-APP-ID-and-API-Key)
+- [Bazaarvoice Passkey](#Bazaarvoice-Passkey)
 - [Bing Maps API Key](#Bing-Maps-API-Key)
 - [Bit.ly Access token](#Bitly-Access-token)
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
@@ -38,12 +39,14 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
 - [Gitlab personal access token](#Gitlab-personal-access-token)
+- [GitLab runner registration token](#Gitlab-runner-registration-token)
 - [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
 - [Help Scout OAUTH](#Help-Scout-OAUTH)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
+- [Infura API key](#Infura-API-key)
 - [Instagram Access Token](#Instagram-Access-Token)
 - [Instagram Basic Display API](#Instagram-Basic-Display-API-Access-Token)
 - [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
@@ -62,6 +65,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [New Relic Personal API Key (NerdGraph)](#New-Relic-Personal-API-Key-(NerdGraph))
 - [New Relic REST API](#New-Relic-REST-API)
 - [NPM token](#NPM-token)
+- [OpsGenie API Key](#OpsGenie-API-Key)
 - [Pagerduty API token](#Pagerduty-API-token)
 - [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
 - [Pendo Integration Key](#Pendo-Integration-Key)
@@ -70,6 +74,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Salesforce API key](#Salesforce-API-key)
 - [SauceLabs Username and access Key](#SauceLabs-Username-and-access-Key)
 - [SendGrid API Token](#SendGrid-API-Token)
+- [Shodan.io](#Shodan-Api-Key)
 - [Slack API token](#Slack-API-token)
 - [Slack Webhook](#Slack-Webhook)
 - [Sonarcloud](#Sonarcloud-Token)
@@ -183,6 +188,11 @@ Get all contact details:
 ```
 https://api.hubapi.com/contacts/v1/lists/all/contacts/all?hapikey={keyhere}
 
+```
+
+## [Infura API key](https://docs.infura.io/infura/networks/ethereum/how-to/secure-a-project/project-id)
+```
+curl https://mainnet.infura.io/v3/<YOUR-API-KEY> -X POST -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_accounts","params":[],"id":1}'
 ```
 
 ## [Deviant Art Secret](https://www.deviantart.com/developers/authentication)
@@ -615,6 +625,22 @@ curl -i -X GET 'https://graph.facebook.com/v8.0/me/accounts?access_token={access
 curl "https://gitlab.example.com/api/v4/projects?private_token=<your_access_token>"
 ```
 
+## [GitLab runner registration token](https://docs.gitlab.com/runner/register/)
+```
+docker run --rm gitlab/gitlab-runner register \
+  --non-interactive \
+  --executor "docker" \
+  --docker-image alpine:latest \
+  --url "https://gitlab.com/" \
+  --registration-token "PROJECT_REGISTRATION_TOKEN" \
+  --description "keyhacks-test" \
+  --maintenance-note "Testing token with keyhacks" \
+  --tag-list "docker,aws" \
+  --run-untagged="true" \
+  --locked="false" \
+  --access-level="not_protected"
+```
+
 ## [Paypal client id and secret key](https://developer.paypal.com/docs/api/get-an-access-token-curl/)
 ```
 curl -v https://api.sandbox.paypal.com/v1/oauth2/token \
@@ -694,6 +720,11 @@ You'll get username in response in case of success, `401 Unauthorized` in case i
 NPM token can be [CIDR-whitelisted](https://docs.npmjs.com/creating-and-viewing-authentication-tokens#creating-tokens-with-the-cli). Thus if you are using token from *non-whitelisted* CIDR you'll get `403 Forbidden` in response. So try to verify NPM token from different IP ranges!.
 
 P.S. Some companies [uses registries other than `registry.npmjs.org`](https://medium.com/bugbountywriteup/one-token-to-leak-them-all-the-story-of-a-8000-npm-token-79b13af182a3). If it's the case replace all `registry.npmjs.org` occurrences with domain name of company's NPM registry.
+
+## [OpsGenie API Key](https://docs.opsgenie.com/docs/api-overview)
+```
+curl https://api.opsgenie.com/v2/alerts -H 'Authorization: GenieKey API_KEY'
+```
 
 ## [Keen.io API Key](https://keen.io/docs/api/)
 
@@ -828,6 +859,7 @@ curl -XPOST -H "Content-type: application/x-www-form-urlencoded" -d 'grant_type=
 
 ```
 
+
 ## [Help Scout OAUTH](https://developer.helpscout.com/mailbox-api/overview/authentication/)
 A successful access token request returns a JSON object containing token_type, access_token, expires_in.
 ```
@@ -835,6 +867,20 @@ curl -X POST https://api.helpscout.net/v2/oauth2/token \
     --data "grant_type=client_credentials" \
     --data "client_id={application_id}" \
     --data "client_secret={application_secret}"
+```
+
+
+## [Shodan Api Key](https://developer.shodan.io/api/requirements)
+```
+curl "https://api.shodan.io/shodan/host/8.8.8.8?key=TOKEN_HERE"
+```
+
+
+## [Bazaarvoice Passkey](https://developer.bazaarvoice.com/conversations-api/home)
+A Successful Passkey Request returns a JSON object containing company name
+```
+curl 'https://which-cpv-api.bazaarvoice.com/clientInfo?conversationspasskey=<Passkey>' --insecure 
+
 ```
 
 # Contributing
