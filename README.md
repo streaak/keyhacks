@@ -73,6 +73,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Salesforce API key](#Salesforce-API-key)
 - [SauceLabs Username and access Key](#SauceLabs-Username-and-access-Key)
 - [SendGrid API Token](#SendGrid-API-Token)
+- [Shodan.io](#Shodan-Api-Key)
 - [Slack API token](#Slack-API-token)
 - [Slack Webhook](#Slack-Webhook)
 - [Sonarcloud](#Sonarcloud-Token)
@@ -856,12 +857,21 @@ A successful access token request returns a JSON object containing access_token,
 curl -XPOST -H "Content-type: application/x-www-form-urlencoded" -d 'grant_type=client_credentials&client_id=<client-ID>&client_secret=<client-secret>' 'https://www.linkedin.com/oauth/v2/accessToken'
 
 ```
+
+
+## [Shodan Api Key](https://developer.shodan.io/api/requirements)
+```
+curl "https://api.shodan.io/shodan/host/8.8.8.8?key=TOKEN_HERE"
+```
+
+
 ## [Bazaarvoice Passkey](https://developer.bazaarvoice.com/conversations-api/home)
 A Successful Passkey Request returns a JSON object containing company name
 ```
 curl 'https://which-cpv-api.bazaarvoice.com/clientInfo?conversationspasskey=<Passkey>' --insecure 
 
 ```
+
 # Contributing
 
 I welcome contributions from the public.
