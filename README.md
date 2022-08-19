@@ -15,6 +15,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Asana Access token](#Asana-Access-Token)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
 - [Azure Application Insights APP ID and API Key](#Azure-Application-Insights-APP-ID-and-API-Key)
+- [Bazaarvoice Passkey](#Bazaarvoice-Passkey)
 - [Bing Maps API Key](#Bing-Maps-API-Key)
 - [Bit.ly Access token](#Bitly-Access-token)
 - [Branch.io Key and Secret](#BranchIO-Key-and-Secret)
@@ -824,6 +825,12 @@ curl -X POST \
 A successful access token request returns a JSON object containing access_token, expires_in.
 ```
 curl -XPOST -H "Content-type: application/x-www-form-urlencoded" -d 'grant_type=client_credentials&client_id=<client-ID>&client_secret=<client-secret>' 'https://www.linkedin.com/oauth/v2/accessToken'
+
+```
+## [Bazaarvoice Passkey](https://developer.bazaarvoice.com/conversations-api/home)
+A Successful Passkey Request returns a JSON object containing company name
+```
+curl 'https://which-cpv-api.bazaarvoice.com/clientInfo?conversationspasskey=<Passkey>' --insecure 
 
 ```
 # Contributing
