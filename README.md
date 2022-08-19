@@ -43,6 +43,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
+- [Help Scout OAUTH](#Help-Scout-OAUTH)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
 - [Infura API key](#Infura-API-key)
@@ -856,6 +857,16 @@ A successful access token request returns a JSON object containing access_token,
 ```
 curl -XPOST -H "Content-type: application/x-www-form-urlencoded" -d 'grant_type=client_credentials&client_id=<client-ID>&client_secret=<client-secret>' 'https://www.linkedin.com/oauth/v2/accessToken'
 
+```
+
+
+## [Help Scout OAUTH](https://developer.helpscout.com/mailbox-api/overview/authentication/)
+A successful access token request returns a JSON object containing token_type, access_token, expires_in.
+```
+curl -X POST https://api.helpscout.net/v2/oauth2/token \
+    --data "grant_type=client_credentials" \
+    --data "client_id={application_id}" \
+    --data "client_secret={application_secret}"
 ```
 
 
