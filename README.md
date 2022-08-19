@@ -39,6 +39,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
 - [Gitlab personal access token](#Gitlab-personal-access-token)
+- [GitLab runner registration token](#Gitlab-runner-registration-token)
 - [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
@@ -613,6 +614,22 @@ curl -i -X GET 'https://graph.facebook.com/v8.0/me/accounts?access_token={access
 ## [Gitlab personal access token](https://docs.gitlab.com/ee/api/README.html#personal-access-tokens)
 ```
 curl "https://gitlab.example.com/api/v4/projects?private_token=<your_access_token>"
+```
+
+## [GitLab runner registration token](https://docs.gitlab.com/runner/register/)
+```
+docker run --rm gitlab/gitlab-runner register \
+  --non-interactive \
+  --executor "docker" \
+  --docker-image alpine:latest \
+  --url "https://gitlab.com/" \
+  --registration-token "PROJECT_REGISTRATION_TOKEN" \
+  --description "keyhacks-test" \
+  --maintenance-note "Testing token with keyhacks" \
+  --tag-list "docker,aws" \
+  --run-untagged="true" \
+  --locked="false" \
+  --access-level="not_protected"
 ```
 
 ## [Paypal client id and secret key](https://developer.paypal.com/docs/api/get-an-access-token-curl/)
