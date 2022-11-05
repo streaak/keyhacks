@@ -24,6 +24,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [ButterCMS API Key](#ButterCMS-API-Key)
 - [Calendly API Key](#Calendly-API-Key)
 - [CircleCI Access Token](#CircleCI-Access-Token)
+- [Cloudflare API key](#cloudflare-api-key)
 - [Cypress record key](#Cypress-record-key)
 - [DataDog API key](#DataDog-API-key)
 - [Delighted API key](#Delighted-api-key)
@@ -685,6 +686,13 @@ curl -u <YOUR_KEY_ID>:<YOUR_KEY_SECRET> \
 
 ```
 curl https://circleci.com/api/v1.1/me?circle-token=<TOKEN>
+```
+
+## [Cloudflare API key](https://api.cloudflare.com/#user-api-tokens-verify-token)
+
+```
+curl -X GET "https://api.cloudflare.com/client/v4/user/tokens/verify" \
+  -H "Authorization: Bearer <YOUR_API_TOKEN>"
 ```
 
 ## [Loqate API key](https://www.loqate.com/resources/support/apis)
