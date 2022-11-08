@@ -24,6 +24,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [ButterCMS API Key](#ButterCMS-API-Key)
 - [Calendly API Key](#Calendly-API-Key)
 - [CircleCI Access Token](#CircleCI-Access-Token)
+- [Cloudinary Basic Auth](#Cloudinary-Basic-Auth)
 - [Cypress record key](#Cypress-record-key)
 - [DataDog API key](#DataDog-API-key)
 - [Delighted API key](#Delighted-api-key)
@@ -34,7 +35,9 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Facebook AppSecret](#Facebook-AppSecret)
 - [Firebase](#Firebase)
 - [Firebase Cloud Messaging (FCM)](#Firebase-Cloud-Messaging)
+- [FileStack API key](#FileStack-API-key)
 - [FreshDesk API Key](#FreshDesk-API-key)
+- [Giphy API Key](#Giphy-API-Key)
 - [Github client id and client secret](#Github-client-id-and-client-secret)
 - [GitHub private SSH key](#GitHub-private-SSH-key)
 - [Github Token](#Github-Token)
@@ -427,6 +430,18 @@ curl --request PUT \
 curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"name":"streaak"}' "webhook_url_here"
 ```
 
+## [Cloudinary Basic Auth](https://cloudinary.com/documentation/admin_api)
+Auth details when hard coded in application looks very similar to this :
+
+https://<API_KEY>:<API_SECRET>@api.cloudinary.com/v1_1/<CLOUD_NAME>/resources/image
+
+```Bash
+curl "https://<basic>:<auth-details>@api.cloudinary.com/v1_1/<CLOUD_NAME>/resources/image"
+
+Example:
+curl "992338483313848:bCfgrMedsBlackAdam_8pI1k@api.cloudinary.com/v1_1/dfkx2e1y6/resources/image"
+```
+
 ## [Pagerduty API token](https://support.pagerduty.com/docs/using-the-api)
 ```
 curl -H "Accept: application/vnd.pagerduty+json;version=2"  -H "Authorization: Token token=TOKEN_HERE" -X GET  "https://api.pagerduty.com/schedules"
@@ -517,6 +532,13 @@ Visit the following URL to check for validity:
 https://api2.branch.io/v1/app/KEY_HERE?branch_secret=SECRET_HERE
 ```
 
+## [Giphy API Key](https://giphy.api-docs.io/1.0/gifs/trending-gifs)
+To verify api key we can simply request or visit in browser.
+```
+https://api.giphy.com/v1/gifs/trending?api_key=<YOUR KEY>
+```
+If it gives 200 then it means key is active and correct, if it is wrong it will give you 401 unauthorized error.
+
 ## [Bing Maps API Key](https://docs.microsoft.com/en-us/bingmaps/rest-services/locations/find-a-location-by-address)
 
 Visit this link to check for the key's validity. A valid key's response should start with `authenticationResultCode:	"ValidCredentials"`
@@ -547,6 +569,14 @@ curl -X GET 'https://api.buttercms.com/v2/posts/?auth_token=your_api_token'
 ## [Asana Access token](https://asana.com/developers/documentation/getting-started/auth#personal-access-token)
 ```
 curl -H "Authorization: Bearer ACCESS_TOKEN" https://app.asana.com/api/1.0/users/me
+```
+
+## [FileStack API key](https://www.filestack.com/docs/api/file/)
+You can confirm the key validity by running the below curl command.
+```
+curl -X POST \
+    -d url="https://assets.filestackapi.com/watermark.png" \
+    "https://www.filestackapi.com/api/store/S3?key=<MY_API_KEY>"
 ```
 
 ## [Zendesk Access token](https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application)
