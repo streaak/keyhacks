@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/18099289/56750563-558a9400-6784-11e9-8175-ee2a19ee9d75.png" width="300px">
-</p>
-</br>
 
 KeyHacks shows ways in which particular API keys found on a Bug Bounty Program can be used, to check if they are valid.
 
@@ -81,6 +77,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Spotify Access Token](#Spotify-Access-Token)
 - [Square](#Square)
 - [Stripe Live Token](#Stripe-Live-Token)
+- [Sentry Auth token](#sentry-auth-token)
 - [Travis CI API token](#Travis-CI-API-token)
 - [Twilio Account_sid and Auth token](#Twilio-Account_sid-and-Auth-token)
 - [Twitter API Secret](#Twitter-API-Secret)
@@ -93,6 +90,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Zapier Webhook Token](#Zapier-Webhook-Token)
 - [Zendesk Access token](#Zendesk-Access-Token)
 - [Zendesk API key](#Zendesk-api-key)
+
 
 
 # Detailed Information
@@ -881,6 +879,14 @@ A Successful Passkey Request returns a JSON object containing company name
 ```
 curl 'https://which-cpv-api.bazaarvoice.com/clientInfo?conversationspasskey=<Passkey>' --insecure 
 
+```
+## [sentry auth token](https://docs.sentry.io/api/)
+Return a list of projects available to the authenticated session.
+```
+
+curl https://sentry.io/api/0/projects/ \
+ -H 'Authorization: Bearer <auth_token>'
+ 
 ```
 
 # Contributing
