@@ -81,6 +81,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Spotify Access Token](#Spotify-Access-Token)
 - [Square](#Square)
 - [Stripe Live Token](#Stripe-Live-Token)
+- [Sentry Auth token](#sentry-auth-token)
 - [Travis CI API token](#Travis-CI-API-token)
 - [Twilio Account_sid and Auth token](#Twilio-Account_sid-and-Auth-token)
 - [Twitter API Secret](#Twitter-API-Secret)
@@ -881,6 +882,14 @@ A Successful Passkey Request returns a JSON object containing company name
 ```
 curl 'https://which-cpv-api.bazaarvoice.com/clientInfo?conversationspasskey=<Passkey>' --insecure 
 
+```
+## [sentry auth token](https://docs.sentry.io/api/)
+Return a list of projects available to the authenticated session.
+```
+
+curl https://sentry.io/api/0/projects/ \
+ -H 'Authorization: Bearer <auth_token>'
+ 
 ```
 
 # Contributing
