@@ -43,6 +43,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
+- [Grafana Access Token](#Grafana-Access-Token)
 - [Help Scout OAUTH](#Help-Scout-OAUTH)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
@@ -881,6 +882,16 @@ A Successful Passkey Request returns a JSON object containing company name
 ```
 curl 'https://which-cpv-api.bazaarvoice.com/clientInfo?conversationspasskey=<Passkey>' --insecure 
 
+```
+
+## [Grafana Access Token](https://grafana.com/docs/grafana/latest/developers/http_api/user/)
+Grafana API supports Bearer and Basic authorisation schemes. Bearer:
+```
+curl -s -H "Authorization: Bearer your-api-key" http://your-grafana-server-url.com/api/user
+```
+Basic:
+```
+curl -u username:password http://your-grafana-server-url.com/api/user
 ```
 
 # Contributing
