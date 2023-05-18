@@ -24,6 +24,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [ButterCMS API Key](#ButterCMS-API-Key)
 - [Calendly API Key](#Calendly-API-Key)
 - [CircleCI Access Token](#CircleCI-Access-Token)
+- [Constructor API Key](#Constructor-API-Key)
 - [Cypress record key](#Cypress-record-key)
 - [DataDog API key](#DataDog-API-key)
 - [Delighted API key](#Delighted-api-key)
@@ -96,6 +97,11 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 
 
 # Detailed Information
+
+## [Construcor API Key](https://docs.constructor.io/rest_api/authentication/)
+```
+https://ac.cnstrc.com/v1/verify?key=<your-api-key>
+```
 
 ## [Slack Webhook](https://api.slack.com/incoming-webhooks)
 
