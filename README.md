@@ -81,6 +81,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Spotify Access Token](#Spotify-Access-Token)
 - [Square](#Square)
 - [Stripe Live Token](#Stripe-Live-Token)
+- [Telegram Bot API Token](#Telegram-Bot-API-Token)
 - [Travis CI API token](#Travis-CI-API-token)
 - [Twilio Account_sid and Auth token](#Twilio-Account_sid-and-Auth-token)
 - [Twitter API Secret](#Twitter-API-Secret)
@@ -591,6 +592,12 @@ curl https://api.delighted.com/v1/metrics.json \
 
 ```
 curl -H "Travis-API-Version: 3" -H "Authorization: token <TOKEN>" https://api.travis-ci.org/repos
+```
+
+## [Telegram Bot API Token](https://core.telegram.org/bots/api#making-requests)
+
+```
+curl https://api.telegram.org/bot<TOKEN>/getMe
 ```
 
 ## [WakaTime API Key](https://wakatime.com/developers)
