@@ -543,7 +543,7 @@ https://api-ssl.bitly.com/v3/shorten?access_token=ACCESS_TOKEN&longUrl=https://w
 ## [Buildkite Access token](https://buildkite.com/docs/apis/rest-api)
 ```
 curl -H "Authorization: Bearer ACCESS_TOKEN" \
-https://api.buildkite.com/v2/user
+https://api.buildkite.com/v2/access-token
 ```
 
 ## [ButterCMS-API-Key](https://buttercms.com/docs/api/#authentication)
