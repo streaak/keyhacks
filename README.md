@@ -608,7 +608,7 @@ curl https://api.telegram.org/bot<TOKEN>/getMe
 
 ## [WakaTime API Key](https://wakatime.com/developers)
 ```
-curl "https://wakatime.com/api/v1/users/current/projects/?api_key=KEY_HERE"
+curl "https://wakatime.com/api/v1/users/current?api_key=KEY_HERE"
 ```
 
 ## [Sonarcloud Token](https://sonarcloud.io/web_api)
