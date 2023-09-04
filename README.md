@@ -23,6 +23,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Buildkite Access token](#Buildkite-Access-token)
 - [ButterCMS API Key](#ButterCMS-API-Key)
 - [Calendly API Key](#Calendly-API-Key)
+- [Contentful Access Token](#Contentful-access-token)
 - [CircleCI Access Token](#CircleCI-Access-Token)
 - [Cypress record key](#Cypress-record-key)
 - [DataDog API key](#DataDog-API-key)
@@ -254,6 +255,10 @@ Response indicating valid credentials:
 Response indicating invalid credentials:
 ```
 {"errors":[{"category":"AUTHENTICATION_ERROR","code":"UNAUTHORIZED","detail":"This request could not be authorized."}]}
+```
+## [Contentful Access Token](https://www.contentful.com/developers/docs/references/authentication)
+```
+curl -v https://cdn.contentful.com/spaces/SPACE_ID_HERE/entries\?access_token\=ACCESS_TOKEN_HERE
 ```
 
 ## [Dropbox API](https://www.dropbox.com/developers/documentation/http/documentation)
