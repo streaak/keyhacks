@@ -69,6 +69,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [New Relic REST API](#New-Relic-REST-API)
 - [NPM token](#NPM-token)
 - [OpsGenie API Key](#OpsGenie-API-Key)
+- [OPENAI API KEY](#OPENAI_API_KEY)
 - [Pagerduty API token](#Pagerduty-API-token)
 - [Paypal client id and secret key](#Paypal-client-id-and-secret-key)
 - [Pendo Integration Key](#Pendo-Integration-Key)
@@ -746,6 +747,17 @@ P.S. Some companies [uses registries other than `registry.npmjs.org`](https://me
 ```
 curl https://api.opsgenie.com/v2/alerts -H 'Authorization: GenieKey API_KEY'
 ```
+
+## [OPENAI API KEY](https://platform.openai.com/docs/api-reference)
+
+
+List Files Using the OpenAI API:
+
+```
+curl -X GET -H "Authorization: Bearer YOUR_OPENAI_API_KEY" https://api.openai.com/v1/files
+```
+
+Unauthorized usage can also lead to significant financial costs, given the potential rate and volume of API calls.
 
 ## [Keen.io API Key](https://keen.io/docs/api/)
 
