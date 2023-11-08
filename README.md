@@ -300,6 +300,7 @@ curl --user 'api:YOUR_API_KEY' "https://api.mailgun.net/v3/domains"
 ```
 curl -v -u user@yourcompany.com:test -X GET 'https://domain.freshdesk.com/api/v2/groups/1'
 This requires the API key in 'user@yourcompany.com', pass in 'test' and 'domain.freshdesk.com' to be the instance url of the target. In case you get a 403, try the endpoint api/v2/tickets, which is accessible for all keys.
+```
 
 ## [Jumio-API-Key](http://ee.ocm)
 
@@ -308,7 +309,7 @@ curl --request POST --location 'https://auth.emea-1.jumio.ai/oauth2/token'     -
 
 ```
 
-```
+
 ## [JumpCloud API Key](https://docs.jumpcloud.com/1.0/authentication-and-authorization/authentication-and-authorization-overview)
 
 #### [v1](https://docs.jumpcloud.com/1.0/systemusers)
