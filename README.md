@@ -55,6 +55,7 @@ KeyHacks shows ways in which particular API keys found on a Bug Bounty Program c
 - [Instagram Graph API](#Instagram-Graph-Api-Access-Token)
 - [Ipstack API Key](#Ipstack-API-Key)
 - [Iterable API Key](#Iterable-API-Key)
+- [Jumio API Key](#Jumio-API-Key)
 - [JumpCloud API Key](#JumpCloud-API-Key)
 - [Keen.io API Key](#Keenio-API-Key)
 - [LinkedIn OAUTH](#LinkedIn-OAUTH)
@@ -299,6 +300,13 @@ curl --user 'api:YOUR_API_KEY' "https://api.mailgun.net/v3/domains"
 ```
 curl -v -u user@yourcompany.com:test -X GET 'https://domain.freshdesk.com/api/v2/groups/1'
 This requires the API key in 'user@yourcompany.com', pass in 'test' and 'domain.freshdesk.com' to be the instance url of the target. In case you get a 403, try the endpoint api/v2/tickets, which is accessible for all keys.
+
+## Jumio API Key
+
+```
+curl --request POST --location 'https://auth.emea-1.jumio.ai/oauth2/token'     --header 'Accept: application/json'     --header 'Content-Type: application/x-www-form-urlencoded'     --data-raw 'grant_type=client_credentials'     --basic --user {API_KEY}:{APY_SECRET}
+
+```
 
 ```
 ## [JumpCloud API Key](https://docs.jumpcloud.com/1.0/authentication-and-authorization/authentication-and-authorization-overview)
