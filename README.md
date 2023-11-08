@@ -302,10 +302,16 @@ curl -v -u user@yourcompany.com:test -X GET 'https://domain.freshdesk.com/api/v2
 This requires the API key in 'user@yourcompany.com', pass in 'test' and 'domain.freshdesk.com' to be the instance url of the target. In case you get a 403, try the endpoint api/v2/tickets, which is accessible for all keys.
 ```
 
-## [Jumio-API-Key](http://ee.ocm)
+## [Jumio API Key](https://github.com/Jumio/mobile-sdk-android#authentication-and-encryption)
+
+
 
 ```
-curl --request POST --location 'https://auth.emea-1.jumio.ai/oauth2/token'     --header 'Accept: application/json'     --header 'Content-Type: application/x-www-form-urlencoded'     --data-raw 'grant_type=client_credentials'     --basic --user {API_KEY}:{APY_SECRET}
+curl --request POST --location 'https://auth.emea-1.jumio.ai/oauth2/token'
+      --header 'Accept: application/json'   
+      --header 'Content-Type: application/x-www-form-urlencoded'
+      --data-raw 'grant_type=client_credentials'
+      --basic --user {API_KEY}:{APY_SECRET}
 
 ```
 
