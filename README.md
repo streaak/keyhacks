@@ -419,6 +419,24 @@ curl https://instance_name.salesforce.com/services/data/v20.0/ -H 'Authorization
 
 ## [Algolia API key](https://www.algolia.com/doc/rest-api/search/#overview)
 
+If the key has the `listIndexes` permission, you can list indexes with:
+```
+curl --request GET \
+  --url https://<example-app-id>-1.algolianet.com/1/indexes/ \
+  --header 'content-type: application/json' \
+  --header 'x-algolia-api-key: <example-key>' \
+  --header 'x-algolia-application-id: <example-appid>'
+```
+
+Otherwise you will have to know the name of an index (check the app source code or the requests it does). Then to enumerate its content:
+```
+curl --request GET \
+  --url https://<example-app-id>-1.algolianet.com/1/indexes/<example-index> \
+  --header 'content-type: application/json' \
+  --header 'x-algolia-api-key: <example-key>' \
+  --header 'x-algolia-application-id: <example-appid>'
+```
+
 Be cautious when running this command, since the payload might execute within an administrative environment, depending on what index you are editing the `highlightPreTag` of. It's recommended to use a more silent payload (such as XSS Hunter) to prove the possible cross-site scripting attack.
 
 ```
