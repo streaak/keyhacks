@@ -113,6 +113,12 @@ curl -s -X POST -H "Content-type: application/json" -d '{"text":""}' "https://ho
 curl -sX POST "https://slack.com/api/auth.test?token=xoxp-TOKEN_HERE&pretty=1"
 ```
 
+or
+
+```
+curl -sX POST "https://slack.com/api/auth.test" -H "Accept: application/json; charset=utf-8" -H "Authorization: Bearer xoxb-TOKEN_HERE"
+```
+
 ## [SauceLabs Username and access Key](https://wiki.saucelabs.com/display/DOCS/Account+Methods)
 ```
 curl -u USERNAME:ACCESS_KEY https://saucelabs.com/rest/v1/users/USERNAME
