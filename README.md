@@ -65,7 +65,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Mapbox API key](#Mapbox-API-Key)
 - [Microsoft Azure Tenant](#Microsoft-Azure-Tenant)
 - [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
-- [Microsoft Teams Webhook](#MicrosoftTeamsWebhook)
+- [Microsoft Teams Webhook](#Microsoft-Teams-Webhook)
 - [New Relic Personal API Key (NerdGraph)](#New-Relic-Personal-API-Key-(NerdGraph))
 - [New Relic REST API](#New-Relic-REST-API)
 - [NPM token](#NPM-token)
