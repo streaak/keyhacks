@@ -656,7 +656,7 @@ curl -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.spotify.com/v1/me
 ## [Instagram Basic Display API Access Token](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started)
 E.g.: IGQVJ...
 ```
-curl -X GET 'https://graph.instagram.com/{user-id}?fields=id,username&access_token={access-token}'
+curl -X GET 'https://graph.instagram.com/me?fields=id,username&access_token={access-token}'
 ```
 
 ## [Instagram Graph API Access Token](https://developers.facebook.com/docs/instagram-api/getting-started)
