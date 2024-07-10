@@ -65,6 +65,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Mapbox API key](#Mapbox-API-Key)
 - [Microsoft Azure Tenant](#Microsoft-Azure-Tenant)
 - [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
+- [Microsoft Teams Webhook](#Microsoft-Teams-Webhook)
 - [New Relic Personal API Key (NerdGraph)](#New-Relic-Personal-API-Key-(NerdGraph))
 - [New Relic REST API](#New-Relic-REST-API)
 - [NPM token](#NPM-token)
@@ -374,6 +375,12 @@ static void UseAccountSAS(string sasToken)
     Console.WriteLine(serviceProperties.HourMetrics.RetentionDays);
     Console.WriteLine(serviceProperties.HourMetrics.Version);
 }
+```
+
+## [Microsoft Teams Webhook](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/connectors-using)
+If the below command returns `Summary or Text is required.`, it means that the URL is valid. If it returns `Invalid webhook URL` or any other responses would mean that the URL is invalid.
+```
+curl -H "Content-Type:application/json" -d "{'text':''}" "YOUR_WEBHOOK_URL"
 ```
 
 ## [New Relic Personal API Key (NerdGraph)](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph#endpoint)
