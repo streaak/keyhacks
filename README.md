@@ -141,7 +141,7 @@ https://developers.facebook.com/tools/debug/accesstoken/?access_token=ACCESS_TOK
 ## [Firebase](https://firebase.google.com/)
 Requires a **custom token**, and an **API key**.
 
-1. Obtain ID token and refresh token from custom token and API key: `curl -s -XPOST -H 'content-type: application/json' -d '{"token":":custom_token","returnSecureToken":True}' 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=:api_key'`
+1. Obtain ID token and refresh token from custom token and API key: `curl -s -XPOST -H 'content-type: application/json' -d '{"token":":custom_token","returnSecureToken":true}' 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=:api_key'`
 2. Exchange ID token for auth token: `curl -s -XPOST -H 'content-type: application/json' -d '{"idToken":":id_token"}' https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyCustomToken?key=:api_key'`
 
 ## [Github Token](https://developer.github.com/v3/)
