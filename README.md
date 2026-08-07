@@ -12,6 +12,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [ABTasty API Key](#ABTasty-API-Key)
 - [Algolia API key](#Algolia-API-key)
 - [Amplitude API Keys](#Amplitude-API-Keys)
+- [Anthropic API Key](#Anthropic-API-Key)
 - [Asana Access token](#Asana-Access-Token)
 - [AWS Access Key ID and Secret](#AWS-Access-Key-ID-and-Secret)
 - [Azure Application Insights APP ID and API Key](#Azure-Application-Insights-APP-ID-and-API-Key)
@@ -26,16 +27,20 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Contentful Access Token](#Contentful-access-token)
 - [CircleCI Access Token](#CircleCI-Access-Token)
 - [Cloudflare API key](#cloudflare-api-key)
+- [Cohere API Key](#Cohere-API-Key)
 - [Cypress record key](#Cypress-record-key)
 - [DataDog API key](#DataDog-API-key)
+- [DeepSeek API Key](#DeepSeek-API-Key)
 - [Delighted API key](#Delighted-api-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
 - [Dropbox API](#Dropbox-API)
+- [ElevenLabs API Key](#ElevenLabs-API-Key)
 - [Facebook Access Token](#Facebook-Access-Token)
 - [Facebook AppSecret](#Facebook-AppSecret)
 - [Firebase](#Firebase)
 - [Firebase Cloud Messaging (FCM)](#Firebase-Cloud-Messaging)
+- [Fireworks AI API Key](#Fireworks-AI-API-Key)
 - [FreshDesk API Key](#FreshDesk-API-key)
 - [Github client id and client secret](#Github-client-id-and-client-secret)
 - [GitHub private SSH key](#GitHub-private-SSH-key)
@@ -46,9 +51,11 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
 - [Grafana Access Token](#Grafana-Access-Token)
+- [Groq API Key](#Groq-API-Key)
 - [Help Scout OAUTH](#Help-Scout-OAUTH)
 - [Heroku API key](#Heroku-API-key)
 - [HubSpot API key](#Hubspot-API-key)
+- [Hugging Face Access Token](#Hugging-Face-Access-Token)
 - [Infura API key](#Infura-API-key)
 - [Instagram Access Token](#Instagram-Access-Token)
 - [Instagram Basic Display API](#Instagram-Basic-Display-API-Access-Token)
@@ -66,6 +73,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Microsoft Azure Tenant](#Microsoft-Azure-Tenant)
 - [Microsoft Shared Access Signatures (SAS)](#Microsoft-Shared-Access-Signatures-(SAS))
 - [Microsoft Teams Webhook](#Microsoft-Teams-Webhook)
+- [Mistral API Key](#Mistral-API-Key)
 - [New Relic Personal API Key (NerdGraph)](#New-Relic-Personal-API-Key-(NerdGraph))
 - [New Relic REST API](#New-Relic-REST-API)
 - [NPM token](#NPM-token)
@@ -76,6 +84,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Pendo Integration Key](#Pendo-Integration-Key)
 - [PivotalTracker API Token](#PivotalTracker-API-Token)
 - [Razorpay API key and secret key](#Razorpay-keys)
+- [Replicate API Token](#Replicate-API-Token)
 - [Salesforce API key](#Salesforce-API-key)
 - [SauceLabs Username and access Key](#SauceLabs-Username-and-access-Key)
 - [SendGrid API Token](#SendGrid-API-Token)
@@ -87,6 +96,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Square](#Square)
 - [Stripe Live Token](#Stripe-Live-Token)
 - [Telegram Bot API Token](#Telegram-Bot-API-Token)
+- [Together AI API Key](#Together-AI-API-Key)
 - [Travis CI API token](#Travis-CI-API-token)
 - [Twilio Account_sid and Auth token](#Twilio-Account_sid-and-Auth-token)
 - [Twitter API Secret](#Twitter-API-Secret)
@@ -955,6 +965,102 @@ curl -s -H "Authorization: Bearer your-api-key" http://your-grafana-server-url.c
 Basic:
 ```
 curl -u username:password http://your-grafana-server-url.com/api/user
+```
+
+## [Anthropic API Key](https://docs.anthropic.com/en/api/models-list)
+
+A valid key returns `200` with a JSON list of models. An invalid key returns `401` with an `authentication_error`. Key format: `sk-ant-...`
+
+```
+curl https://api.anthropic.com/v1/models \
+  -H "x-api-key: API_KEY_HERE" \
+  -H "anthropic-version: 2023-06-01"
+```
+
+## [Cohere API Key](https://docs.cohere.com/reference/check-api-key)
+
+`check-api-key` returns `{"valid":true}` for a live key and `401` otherwise. This endpoint is marked deprecated in Cohere's reference, so `/v1/models` is included as a stable alternative.
+
+```
+curl -X POST https://api.cohere.com/v1/check-api-key \
+  -H "Authorization: Bearer API_KEY_HERE"
+```
+
+```
+curl https://api.cohere.com/v1/models \
+  -H "Authorization: Bearer API_KEY_HERE"
+```
+
+## [DeepSeek API Key](https://api-docs.deepseek.com/)
+
+A valid key returns `200` with a JSON model list. An invalid key returns `401`. The `/v1` path is a compatibility alias, so `https://api.deepseek.com/v1/models` also works. Key format: `sk-...`
+
+```
+curl https://api.deepseek.com/models \
+  -H "Authorization: Bearer API_KEY_HERE"
+```
+
+## [ElevenLabs API Key](https://elevenlabs.io/docs/api-reference/authentication)
+
+A valid key returns `200` with the account's user object. An invalid key returns `401`. Use `/v1/user/subscription` to read remaining character quota.
+
+```
+curl https://api.elevenlabs.io/v1/user \
+  -H "xi-api-key: API_KEY_HERE"
+```
+
+## [Fireworks AI API Key](https://docs.fireworks.ai/api-reference/introduction)
+
+A valid key returns `200` with a JSON model list. An invalid key returns `401`. Note the `/inference/v1` base path. Key format: `fw_...`
+
+```
+curl https://api.fireworks.ai/inference/v1/models \
+  -H "Authorization: Bearer API_KEY_HERE"
+```
+
+## [Groq API Key](https://console.groq.com/docs/models)
+
+A valid key returns `200` with a JSON model list. An invalid key returns `401`. Note the `/openai/v1` base path. Key format: `gsk_...`
+
+```
+curl https://api.groq.com/openai/v1/models \
+  -H "Authorization: Bearer API_KEY_HERE"
+```
+
+## [Hugging Face Access Token](https://huggingface.co/docs/hub/en/api)
+
+A valid token returns `200` with a JSON object containing the account name, token type, and scopes. An invalid token returns `401`. Token format: `hf_...`
+
+```
+curl https://huggingface.co/api/whoami-v2 \
+  -H "Authorization: Bearer API_KEY_HERE"
+```
+
+## [Mistral API Key](https://docs.mistral.ai/api/)
+
+A valid key returns `200` with a JSON model list. An invalid key returns `401`.
+
+```
+curl https://api.mistral.ai/v1/models \
+  -H "Authorization: Bearer API_KEY_HERE"
+```
+
+## [Replicate API Token](https://replicate.com/docs/reference/http)
+
+A valid token returns `200` with the account object (type, username). An invalid token returns `401`. `Token` is also accepted in place of `Bearer`. Token format: `r8_...`
+
+```
+curl https://api.replicate.com/v1/account \
+  -H "Authorization: Bearer API_KEY_HERE"
+```
+
+## [Together AI API Key](https://docs.together.ai/reference/models-1)
+
+A valid key returns `200` with a JSON model list. An invalid key returns `401`.
+
+```
+curl https://api.together.xyz/v1/models \
+  -H "Authorization: Bearer API_KEY_HERE"
 ```
 
 # Contributing
