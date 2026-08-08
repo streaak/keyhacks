@@ -24,6 +24,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [ButterCMS API Key](#ButterCMS-API-Key)
 - [Calendly API Key](#Calendly-API-Key)
 - [Contentful Access Token](#Contentful-access-token)
+- [ChatGPT/Open AI](#ChatGPT-API-Key)
 - [CircleCI Access Token](#CircleCI-Access-Token)
 - [Cloudflare API key](#cloudflare-api-key)
 - [Cypress record key](#Cypress-record-key)
@@ -31,6 +32,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Delighted API key](#Delighted-api-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
+- [DeepSeek API Key](#DeepSeek-API-Key)
 - [Dropbox API](#Dropbox-API)
 - [Facebook Access Token](#Facebook-Access-Token)
 - [Facebook AppSecret](#Facebook-AppSecret)
@@ -43,6 +45,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Gitlab personal access token](#Gitlab-personal-access-token)
 - [GitLab runner registration token](#Gitlab-runner-registration-token)
 - [Google Cloud Service Account credentials](#Google-Cloud-Service-Account-credentials)
+- [Google Gemini API key](#Google-Gemini-key)
 - [Google Maps API key](#Google-Maps-API-key)
 - [Google Recaptcha key](#Google-Recaptcha-key)
 - [Grafana Access Token](#Grafana-Access-Token)
@@ -955,6 +958,33 @@ curl -s -H "Authorization: Bearer your-api-key" http://your-grafana-server-url.c
 Basic:
 ```
 curl -u username:password http://your-grafana-server-url.com/api/user
+```
+
+## [ChatGPT/Open AI](https://platform.openai.com/api-keys)
+```
+curl -k "https://api.openai.com/v1/responses" -H "Content-Type: application/json" -H "Authorization: Bearer <OPENAI_API_KEY>" -d '{"model": "gpt-4.1","input": "What is One Plus One"}'
+```
+
+```
+curl -k "https://api.openai.com/v1/responses" -H "Content-Type: application/json" -H "Authorization: Bearer <OPENAI_API_KEY>" -d "{\"model\": \"gpt-4.1\",\"input\":\"What is One Plus One\"}"
+```
+
+## [Google Gemini](https://aistudio.google.com/app/apikey)
+```
+curl -k -H 'Content-Type: application/json' -X POST -d '{"contents": [{"parts": [{"text": "What is One Plus One"}]}]}' "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=<GEMINI_API_KEY>"
+```
+
+```
+curl -k -H "Content-Type: application/json" -X POST -d "{\"contents\": [{\"parts\": [{\"text\": \"What is One Plus One\"}]}]}" "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=<GEMINI_API_KEY>"
+```
+
+## [DeepSeek API Key](https://api-docs.deepseek.com/)
+```
+curl -k "https://api.deepseek.com/chat/completions" -H "Content-Type: application/json" -H "Authorization: Bearer <DeepSeek_API_Key>" -d "{\"model\":\"deepseek-chat\",\"messages\": [{\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},{\"role\": \"user\", \"content\": \"Hello!\"}],\"stream\": false}"
+```
+
+```
+curl -k "https://api.deepseek.com/chat/completions" -H "Content-Type: application/json" -H "Authorization: Bearer <DeepSeek_API_Key>" -d '{"model":"deepseek-chat","messages": [{"role": "system", "content": "You are a helpful assistant."},{"role": "user", "content": "Hello!"}],"stream": false}'
 ```
 
 # Contributing
