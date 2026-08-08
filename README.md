@@ -69,6 +69,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [New Relic Personal API Key (NerdGraph)](#New-Relic-Personal-API-Key-(NerdGraph))
 - [New Relic REST API](#New-Relic-REST-API)
 - [NPM token](#NPM-token)
+- [Nylas API Key](#Nylas-API-Key)
 - [OpsGenie API Key](#OpsGenie-API-Key)
 - [OPENAI API KEY](#OPENAI_API_KEY)
 - [Pagerduty API token](#Pagerduty-API-token)
@@ -407,6 +408,18 @@ curl -X GET 'https://api.newrelic.com/v2/applications.json' \
 ```
 
 If valid, test further to see if it's an [admin key](https://docs.newrelic.com/docs/apis/get-started/intro-apis/types-new-relic-api-keys#admin)
+
+## [Nylas API Key](https://developer.nylas.com/docs/api/v3/admin/)
+
+List applications:
+
+```bash
+curl --request GET \
+  --url 'https://api.us.nylas.com/v3/applications' \
+  --header 'Authorization: Bearer API_KEY_HERE'
+```
+
+A valid key returns information about the Nylas application. Invalid credentials return `401 Unauthorized`.
 
 ## [Heroku API key](https://devcenter.heroku.com/articles/platform-api-quickstart)
 ```
