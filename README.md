@@ -28,6 +28,7 @@ KeyHacks shows methods to validate different API keys found on a Bug Bounty Prog
 - [Cloudflare API key](#cloudflare-api-key)
 - [Cypress record key](#Cypress-record-key)
 - [DataDog API key](#DataDog-API-key)
+- [Databricks API key](#Databricks-API-key)
 - [Delighted API key](#Delighted-api-key)
 - [Deviant Art Access Token](#Deviant-Art-Access-Token)
 - [Deviant Art Secret](#Deviant-Art-Secret)
@@ -617,6 +618,11 @@ curl "https://api.wpengine.com/1.2/?method=site&account_name=ACCOUNT_NAME&wpe_ap
 ## [DataDog API key](https://docs.datadoghq.com/api/)
 ```
 curl "https://api.datadoghq.com/api/v1/dashboard?api_key=<api_key>&application_key=<application_key>"
+```
+
+## [Databricks API key](https://docs.databricks.com/en/dev-tools/auth/index.html)
+```
+curl -X GET https://<databricks-instance>/api/2.0/clusters/list -H "Authorization: Bearer <API-KEY>"
 ```
 
 ## [Delighted API key](https://app.delighted.com/docs/api)
