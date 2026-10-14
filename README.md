@@ -5,7 +5,7 @@
 
 KeyHacks shows methods to validate different API keys found on a Bug Bounty Program or a pentest.
 
-@Gwen001 has scripted the entire process available here and it can be found [here](https://github.com/gwen001/pentest-tools/blob/master/keyhacks.sh)
+@Gwen001 has scripted the entire process available here and it can be found [here](https://github.com/gwen001/keyhacks.sh)
 
 # Table of Contents
 
